@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{180AB500-E018-4386-B5A6-2FA8F3569EB8}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>moba_game_server</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\3rd\libuv\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\3rd\libuv\src\fs-poll.c" />
+    <ClCompile Include="..\..\..\3rd\libuv\src\inet.c" />
+    <ClCompile Include="..\..\..\3rd\libuv\src\threadpool.c" />
+    <ClCompile Include="..\..\..\3rd\libuv\src\uv-common.c" />
+    <ClCompile Include="..\..\..\3rd\libuv\src\version.c" />
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\async.c" />
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\core.c" />
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\dl.c" />
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\error.c" />
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\fs-event.c" />
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\fs.c" />
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\getaddrinfo.c" />
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\getnameinfo.c" />
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\handle.c" />
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\loop-watcher.c" />
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\pipe.c" />
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\poll.c" />
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\process-stdio.c" />
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\process.c" />
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\req.c" />
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\signal.c" />
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\snprintf.c" />
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\stream.c" />
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\tcp.c" />
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\thread.c" />
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\timer.c" />
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\tty.c" />
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\udp.c" />
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\util.c" />
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\winapi.c" />
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\winsock.c" />
+    <ClCompile Include="..\..\..\apps\test\main.cc" />
+    <ClCompile Include="..\..\..\netbus\netbus.cc" />
+    <ClCompile Include="..\..\..\netbus\session_uv.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\3rd\libuv\include\android-ifaddrs.h" />
+    <ClInclude Include="..\..\..\3rd\libuv\include\pthread-barrier.h" />
+    <ClInclude Include="..\..\..\3rd\libuv\include\stdint-msvc2008.h" />
+    <ClInclude Include="..\..\..\3rd\libuv\include\tree.h" />
+    <ClInclude Include="..\..\..\3rd\libuv\include\uv-aix.h" />
+    <ClInclude Include="..\..\..\3rd\libuv\include\uv-bsd.h" />
+    <ClInclude Include="..\..\..\3rd\libuv\include\uv-darwin.h" />
+    <ClInclude Include="..\..\..\3rd\libuv\include\uv-errno.h" />
+    <ClInclude Include="..\..\..\3rd\libuv\include\uv-linux.h" />
+    <ClInclude Include="..\..\..\3rd\libuv\include\uv-sunos.h" />
+    <ClInclude Include="..\..\..\3rd\libuv\include\uv-threadpool.h" />
+    <ClInclude Include="..\..\..\3rd\libuv\include\uv-unix.h" />
+    <ClInclude Include="..\..\..\3rd\libuv\include\uv-version.h" />
+    <ClInclude Include="..\..\..\3rd\libuv\include\uv-win.h" />
+    <ClInclude Include="..\..\..\3rd\libuv\include\uv.h" />
+    <ClInclude Include="..\..\..\3rd\libuv\src\heap-inl.h" />
+    <ClInclude Include="..\..\..\3rd\libuv\src\queue.h" />
+    <ClInclude Include="..\..\..\3rd\libuv\src\uv-common.h" />
+    <ClInclude Include="..\..\..\3rd\libuv\src\win\atomicops-inl.h" />
+    <ClInclude Include="..\..\..\3rd\libuv\src\win\handle-inl.h" />
+    <ClInclude Include="..\..\..\3rd\libuv\src\win\internal.h" />
+    <ClInclude Include="..\..\..\3rd\libuv\src\win\req-inl.h" />
+    <ClInclude Include="..\..\..\3rd\libuv\src\win\stream-inl.h" />
+    <ClInclude Include="..\..\..\3rd\libuv\src\win\winapi.h" />
+    <ClInclude Include="..\..\..\3rd\libuv\src\win\winsock.h" />
+    <ClInclude Include="..\..\..\netbus\netbus.h" />
+    <ClInclude Include="..\..\..\netbus\session.h" />
+    <ClInclude Include="..\..\..\netbus\session_uv.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
