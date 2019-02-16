@@ -40,6 +40,12 @@
     <Filter Include="3rd\libuv\src\win">
       <UniqueIdentifier>{b8b4fb5c-4e15-4d35-a714-9d6b09576869}</UniqueIdentifier>
     </Filter>
+    <Filter Include="3rd\http_parser">
+      <UniqueIdentifier>{9fba6044-70b5-4cce-9e25-f9dcd46e5c19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\crypto">
+      <UniqueIdentifier>{793afe25-ee82-4ed2-8c31-a70a9d11af75}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\apps\test\main.cc">
@@ -144,6 +150,27 @@
     <ClCompile Include="..\..\..\netbus\session_uv.cc">
       <Filter>netbus</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\utils\cacke_alloc.cc">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\http_parser\http_parser.c">
+      <Filter>3rd\http_parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\crypto\md5.cpp">
+      <Filter>3rd\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\crypto\sha1.cpp">
+      <Filter>3rd\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\netbus\ws_protocal.cc">
+      <Filter>netbus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\crypto\base64_decoder_zfs.cc">
+      <Filter>3rd\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\crypto\base64_encode_zfs.cc">
+      <Filter>3rd\crypto</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\3rd\libuv\include\android-ifaddrs.h">
@@ -229,6 +256,27 @@
     </ClInclude>
     <ClInclude Include="..\..\..\netbus\session_uv.h">
       <Filter>netbus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\utils\cacke_alloc.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\http_parser\http_parser.h">
+      <Filter>3rd\http_parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\crypto\md5.h">
+      <Filter>3rd\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\crypto\sha1.h">
+      <Filter>3rd\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\netbus\ws_protocal.h">
+      <Filter>netbus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\crypto\base64_decoder_zfs.h">
+      <Filter>3rd\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\crypto\base64_encode_zfs.h">
+      <Filter>3rd\crypto</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

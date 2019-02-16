@@ -17,12 +17,15 @@ public:
 	int c_port;
 
 	uv_shutdown_t shutdown;
-	uv_write_t w_req;
-	uv_buf_t w_buf;
+	bool is_shutdown;//要标记一下session,避免重复uv_shutdown
 public:
 	char recv_buf[RECV_LEN];
 	int recved;
 	int socket_type;
+	char* long_pkg;
+	int long_pkg_size;
+public:
+	bool is_ws_shaked;
 private:
 	void init();
 	void exit();
@@ -34,5 +37,5 @@ public:
 	virtual void send_data(unsigned char* body,int len);
 	virtual const char* get_address(int* client_port);
 };
-
+void init_session_allocer();
 #endif
