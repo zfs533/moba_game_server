@@ -1,0 +1,21 @@
+﻿生成启动时间为 2019/2/18 21:24:55。
+     1>项目“H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_client\moba_client\proj.win32\moba_client\moba_client.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IH:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_client\moba_client\3rd\protobuf\src /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\src\main_proto_manager.cc
+         main_proto_manager.cc
+     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_client\moba_client\3rd\protobuf\src\google\protobuf\io\coded_stream.h(869): warning C4800: “google::protobuf::internal::Atomic32”: 将值强制为布尔值“true”或“false”(性能警告)
+     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_client\moba_client\3rd\protobuf\src\google\protobuf\wire_format_lite.h(863): warning C4146: 一元负运算符应用于无符号类型，结果仍为无符号类型
+     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_client\moba_client\3rd\protobuf\src\google\protobuf\wire_format_lite.h(874): warning C4146: 一元负运算符应用于无符号类型，结果仍为无符号类型
+     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_client\moba_client\3rd\protobuf\src\google\protobuf\generated_message_util.h(160): warning C4800: “const google::protobuf::uint32”: 将值强制为布尔值“true”或“false”(性能警告)
+     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_client\moba_client\src\main_proto_manager.cc(29): warning C4244: “参数”: 从“DWORD”转换到“WORD”，可能丢失数据
+       Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_client\moba_client\proj.win32\Debug\moba_client.exe" /INCREMENTAL /NOLOGO /LIBPATH:H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_client\moba_client\proj.win32\protobuf kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_client\moba_client\proj.win32\Debug\moba_client.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_client\moba_client\proj.win32\Debug\moba_client.lib" /MACHINE:X86 Debug\game.pb.obj
+         Debug\main_proto_manager.obj
+         Debug\main_tp_protocol.obj
+         Debug\tp_protocol.obj
+         moba_client.vcxproj -> H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_client\moba_client\proj.win32\Debug\moba_client.exe
+     1>已完成生成项目“H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_client\moba_client\proj.win32\moba_client\moba_client.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:03.32
