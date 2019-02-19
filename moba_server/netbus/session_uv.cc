@@ -11,6 +11,7 @@
 #include "../utils/cacke_alloc.h"
 #include "ws_protocal.h"
 #include "tp_protocol.h"
+#include "proto_man.h"
 
 using namespace std;
 
@@ -137,6 +138,18 @@ const char* uv_session::get_address(int* port)
 {
 	*port = this->c_port;
 	return this->c_address;
+}
+
+void uv_session::send_msg(struct cmd_msg* msg)
+{
+	unsigned char* encode_pkg = NULL;
+	int encode_len = 0;
+	encode_pkg = proto_man::encode_msg_to_raw(msg,&encode_len);
+	if(encode_pkg)
+	{
+		this->send_data(encode_pkg,encode_len);
+		proto_man::msg_raw_free(encode_pkg);
+	}
 }
 
 

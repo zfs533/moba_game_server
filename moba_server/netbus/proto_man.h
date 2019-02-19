@@ -9,8 +9,8 @@ enum
 
 struct cmd_msg
 {
-	int stype; 
-	int ctype; 
+	int stype; //service tag
+	int ctype; //commond tag
 	unsigned int utag;
 	void* body; // JSON str ªÚ’ﬂ «message;
 };
