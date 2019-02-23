@@ -3,8 +3,8 @@
 
 enum {
 	DEBUG = 0,
-	WARNING,
-	ERRORR,
+	WARNING=1,
+	ERRORR=2,
 };
 
 #define log_debug(msg, ...) logger::log(__FILE__, __LINE__, DEBUG, msg, ## __VA_ARGS__);
