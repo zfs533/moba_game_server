@@ -22,12 +22,13 @@ public:
 	LibuvTimer();
 	~LibuvTimer();
 	static LibuvTimer* getInstance();
-	STimer* schedule(void(*on_timer)(void* udata),void* data,int after_time,int time_offset,int repeat_count);
+	STimer* schedule_repeat(void(*on_timer)(void* udata),void* data,int after_time,int time_offset,int repeat_count);
 	STimer* allocTimer(void(*on_timer)(void* udata),void* data,int time_offset,int repeat_count);
 	static void timer_cb(uv_timer_t* handle);
 	void cancel(STimer* timer);
 	STimer* scheduleOnce(void(*on_timer)(void* udata),void* data,int after_time);
 	void free_timer(STimer* timer);
+	void* get_timer_udata(STimer* t);
 };
 #ifdef __cplusplus
 }

@@ -1,8 +1,8 @@
 #ifndef __SERVICE_H
 #define __SERVICE_H
 
-class session;
-struct cmd_msg;
+#include "session.h"
+#include "proto_man.h"
 
 class service
 {

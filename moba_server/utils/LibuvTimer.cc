@@ -22,7 +22,11 @@ LibuvTimer::LibuvTimer()
 
 LibuvTimer::~LibuvTimer()
 {
-	
+	if(inst)
+	{
+		delete inst;
+		inst = NULL;
+	}
 }
 
 LibuvTimer* LibuvTimer::getInstance()
@@ -38,7 +42,7 @@ on_timer:timer callback func
 data:call data
 repeat_count:-1 repeatforever
 */
-STimer* LibuvTimer::schedule(void(*on_timer)(void* udata),void* data,int after_time,int time_offset,int repeat_count)
+STimer* LibuvTimer::schedule_repeat(void(*on_timer)(void* udata),void* data,int after_time,int time_offset,int repeat_count)
 {
 	STimer* t = this->allocTimer(on_timer,data,time_offset,repeat_count);
 	t->uv_timer.data = t;
@@ -63,7 +67,6 @@ STimer* LibuvTimer::allocTimer(void(*on_timer)(void* udata),void* data,int time_
 void LibuvTimer::timer_cb(uv_timer_t* handle)
 {
 	STimer* t = (STimer*)handle->data;
-	log_debug("%d",t->repeat_count);
 	if(t->repeat_count<0)//repeatforever
 	{
 		t->on_Timer(t->data);
@@ -98,5 +101,10 @@ void LibuvTimer::free_timer(STimer* t)
 
 STimer* LibuvTimer::scheduleOnce(void(*on_timer)(void* udata),void* data,int after_time)
 {
-	return this->schedule(on_timer,data,after_time,after_time,1);
+	return this->schedule_repeat(on_timer,data,after_time,after_time,1);
+}
+
+void* LibuvTimer::get_timer_udata(STimer* t)
+{
+	return t->data;
 }
