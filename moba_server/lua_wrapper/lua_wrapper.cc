@@ -11,10 +11,16 @@ using namespace std;
 #include "../utils/logger.h"
 #include "tolua_fix.h"
 #include "mysql_export_to_lua.h"
+#include "service_export_to_lua.h"
+#include "session_export_to_lua.h"
+#include "logger_export_to_lua.h"
+#include "scheduler_export_to_lua.h"
+#include "netbus_export_to_lua.h"
+#include "proto_man_export_to_lua.h"
 
 lua_State* g_lua_State = NULL;
 //get lua file path,name ,line_num
-static void do_log_message(void(*log)(const char* file_name, int line_num, const char* msg), const char* msg) 
+void lua_wrapper::do_log_message(void(*log)(const char* file_name, int line_num, const char* msg), const char* msg) 
 {
 	lua_Debug info;
 	int depth = 0;
@@ -35,17 +41,17 @@ static void do_log_message(void(*log)(const char* file_name, int line_num, const
 	}
 }
 
-static void print_debug(const char* file_name,int line_num,const char* msg)
+void lua_wrapper::print_debug(const char* file_name,int line_num,const char* msg)
 {
 	logger::log(file_name,line_num,DEBUG,msg);
 }
 
-static void print_warning(const char* file_name,int line_num,const char* msg)
+void lua_wrapper::print_warning(const char* file_name,int line_num,const char* msg)
 {
 	logger::log(file_name,line_num,WARNING,msg);
 }
 
-static void print_error(const char* file_name,int line_num,const char* msg)
+void lua_wrapper::print_error(const char* file_name,int line_num,const char* msg)
 {
 	logger::log(file_name,line_num,ERRORR,msg);
 }
@@ -56,7 +62,7 @@ static int lua_log_debug(lua_State* L)
 	const char* info = luaL_checkstring(L,-1);
 	if(info)
 	{
-		do_log_message(print_debug,info);
+		lua_wrapper::do_log_message(lua_wrapper::print_debug,info);
 	}
 	return 0;
 }
@@ -66,7 +72,7 @@ static int lua_log_warning(lua_State* L)
 	const char* info = luaL_checkstring(L,-1);
 	if(info)
 	{
-		do_log_message(print_warning,info);
+		lua_wrapper::do_log_message(lua_wrapper::print_warning,info);
 	}
 	return 0;
 }
@@ -76,7 +82,7 @@ static int lua_log_error(lua_State* L)
 	const char* info = luaL_checkstring(L,-1);
 	if(info)
 	{
-		do_log_message(print_error,info);
+		lua_wrapper::do_log_message(lua_wrapper::print_error,info);
 	}
 	return 0;
 }
@@ -87,24 +93,26 @@ static int lua_panic(lua_State* L)
 	const char* msg = luaL_checkstring(L,-1);
 	if(msg)
 	{
-		do_log_message(print_error,msg);
+		lua_wrapper::do_log_message(lua_wrapper::print_error,msg);
 	}
 	return 0;
 }
 
 void lua_wrapper::init()
+
 {
 	g_lua_State = luaL_newstate();
 	lua_atpanic(g_lua_State,lua_panic);
 	luaL_openlibs(g_lua_State);
 	//--------
 	toluafix_open(g_lua_State);
+	register_logger_tolua(g_lua_State);
 	register_mysql_export(g_lua_State);
-
-	//--------
-	lua_wrapper::register_luaFunction("log_debug",lua_log_debug);
-	lua_wrapper::register_luaFunction("log_warning",lua_log_warning);
-	lua_wrapper::register_luaFunction("log_error",lua_log_error);
+	register_service_export(g_lua_State);
+	register_session_export(g_lua_State);
+	register_scheduler_export(g_lua_State);
+	register_netbus_export(g_lua_State);
+	register_proto_man_export(g_lua_State);
 }
 
 void lua_wrapper::exit()
@@ -116,12 +124,14 @@ void lua_wrapper::exit()
 	}
 }
 
-bool lua_wrapper::exe_lua_file(const char* lua_file)
+bool lua_wrapper::do_file(std::string& lua_file)
 {
+	/*
 	string lua_head = "../../../lua_script/";
 	string lua_fl = string(lua_file);
-
-	if(luaL_dofile(g_lua_State,(lua_head+lua_fl).c_str()))
+	*/
+	//if(luaL_dofile(g_lua_State,(lua_head+lua_fl).c_str()))
+	if(luaL_dofile(g_lua_State,(lua_file.c_str())))
 	{
 		log_error("lua grammer error");
 		return false;
@@ -229,4 +239,11 @@ int lua_wrapper::execute_script_handler(int nHandler, int numArgs) {
 void lua_wrapper::remove_script_handler(int nHandler)
 {
 	toluafix_remove_function_by_refid(g_lua_State, nHandler);
+}
+
+void lua_wrapper::add_search_path(std::string& path)
+{
+	char strPath[1024] = { 0 };
+	sprintf(strPath, "local path = string.match([[%s]],[[(.*)/[^/]*$]])\n package.path = package.path .. [[;]] .. path .. [[/?.lua;]] .. path .. [[/?/init.lua]]\n", path.c_str());
+	luaL_dostring(g_lua_State, strPath);
 }

@@ -1,0 +1,1 @@
+H:\Apan_WorkAbout\duokemeng\mytest\server\protobuf_win\protobuf>protoc --cpp_out ./data ./person.proto
