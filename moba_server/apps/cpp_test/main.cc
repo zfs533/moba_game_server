@@ -105,9 +105,9 @@ int main(int argc,char** argv)
 	proto_man::init(PROTO_BUF);
 	init_pf_cmd_map();
 	netbus::instance()->init();
-	netbus::instance()->tcp_listen(6080);
-	netbus::instance()->ws_listen(3000);
-	netbus::instance()->udp_listen(6081);
+	netbus::instance()->tcp_listen(6080,"127.0.0.1");
+	netbus::instance()->ws_listen(3000,"10.0.7.65");
+	netbus::instance()->udp_listen(6081,"127.0.0.1");
 	
 	netbus::instance()->run();
 	

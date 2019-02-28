@@ -16,6 +16,7 @@ using namespace std;
 #include "service_man.h"
 #include "udp_session.h"
 
+
 extern "C"
 {
 struct udp_recv_buf {
@@ -39,7 +40,7 @@ static void on_recv_client_cmd(session* s,unsigned char* body,int len)
 		{
 			s->close();
 		}
-		s->send_msg(msg);
+		//s->send_msg(msg);
 		proto_man::cmd_msg_free(msg);
 	}
 }
@@ -230,7 +231,13 @@ static void uv_alloc_buf(uv_handle_t* handle,
 			}
 			else
 			{
-				//tcp socket 接收数据包
+				//tcp socket recv data pack
+				int pkg_size;
+				int head_size;
+				tp_protocol::read_header((unsigned char*)s->recv_buf,s->recved,&pkg_size,&head_size);
+				s->long_pkg_size = pkg_size;
+				s->long_pkg = (char*)malloc(pkg_size);
+				memcpy(s->long_pkg,s->recv_buf,s->recved);
 			}
 			*buf = uv_buf_init(s->long_pkg + s->recved,s->long_pkg_size - s->recved);
 		}
@@ -268,7 +275,7 @@ netbus* netbus::instance()
 	return &g_netbus;
 }
 
-void netbus::udp_listen(int port)
+void netbus::udp_listen(int port,const char* ip)
 {
 	uv_udp_t* server = (uv_udp_t*)malloc(sizeof(uv_udp_t));
 	memset(server,0,sizeof(uv_udp_t));
@@ -278,19 +285,21 @@ void netbus::udp_listen(int port)
 	server->data = (struct udp_recv_buf*) udp_buf;
 	
 	struct sockaddr_in addr;
-	uv_ip4_addr("127.0.0.1",port,&addr);
+	//uv_ip4_addr("127.0.0.1",port,&addr);
+	uv_ip4_addr(ip,port,&addr);
 	uv_udp_bind(server,(const struct sockaddr*)&addr,0);
 
 	uv_udp_recv_start(server,udp_uv_alloc_buf,after_uv_udp_recv);
 }
 
-void netbus::tcp_listen(int port)
+void netbus::tcp_listen(int port,const char* ip)
 {
 	uv_tcp_t* listen = (uv_tcp_t*)malloc(sizeof(uv_tcp_t));
 	memset(listen,0,sizeof(uv_tcp_t));
 	uv_tcp_init(uv_default_loop(),listen);
 	struct sockaddr_in addr;
-	uv_ip4_addr("127.0.0.1",port,&addr);
+	//uv_ip4_addr("127.0.0.1",port,&addr);
+	uv_ip4_addr(ip,port,&addr);
 	//bind ip and port
 	int ret = uv_tcp_bind(listen,(const struct sockaddr*)&addr,0);
 	if(ret !=0)
@@ -304,14 +313,15 @@ void netbus::tcp_listen(int port)
 	listen->data = (void*)TCP_SOCKET;
 }
 
-void netbus::ws_listen(int port)
+void netbus::ws_listen(int port,const char* ip)
 {
 	uv_tcp_t* listen = (uv_tcp_t*)malloc(sizeof(uv_tcp_t));
 	memset(listen,0,sizeof(uv_tcp_t));
 	uv_tcp_init(uv_default_loop(),listen);
 	struct sockaddr_in addr;
 	//uv_ip4_addr("127.0.0.1",port,&addr);
-	uv_ip4_addr("10.0.7.65",port,&addr);
+	//uv_ip4_addr("10.0.7.65",port,&addr);
+	uv_ip4_addr(ip,port,&addr);
 	//bind ip and port
 	int ret = uv_tcp_bind(listen,(const struct sockaddr*)&addr,0);
 	if(ret !=0)

@@ -12,6 +12,7 @@
 #include "ws_protocal.h"
 #include "tp_protocol.h"
 #include "proto_man.h"
+#include "service_man.h"
 
 using namespace std;
 
@@ -96,6 +97,7 @@ void uv_session::close()
 	{
 		return;
 	}
+	service_man::on_session_disconnect(this);
 	this->is_shutdown = true;
 	uv_shutdown_t* reg = &this->shutdown;
 	memset(reg,0,sizeof(uv_shutdown_t));

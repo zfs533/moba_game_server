@@ -11,36 +11,39 @@ using namespace std;
 static int tcp_listen_tolua(lua_State* tolua_S)
 {
 	int port = tolua_tonumber(tolua_S,1,0);
-	if(port == 0)
+	const char* ip = tolua_tostring(tolua_S,2,0);
+	if(port == 0 || ip == NULL)
 	{
 		goto lua_failed;
 	}
 lua_failed:
-	netbus::instance()->tcp_listen(port);
+	netbus::instance()->tcp_listen(port,ip);
 	return 0;
 }
 
 static int ws_listen_tolua(lua_State* tolua_S)
 {
 	int port = tolua_tonumber(tolua_S,1,0);
-	if(port == 0)
+	const char* ip = tolua_tostring(tolua_S,2,0);
+	if(port == 0 || ip == NULL)
 	{
 		goto lua_failed;
 	}
 lua_failed:
-	netbus::instance()->ws_listen(port);
+	netbus::instance()->ws_listen(port,ip);
 	return 0;
 }
 
 static int udp_listen_tolua(lua_State* tolua_S)
 {
 	int port = tolua_tonumber(tolua_S,1,0);
-	if(port == 0)
+	const char* ip = tolua_tostring(tolua_S,2,0);
+	if(port == 0 || ip == NULL)
 	{
 		goto lua_failed;
 	}
 lua_failed:
-	netbus::instance()->udp_listen(port);
+	netbus::instance()->udp_listen(port,ip);
 	return 0;
 }
 

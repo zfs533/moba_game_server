@@ -31,7 +31,7 @@ static unsigned int save_service_function(lua_State* L,int lo, int def)
 	}
 	s_function_ref_id++;
 	lua_pushstring(L,SERVICE_FUNCTION_MAPPING);
-	lua_rawset(L,LUA_REGISTRYINDEX);
+	lua_rawget(L,LUA_REGISTRYINDEX);
 	lua_pushinteger(L,s_function_ref_id);
 	lua_pushvalue(L,lo);
 	lua_rawset(L,-3);
@@ -343,7 +343,7 @@ static int register_service_tolua(lua_State* tolua_S)
 	ret = service_man::register_service(stype,s);
 
 lua_failed:
-	return 0;
+	return 1;
 }
 
 int register_service_export(lua_State* tolua_S)

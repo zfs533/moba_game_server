@@ -41,22 +41,24 @@ local proto_type = {
     PROTO_BUF = 1,
 }
 proto_man.init(proto_type.PROTO_BUF)
-logger.error(proto_man.proto_type(),proto_type.PROTO_BUF)
-logger.error(proto_man.proto_type()==proto_type.PROTO_BUF)
+
+local cmd_name_map = require("cmd_name_map")
+local service_cmd = require("service_test")
+
 --如果是protobuf协议，则注册一下映射表
 if proto_man.proto_type() == proto_type.PROTO_BUF then
-    local cmd_name_map = require("cmd_name_map")
     if cmd_name_map then
         print("cmd nama map")
         PrintTable(cmd_name_map)
         proto_man.register_protobuf_cmd_map(cmd_name_map)
     end
 end
-
+service.register(service_cmd.stype,service_cmd.cmd_s)
 --开启网络服务
-netbus.tcp_listen(6080)
-netbus.ws_listen(3000)
-netbus.udp_listen(6081)
+
+netbus.tcp_listen(6080,"127.0.0.1")
+netbus.ws_listen(3000,"10.0.7.65")
+netbus.udp_listen(6081,"127.0.0.1")
 
 print("start service success------------------")
 print("---------------hahahah")

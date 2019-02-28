@@ -12,9 +12,9 @@ public:
 	static netbus* instance();
 public:
 	void init();
-	void tcp_listen(int port);
-	void ws_listen(int port);
-	void udp_listen(int port);
+	void tcp_listen(int port,const char* ip);
+	void ws_listen(int port,const char* ip);
+	void udp_listen(int port,const char* ip);
 	void run();
 };
 #endif

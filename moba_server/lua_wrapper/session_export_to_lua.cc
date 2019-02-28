@@ -7,7 +7,7 @@
 #include "../netbus/proto_man.h"
 #include "google/protobuf/message.h"
 #include "../utils/logger.h"
-
+  
 using namespace google::protobuf;
 
 static int session_close_tolua(lua_State* tolua_S)
@@ -33,8 +33,9 @@ static int get_address_tolua(lua_State* tolua_S)
 	const char* ip = s->get_address(&client_port);
 	lua_pushstring(tolua_S,ip);
 	lua_pushinteger(tolua_S,client_port);
+	return 2;
 lua_failed:
-	return 0;
+	return 1;
 }
 
 static google::protobuf::Message* lua_table_to_protobuf(lua_State* L, int stack_index, const char* msg_name) {
@@ -268,6 +269,7 @@ static int send_msg_tolua(lua_State* tolua_S)
 		goto lua_failed;
 	}
 	//read table key-value and push in lua stack
+	/*
 	lua_getfield(tolua_S,2,"1");//3
 	lua_getfield(tolua_S,2,"2");//4
 	lua_getfield(tolua_S,2,"3");//5
@@ -276,6 +278,28 @@ static int send_msg_tolua(lua_State* tolua_S)
 	msg.stype = lua_tointeger(tolua_S,3);
 	msg.ctype = lua_tointeger(tolua_S,4);
 	msg.utag = lua_tointeger(tolua_S,5);
+	*/
+	struct cmd_msg msg;
+	int n = luaL_len(tolua_S,2);
+	if(n != 4)
+	{
+		goto lua_failed;
+	}
+	lua_pushnumber(tolua_S,1);
+	lua_gettable(tolua_S,2);
+	msg.stype = luaL_checkinteger(tolua_S,-1);
+
+	lua_pushnumber(tolua_S, 2);
+	lua_gettable(tolua_S, 2);
+	msg.ctype = luaL_checkinteger(tolua_S, -1);
+
+	lua_pushnumber(tolua_S, 3);
+	lua_gettable(tolua_S, 2);
+	msg.utag = luaL_checkinteger(tolua_S, -1);
+
+	lua_pushnumber(tolua_S, 4);
+	lua_gettable(tolua_S, 2);
+
 	if(proto_man::proto_type() == PROTO_JSON)
 	{
 		msg.body = (char*)lua_tostring(tolua_S,6);
@@ -290,13 +314,20 @@ static int send_msg_tolua(lua_State* tolua_S)
 		}
 		else
 		{
-			const char* msg_name = proto_man::protobuf_cmd_name(msg.ctype);
-			msg.body = lua_table_to_protobuf(tolua_S,6,msg_name);
-			s->send_msg(&msg);
-			proto_man::release_message((google::protobuf::Message*)(msg.body));
+			if(!lua_istable(tolua_S, -1))
+			{
+				msg.body = NULL;
+				s->send_msg(&msg);
+			}
+			else
+			{
+				const char* msg_name = proto_man::protobuf_cmd_name(msg.ctype);
+				msg.body = lua_table_to_protobuf(tolua_S,6,msg_name);
+				s->send_msg(&msg);
+				proto_man::release_message((google::protobuf::Message*)(msg.body));
+			}
 		}
 	}
-
 lua_failed:
 	return 0;
 }
