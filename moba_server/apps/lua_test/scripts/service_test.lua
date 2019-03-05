@@ -26,7 +26,7 @@ local abc = {
 
 local service_cmd = {
   stype = 1,
-  cmd_s = abc, 
+  service = abc, 
 }
 
 return service_cmd

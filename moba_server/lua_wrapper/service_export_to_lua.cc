@@ -294,14 +294,20 @@ bool lua_service::on_session_recv_cmd(session* s, struct cmd_msg* msg)
 	lua_rawseti(lua_wrapper::lua_state(), -2, index);          /* table[index] = value, L: table */
 	++index;
 
-	if (!msg->body) {
+	if (!msg->body) 
+	{
 		lua_pushnil(lua_wrapper::lua_state());
+		lua_rawseti(lua_wrapper::lua_state(), -2, index);          /* table[index] = value, L: table */
+		++index;
 	}
-	else {
-		if (proto_man::proto_type() == PROTO_JSON) {
+	else 
+	{
+		if (proto_man::proto_type() == PROTO_JSON)
+		{
 			lua_pushstring(lua_wrapper::lua_state(), (char*) msg->body);
 		}
-		else { // protobuf
+		else
+		{ // protobuf
 			push_proto_message_tolua((Message*)msg->body);
 		}
 		lua_rawseti(lua_wrapper::lua_state(), -2, index);          /* table[index] = value, L: table */

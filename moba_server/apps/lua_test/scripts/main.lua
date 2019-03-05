@@ -44,6 +44,7 @@ proto_man.init(proto_type.PROTO_BUF)
 
 local cmd_name_map = require("cmd_name_map")
 local service_cmd = require("service_test")
+local trm_server = require("trm_server")
 
 --如果是protobuf协议，则注册一下映射表
 if proto_man.proto_type() == proto_type.PROTO_BUF then
@@ -53,7 +54,7 @@ if proto_man.proto_type() == proto_type.PROTO_BUF then
         proto_man.register_protobuf_cmd_map(cmd_name_map)
     end
 end
-service.register(service_cmd.stype,service_cmd.cmd_s)
+service.register(trm_server.stype,trm_server.service)
 --开启网络服务
 
 netbus.tcp_listen(6080,"127.0.0.1")

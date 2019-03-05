@@ -140,12 +140,12 @@
     <Compile Include="Assets\Scripts\3rd\protobuf\ServiceModel\XmlProtoSerializer.cs" />
     <Compile Include="Assets\Scripts\3rd\protobuf\SubItemToken.cs" />
     <Compile Include="Assets\Scripts\3rd\protobuf\WireType.cs" />
-    <Compile Include="Assets\Scripts\main_game_scene.cs" />
     <Compile Include="Assets\Scripts\network\data_viewer.cs" />
     <Compile Include="Assets\Scripts\network\network.cs" />
     <Compile Include="Assets\Scripts\network\proto_man.cs" />
     <Compile Include="Assets\Scripts\network\protos\game.cs" />
     <Compile Include="Assets\Scripts\network\tcp_packer.cs" />
+    <Compile Include="Assets\Scripts\talkroom.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>H:/Apan_WorkAbout/duokemeng/mytest/server/moba_game_server/moba_u3d_client/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

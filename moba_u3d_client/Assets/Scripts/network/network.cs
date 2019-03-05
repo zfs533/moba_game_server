@@ -87,8 +87,6 @@ public class network : MonoBehaviour
             {
                 this.net_events.Enqueue(msg);
             }
-            //gprotocol.LoginRes res = proto_man.protobuf_deserialize<gprotocol.LoginRes>(msg.body);
-            //Debug.Log("----------------------------------------------------------------res = " + res.status);
         }
     }
 
