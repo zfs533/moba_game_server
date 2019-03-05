@@ -1,0 +1,10 @@
+20190220 15:34:59 ERRORR h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\apps\test\main.cc:48  
+Can't connect to MySQL server on '127.0.0.0' (10060)
+20190220 15:35:45 DEBUG h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\apps\test\main.cc:51  
+success connect...
+20190220 15:35:45 DEBUG h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\apps\test\main.cc:40  
+success
+20190220 15:37:02 DEBUG h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\apps\test\main.cc:51  
+success connect...
+20190220 15:37:02 DEBUG h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\apps\test\main.cc:40  
+success

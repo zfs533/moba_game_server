@@ -1,0 +1,117 @@
+﻿生成启动时间为 2019/3/5 15:27:28。
+     1>项目“H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\build\proj.win32\moba_game_server\moba_game_server.vcxproj”在节点 2 上(Build 个目标)。
+     1>Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\build\proj.win32\Debug\moba_game_server.exe" /INCREMENTAL /NOLOGO /LIBPATH:H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\build\proj.win32\hiredis\x86_libs /LIBPATH:H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\build\proj.win32\mysqlclient\x86\lib /LIBPATH:H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\build\proj.win32\protobuf_lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\build\proj.win32\Debug\moba_game_server.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\build\proj.win32\Debug\moba_game_server.lib" /MACHINE:X86 /NODEFAULTLIB:libcmt.lib Debug\base64_decoder_zfs.obj
+         Debug\base64_encode_zfs.obj
+         Debug\md5.obj
+         Debug\sha1.obj
+         Debug\http_parser.obj
+         "Debug\fs-poll.obj"
+         Debug\inet.obj
+         Debug\threadpool.obj
+         "Debug\uv-common.obj"
+         Debug\version.obj
+         Debug\async.obj
+         Debug\core.obj
+         Debug\dl.obj
+         Debug\error.obj
+         "Debug\fs-event.obj"
+         Debug\fs.obj
+         Debug\getaddrinfo.obj
+         Debug\getnameinfo.obj
+         Debug\handle.obj
+         "Debug\loop-watcher.obj"
+         Debug\pipe.obj
+         Debug\poll.obj
+         "Debug\process-stdio.obj"
+         Debug\process.obj
+         Debug\req.obj
+         Debug\signal.obj
+         Debug\snprintf.obj
+         Debug\stream.obj
+         Debug\tcp.obj
+         Debug\thread.obj
+         Debug\timer.obj
+         Debug\tty.obj
+         Debug\udp.obj
+         Debug\util.obj
+         Debug\winapi.obj
+         Debug\winsock.obj
+         Debug\lapi.obj
+         Debug\lauxlib.obj
+         Debug\lbaselib.obj
+         Debug\lbitlib.obj
+         Debug\lcode.obj
+         Debug\lcorolib.obj
+         Debug\lctype.obj
+         Debug\ldblib.obj
+         Debug\ldebug.obj
+         Debug\ldo.obj
+         Debug\ldump.obj
+         Debug\lfunc.obj
+         Debug\lgc.obj
+         Debug\linit.obj
+         Debug\liolib.obj
+         Debug\llex.obj
+         Debug\lmathlib.obj
+         Debug\lmem.obj
+         Debug\loadlib.obj
+         Debug\lobject.obj
+         Debug\lopcodes.obj
+         Debug\loslib.obj
+         Debug\lparser.obj
+         Debug\lstate.obj
+         Debug\lstring.obj
+         Debug\lstrlib.obj
+         Debug\ltable.obj
+         Debug\ltablib.obj
+         Debug\ltm.obj
+         Debug\lua.obj
+         Debug\luac.obj
+         Debug\lundump.obj
+         Debug\lutf8lib.obj
+         Debug\lvm.obj
+         Debug\lzio.obj
+         Debug\json.obj
+         Debug\tolua_event.obj
+         Debug\tolua_fix.obj
+         Debug\tolua_is.obj
+         Debug\tolua_map.obj
+         Debug\tolua_push.obj
+         Debug\tolua_to.obj
+         Debug\main.obj
+         Debug\game.pb.obj
+         Debug\pf_cmd_map.obj
+         Debug\main.obj
+         Debug\game.pb.obj
+         Debug\mysql_wrapper.obj
+         Debug\redis_wrapper.obj
+         Debug\logger_export_to_lua.obj
+         Debug\lua_wrapper.obj
+         Debug\mysql_export_to_lua.obj
+         Debug\netbus_export_to_lua.obj
+         Debug\proto_man_export_to_lua.obj
+         Debug\redis_export_to_lua.obj
+         Debug\scheduler_export_to_lua.obj
+         Debug\service_export_to_lua.obj
+         Debug\session_export_to_lua.obj
+         Debug\netbus.obj
+         Debug\proto_man.obj
+         Debug\service.obj
+         Debug\service_man.obj
+         Debug\session_uv.obj
+         Debug\tp_protocol.obj
+         Debug\udp_session.obj
+         Debug\ws_protocal.obj
+         Debug\cacke_alloc.obj
+         Debug\LibuvTimer.obj
+         Debug\logger.obj
+         Debug\timestamp.obj
+     1>Debug\main.obj : warning LNK4042: 对象被多次指定；已忽略多余的指定
+     1>Debug\game.pb.obj : warning LNK4042: 对象被多次指定；已忽略多余的指定
+         moba_game_server.vcxproj -> H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\build\proj.win32\Debug\moba_game_server.exe
+     1>已完成生成项目“H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\build\proj.win32\moba_game_server\moba_game_server.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:08.57

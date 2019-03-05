@@ -1,0 +1,650 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="3rd">
+      <UniqueIdentifier>{4108d588-d04d-421f-ba56-62a8dde9d05b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="apps">
+      <UniqueIdentifier>{35f8051a-4729-48f3-abbf-73346d1a565f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="netbus">
+      <UniqueIdentifier>{66f4a293-ef43-49df-a2f9-5aa4f30637a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utils">
+      <UniqueIdentifier>{d9e75fe6-0487-4386-808e-3d20270075d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\libuv">
+      <UniqueIdentifier>{e91aa76d-2909-42f5-beec-72b1c5a9cd29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\libuv\include">
+      <UniqueIdentifier>{93ac6e97-cc60-417b-ae0c-9f9f4ea3f32d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\libuv\src">
+      <UniqueIdentifier>{1b60df74-5f31-46a1-9af8-119244d91297}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\libuv\src\win">
+      <UniqueIdentifier>{b8b4fb5c-4e15-4d35-a714-9d6b09576869}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\http_parser">
+      <UniqueIdentifier>{9fba6044-70b5-4cce-9e25-f9dcd46e5c19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\crypto">
+      <UniqueIdentifier>{793afe25-ee82-4ed2-8c31-a70a9d11af75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\mjson">
+      <UniqueIdentifier>{a24d439e-a9ee-421b-85fd-5511be73562c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="database">
+      <UniqueIdentifier>{4e961138-ac1d-489b-ba7a-7f3fce5cc389}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\lua">
+      <UniqueIdentifier>{7695d434-0b1b-4055-b4a5-8fbe6150bd30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lua_wrapper">
+      <UniqueIdentifier>{1b96a756-c512-4379-8ea1-b80a31b92616}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd\tolua">
+      <UniqueIdentifier>{4e79a3d7-010c-403f-baf2-18bd00466990}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="apps\cpp_test">
+      <UniqueIdentifier>{ebe45230-6a0e-4997-a5ba-f1002e9c581d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="apps\lua_test">
+      <UniqueIdentifier>{8e1843bb-2206-4461-93c6-722b6681111c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="apps\lua_test\proto">
+      <UniqueIdentifier>{787fb5bd-2500-4b73-b664-30c36ce68ae6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="apps\cpp_test\proto">
+      <UniqueIdentifier>{19187cef-092c-41ce-bebc-a004d08dd2d4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\3rd\libuv\src\fs-poll.c">
+      <Filter>3rd\libuv\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\libuv\src\inet.c">
+      <Filter>3rd\libuv\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\libuv\src\threadpool.c">
+      <Filter>3rd\libuv\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\libuv\src\uv-common.c">
+      <Filter>3rd\libuv\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\libuv\src\version.c">
+      <Filter>3rd\libuv\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\async.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\core.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\dl.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\error.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\fs.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\fs-event.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\getaddrinfo.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\getnameinfo.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\handle.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\loop-watcher.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\pipe.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\poll.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\process.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\process-stdio.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\req.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\signal.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\snprintf.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\stream.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\tcp.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\thread.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\timer.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\tty.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\udp.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\util.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\winapi.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\libuv\src\win\winsock.c">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\netbus\netbus.cc">
+      <Filter>netbus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\netbus\session_uv.cc">
+      <Filter>netbus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\utils\cacke_alloc.cc">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\http_parser\http_parser.c">
+      <Filter>3rd\http_parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\crypto\md5.cpp">
+      <Filter>3rd\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\crypto\sha1.cpp">
+      <Filter>3rd\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\netbus\ws_protocal.cc">
+      <Filter>netbus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\crypto\base64_decoder_zfs.cc">
+      <Filter>3rd\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\crypto\base64_encode_zfs.cc">
+      <Filter>3rd\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\netbus\tp_protocol.cc">
+      <Filter>netbus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\mjson\json.c">
+      <Filter>3rd\mjson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\netbus\proto_man.cc">
+      <Filter>netbus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\netbus\service.cc">
+      <Filter>netbus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\netbus\service_man.cc">
+      <Filter>netbus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\utils\timestamp.cc">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\utils\LibuvTimer.cc">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\utils\logger.cc">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\netbus\udp_session.cc">
+      <Filter>netbus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\database\mysql_wrapper.cc">
+      <Filter>database</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\database\redis_wrapper.cc">
+      <Filter>database</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\lapi.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\lauxlib.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\lbaselib.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\lbitlib.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\lcode.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\lcorolib.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\lctype.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\ldblib.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\ldebug.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\ldo.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\ldump.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\lfunc.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\lgc.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\linit.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\liolib.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\llex.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\lmathlib.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\lmem.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\loadlib.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\lobject.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\lopcodes.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\loslib.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\lparser.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\lstate.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\lstring.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\lstrlib.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\ltable.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\ltablib.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\ltm.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\lua.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\lundump.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\lutf8lib.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\lvm.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\lzio.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\lua-5.3.4\src\luac.c">
+      <Filter>3rd\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lua_wrapper\lua_wrapper.cc">
+      <Filter>lua_wrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\tolua\tolua_event.c">
+      <Filter>3rd\tolua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\tolua\tolua_fix.cc">
+      <Filter>3rd\tolua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\tolua\tolua_is.c">
+      <Filter>3rd\tolua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\tolua\tolua_map.c">
+      <Filter>3rd\tolua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\tolua\tolua_push.c">
+      <Filter>3rd\tolua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rd\tolua\tolua_to.c">
+      <Filter>3rd\tolua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lua_wrapper\mysql_export_to_lua.cc">
+      <Filter>lua_wrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lua_wrapper\redis_export_to_lua.cc">
+      <Filter>lua_wrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lua_wrapper\service_export_to_lua.cc">
+      <Filter>lua_wrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lua_wrapper\session_export_to_lua.cc">
+      <Filter>lua_wrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lua_wrapper\logger_export_to_lua.cc">
+      <Filter>lua_wrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lua_wrapper\scheduler_export_to_lua.cc">
+      <Filter>lua_wrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lua_wrapper\netbus_export_to_lua.cc">
+      <Filter>lua_wrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\lua_wrapper\proto_man_export_to_lua.cc">
+      <Filter>lua_wrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\apps\lua_test\main.cc">
+      <Filter>apps\lua_test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\apps\lua_test\proto\game.pb.cc">
+      <Filter>apps\lua_test\proto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\apps\cpp_test\main.cc">
+      <Filter>apps\cpp_test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\apps\cpp_test\proto\pf_cmd_map.cc">
+      <Filter>apps\cpp_test\proto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\apps\cpp_test\proto\game.pb.cc">
+      <Filter>apps\cpp_test\proto</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\3rd\libuv\include\android-ifaddrs.h">
+      <Filter>3rd\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\libuv\include\pthread-barrier.h">
+      <Filter>3rd\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\libuv\include\stdint-msvc2008.h">
+      <Filter>3rd\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\libuv\include\tree.h">
+      <Filter>3rd\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\libuv\include\uv.h">
+      <Filter>3rd\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\libuv\include\uv-aix.h">
+      <Filter>3rd\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\libuv\include\uv-bsd.h">
+      <Filter>3rd\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\libuv\include\uv-darwin.h">
+      <Filter>3rd\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\libuv\include\uv-errno.h">
+      <Filter>3rd\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\libuv\include\uv-linux.h">
+      <Filter>3rd\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\libuv\include\uv-sunos.h">
+      <Filter>3rd\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\libuv\include\uv-threadpool.h">
+      <Filter>3rd\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\libuv\include\uv-unix.h">
+      <Filter>3rd\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\libuv\include\uv-version.h">
+      <Filter>3rd\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\libuv\include\uv-win.h">
+      <Filter>3rd\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\libuv\src\heap-inl.h">
+      <Filter>3rd\libuv\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\libuv\src\queue.h">
+      <Filter>3rd\libuv\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\libuv\src\uv-common.h">
+      <Filter>3rd\libuv\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\libuv\src\win\atomicops-inl.h">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\libuv\src\win\handle-inl.h">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\libuv\src\win\internal.h">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\libuv\src\win\req-inl.h">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\libuv\src\win\stream-inl.h">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\libuv\src\win\winapi.h">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\libuv\src\win\winsock.h">
+      <Filter>3rd\libuv\src\win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\netbus\netbus.h">
+      <Filter>netbus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\netbus\session.h">
+      <Filter>netbus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\netbus\session_uv.h">
+      <Filter>netbus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\utils\cacke_alloc.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\http_parser\http_parser.h">
+      <Filter>3rd\http_parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\crypto\md5.h">
+      <Filter>3rd\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\crypto\sha1.h">
+      <Filter>3rd\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\netbus\ws_protocal.h">
+      <Filter>netbus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\crypto\base64_decoder_zfs.h">
+      <Filter>3rd\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\crypto\base64_encode_zfs.h">
+      <Filter>3rd\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\netbus\tp_protocol.h">
+      <Filter>netbus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\mjson\json.h">
+      <Filter>3rd\mjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\netbus\proto_man.h">
+      <Filter>netbus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\netbus\service.h">
+      <Filter>netbus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\netbus\service_man.h">
+      <Filter>netbus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\utils\LibuvTimer.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\utils\timestamp.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\utils\logger.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\netbus\udp_session.h">
+      <Filter>netbus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\database\mysql_wrapper.h">
+      <Filter>database</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\database\redis_wrapper.h">
+      <Filter>database</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\lua-5.3.4\src\lapi.h">
+      <Filter>3rd\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\lua-5.3.4\src\lauxlib.h">
+      <Filter>3rd\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\lua-5.3.4\src\lcode.h">
+      <Filter>3rd\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\lua-5.3.4\src\lctype.h">
+      <Filter>3rd\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\lua-5.3.4\src\ldebug.h">
+      <Filter>3rd\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\lua-5.3.4\src\ldo.h">
+      <Filter>3rd\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\lua-5.3.4\src\lfunc.h">
+      <Filter>3rd\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\lua-5.3.4\src\lgc.h">
+      <Filter>3rd\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\lua-5.3.4\src\llex.h">
+      <Filter>3rd\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\lua-5.3.4\src\llimits.h">
+      <Filter>3rd\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\lua-5.3.4\src\lmem.h">
+      <Filter>3rd\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\lua-5.3.4\src\lobject.h">
+      <Filter>3rd\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\lua-5.3.4\src\lopcodes.h">
+      <Filter>3rd\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\lua-5.3.4\src\lparser.h">
+      <Filter>3rd\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\lua-5.3.4\src\lprefix.h">
+      <Filter>3rd\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\lua-5.3.4\src\lstate.h">
+      <Filter>3rd\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\lua-5.3.4\src\lstring.h">
+      <Filter>3rd\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\lua-5.3.4\src\ltable.h">
+      <Filter>3rd\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\lua-5.3.4\src\ltm.h">
+      <Filter>3rd\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\lua-5.3.4\src\lua.h">
+      <Filter>3rd\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\lua-5.3.4\src\lua.hpp">
+      <Filter>3rd\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\lua-5.3.4\src\luaconf.h">
+      <Filter>3rd\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\lua-5.3.4\src\lualib.h">
+      <Filter>3rd\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\lua-5.3.4\src\lundump.h">
+      <Filter>3rd\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\lua-5.3.4\src\lvm.h">
+      <Filter>3rd\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\lua-5.3.4\src\lzio.h">
+      <Filter>3rd\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lua_wrapper\lua_wrapper.h">
+      <Filter>lua_wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\tolua\tolua_event.h">
+      <Filter>3rd\tolua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\tolua\tolua_fix.h">
+      <Filter>3rd\tolua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rd\tolua\tolua++.h">
+      <Filter>3rd\tolua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lua_wrapper\mysql_export_to_lua.h">
+      <Filter>lua_wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lua_wrapper\redis_export_to_lua.h">
+      <Filter>lua_wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lua_wrapper\service_export_to_lua.h">
+      <Filter>lua_wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lua_wrapper\session_export_to_lua.h">
+      <Filter>lua_wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lua_wrapper\logger_export_to_lua.h">
+      <Filter>lua_wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lua_wrapper\scheduler_export_to_lua.h">
+      <Filter>lua_wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lua_wrapper\netbus_export_to_lua.h">
+      <Filter>lua_wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\lua_wrapper\proto_man_export_to_lua.h">
+      <Filter>lua_wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\apps\lua_test\proto\game.pb.h">
+      <Filter>apps\lua_test\proto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\apps\cpp_test\proto\pf_cmd_map.h">
+      <Filter>apps\cpp_test\proto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\apps\cpp_test\proto\game.pb.h">
+      <Filter>apps\cpp_test\proto</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\3rd\lua-5.3.4\src\Makefile">
+      <Filter>3rd\lua</Filter>
+    </None>
+  </ItemGroup>
+</Project>
