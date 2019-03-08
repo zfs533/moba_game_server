@@ -158,11 +158,8 @@
     <ClCompile Include="..\..\..\3rd\tolua\tolua_map.c" />
     <ClCompile Include="..\..\..\3rd\tolua\tolua_push.c" />
     <ClCompile Include="..\..\..\3rd\tolua\tolua_to.c" />
-    <ClCompile Include="..\..\..\apps\cpp_test\main.cc" />
-    <ClCompile Include="..\..\..\apps\cpp_test\proto\game.pb.cc" />
-    <ClCompile Include="..\..\..\apps\cpp_test\proto\pf_cmd_map.cc" />
-    <ClCompile Include="..\..\..\apps\lua_test\main.cc" />
-    <ClCompile Include="..\..\..\apps\lua_test\proto\game.pb.cc" />
+    <ClCompile Include="..\..\..\apps\lua\main.cc" />
+    <ClCompile Include="..\..\..\apps\lua\proto\game.pb.cc" />
     <ClCompile Include="..\..\..\database\mysql_wrapper.cc" />
     <ClCompile Include="..\..\..\database\redis_wrapper.cc" />
     <ClCompile Include="..\..\..\lua_wrapper\logger_export_to_lua.cc" />
@@ -185,6 +182,7 @@
     <ClCompile Include="..\..\..\utils\cacke_alloc.cc" />
     <ClCompile Include="..\..\..\utils\LibuvTimer.cc" />
     <ClCompile Include="..\..\..\utils\logger.cc" />
+    <ClCompile Include="..\..\..\utils\small_alloc.c" />
     <ClCompile Include="..\..\..\utils\timestamp.cc" />
   </ItemGroup>
   <ItemGroup>
@@ -248,9 +246,7 @@
     <ClInclude Include="..\..\..\3rd\tolua\tolua++.h" />
     <ClInclude Include="..\..\..\3rd\tolua\tolua_event.h" />
     <ClInclude Include="..\..\..\3rd\tolua\tolua_fix.h" />
-    <ClInclude Include="..\..\..\apps\cpp_test\proto\game.pb.h" />
-    <ClInclude Include="..\..\..\apps\cpp_test\proto\pf_cmd_map.h" />
-    <ClInclude Include="..\..\..\apps\lua_test\proto\game.pb.h" />
+    <ClInclude Include="..\..\..\apps\lua\proto\game.pb.h" />
     <ClInclude Include="..\..\..\database\mysql_wrapper.h" />
     <ClInclude Include="..\..\..\database\redis_wrapper.h" />
     <ClInclude Include="..\..\..\lua_wrapper\logger_export_to_lua.h" />
@@ -274,6 +270,7 @@
     <ClInclude Include="..\..\..\utils\cacke_alloc.h" />
     <ClInclude Include="..\..\..\utils\LibuvTimer.h" />
     <ClInclude Include="..\..\..\utils\logger.h" />
+    <ClInclude Include="..\..\..\utils\small_alloc.h" />
     <ClInclude Include="..\..\..\utils\timestamp.h" />
   </ItemGroup>
   <ItemGroup>

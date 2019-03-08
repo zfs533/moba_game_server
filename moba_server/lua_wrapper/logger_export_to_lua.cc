@@ -157,8 +157,8 @@ int register_logger_tolua(lua_State* tolua_S)
 	if(lua_istable(tolua_S,-1))
 	{
 		tolua_open(tolua_S);
-		tolua_module(tolua_S,"logger",0);
-		tolua_beginmodule(tolua_S,"logger");
+		tolua_module(tolua_S,"Logger",0);
+		tolua_beginmodule(tolua_S,"Logger");
 		tolua_function(tolua_S,"debug",logger_debug_tolua);
 		tolua_function(tolua_S,"warning",logger_warning_tolua);
 		tolua_function(tolua_S,"error",logger_error_tolua);

@@ -88,10 +88,10 @@ static int lua_log_error(lua_State* L)
 }
 
 //handle excute lua script unusual condition
-static int lua_panic(lua_State* L)
+static int lua_panic_s(lua_State* L)
 {
 	const char* msg = luaL_checkstring(L,-1);
-	if(msg)
+	if(msg)// file_name, line_num
 	{
 		lua_wrapper::do_log_message(lua_wrapper::print_error,msg);
 	}
@@ -99,13 +99,15 @@ static int lua_panic(lua_State* L)
 }
 
 void lua_wrapper::init()
-
 {
 	g_lua_State = luaL_newstate();
-	lua_atpanic(g_lua_State,lua_panic);
+	lua_atpanic(g_lua_State,lua_panic_s);
+
 	luaL_openlibs(g_lua_State);
 	//--------
 	toluafix_open(g_lua_State);
+	
+
 	register_logger_tolua(g_lua_State);
 	register_mysql_export(g_lua_State);
 	register_service_export(g_lua_State);
@@ -126,14 +128,10 @@ void lua_wrapper::exit()
 
 bool lua_wrapper::do_file(std::string& lua_file)
 {
-	/*
-	string lua_head = "../../../lua_script/";
-	string lua_fl = string(lua_file);
-	*/
-	//if(luaL_dofile(g_lua_State,(lua_head+lua_fl).c_str()))
 	if(luaL_dofile(g_lua_State,(lua_file.c_str())))
 	{
-		log_error("lua grammer error");
+		lua_panic_s(g_lua_State);
+		//log_error("lua grammer error");
 		return false;
 	}
 	return true;

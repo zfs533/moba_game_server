@@ -20,6 +20,7 @@ static uint32_t g_last_second;
 static char g_format_time[64] = { 0 };
 static char* g_log_level[] = { "DEBUG ", "WARNING ", "ERRORR "};
 static bool g_std_out = false;
+static bool is_init = false;
 
 static void 
 open_file(tm* time_struct) {
@@ -73,6 +74,11 @@ format_time() {
 
 void 
 logger::init(char* path, char* prefix, bool std_output) {
+	if(is_init)
+	{
+		return;
+	}
+	is_init = true;
 	g_prefix = prefix;
 	g_log_path = path;
 	g_std_out = std_output;
@@ -102,8 +108,8 @@ logger::log(const char* file_name,
 	static char msg_meta_info[1024] = { 0 };
 	static char msg_content[1024 * 10] = { 0 };
 	static char new_line = '\n';
-
-	va_list args;
+	 
+	va_list args; 
 	va_start(args, msg);
 	vsnprintf(msg_content, sizeof(msg_content), msg, args);
 	va_end(args);
@@ -118,7 +124,7 @@ logger::log(const char* file_name,
 	buf[5] = uv_buf_init(&new_line, 1);
 
 	uv_fs_t writeReq;
-	int result = uv_fs_write(NULL, &writeReq, g_file_handle.result, buf, sizeof(buf) / sizeof(buf[0]), -1, NULL);
+	int result = uv_fs_write(uv_default_loop(), &writeReq, g_file_handle.result, buf, sizeof(buf) / sizeof(buf[0]), -1, NULL);
 	if (result < 0) {
 		fprintf(stderr, "log failed %s%s%s%s", g_format_time, g_log_level[level], msg_meta_info, msg_content);
 	}

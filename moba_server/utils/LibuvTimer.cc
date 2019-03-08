@@ -6,6 +6,9 @@
 #include "LibuvTimer.h"
 #include "logger.h"
 #include "timestamp.h"
+#include "small_alloc.h"
+#define my_malloc small_alloc
+#define my_free small_free
 
 /*
 	void cancel(STimer* timer);
@@ -53,7 +56,7 @@ STimer* LibuvTimer::schedule_repeat(void(*on_timer)(void* udata),void* data,int 
 //malloc STimer buffer
 STimer* LibuvTimer::allocTimer(void(*on_timer)(void* udata),void* data,int time_offset,int repeat_count)
 {
-	STimer* t = (STimer*)malloc(sizeof(STimer));
+	STimer* t = (STimer*)my_malloc(sizeof(STimer));
 	memset(t,0,sizeof(struct STimer));
 	t->on_Timer = on_timer;
 	t->data = data;
@@ -79,7 +82,7 @@ void LibuvTimer::timer_cb(uv_timer_t* handle)
 		{
 			//stop timer and free buffer
 			uv_timer_stop(&t->uv_timer);
-			free(t);
+			my_free(t);
 		}
 	}
 }
@@ -96,7 +99,7 @@ void LibuvTimer::cancel(STimer* timer)
 
 void LibuvTimer::free_timer(STimer* t)
 {
-	free(t);
+	my_free(t);
 }
 
 STimer* LibuvTimer::scheduleOnce(void(*on_timer)(void* udata),void* data,int after_time)

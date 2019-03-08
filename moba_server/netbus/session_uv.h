@@ -9,7 +9,7 @@ enum
 	TCP_SOCKET,
 	WS_SOCKET,
 };
-class uv_session:session
+class uv_session:public session
 {
 public:
 	uv_tcp_t tcp_handler;//客户端键入接入进来的句柄

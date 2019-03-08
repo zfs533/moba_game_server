@@ -11,7 +11,8 @@
 #include "../3rd/crypto/md5.h"
 #include "../3rd/crypto/sha1.h"
 #include "../3rd/crypto/base64_encode_zfs.h"
-
+#include "../utils/cacke_alloc.h"
+extern cache_allocer* wbuf_allocer;
 
 using namespace std;
 
@@ -278,8 +279,9 @@ unsigned char* ws_protocol::package_ws_send_data(const unsigned char* raw_data,i
 		return NULL;
 	}
 	// cache malloc
-	unsigned char* data_buf = (unsigned char*)malloc(head_size + len);
-	data_buf[0] = 0x81;
+	//unsigned char* data_buf = (unsigned char*)malloc(head_size + len);
+	unsigned char* data_buf = (unsigned char*)cache_alloc(wbuf_allocer,head_size+len);
+	data_buf[0] = 0x82;
 	if (len <= 125) {
 		data_buf[1] = len;
 	}
@@ -298,5 +300,6 @@ unsigned char* ws_protocol::package_ws_send_data(const unsigned char* raw_data,i
 void ws_protocol::free_ws_send_pkg(unsigned char* ws_pkg)
 {
 	//cacke free
-	free(ws_pkg);
+	//free(ws_pkg); 
+	cache_free(wbuf_allocer,ws_pkg);
 }

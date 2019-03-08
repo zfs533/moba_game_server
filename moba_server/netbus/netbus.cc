@@ -345,3 +345,69 @@ void netbus::init()
 	service_man::init();
 	init_session_allocer();
 }
+//-------------
+struct connect_cb 
+{
+	void(*on_connected)(int err, session* s, void* udata);
+	void* udata;
+};
+
+static void after_connect(uv_connect_t* handle, int status)
+{
+	uv_session* s= (uv_session*)handle->handle->data;
+	struct connect_cb* cb = (struct connect_cb*)handle->data;
+	if(status)
+	{
+		if(cb->on_connected)
+		{
+			cb->on_connected(1,NULL,cb->udata);
+
+		}
+		s->close();
+		free(cb);
+		free(handle);
+		return;
+	}
+	if(cb->on_connected)
+	{
+		cb->on_connected(0,(session*)s,cb->udata);
+	}
+	uv_read_start((uv_stream_t*)handle->handle,uv_alloc_buf,after_read);
+	free(cb);
+	free(handle);
+}
+
+
+
+//server as client to connect to other server
+void netbus::tcp_connect(const char* server_ip,int port,void(*connected)(int err,session*s,void* udata),void* udata)
+{
+	struct sockaddr_in bind_addr;
+	int iret = uv_ip4_addr(server_ip,port,&bind_addr);
+	if(iret)
+	{
+		return ;
+	}
+	uv_session* s = uv_session::create();
+	uv_tcp_t* client = &s->tcp_handler;
+	memset(client,0,sizeof(uv_tcp_t));
+	uv_tcp_init(uv_default_loop(),client);
+	client->data = (void*)s;
+	s->as_client = 1;
+	s->socket_type = TCP_SOCKET;
+	strcpy(s->c_address,server_ip);
+	s->c_port = port;
+
+	uv_connect_t* connect_req = (uv_connect_t*)malloc(sizeof(uv_connect_t));
+	struct connect_cb* cb = (struct connect_cb*)malloc(sizeof(struct connect_cb));
+	cb->on_connected = connected;
+	cb->udata = udata;
+	connect_req->data = (void*)cb;
+
+	iret = uv_tcp_connect(connect_req,client,(struct sockaddr*)&bind_addr,after_connect);
+	if(iret)
+	{
+		return;
+	}
+
+}

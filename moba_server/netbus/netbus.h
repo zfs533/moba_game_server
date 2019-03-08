@@ -6,6 +6,7 @@
 */
 #ifndef __NETBUS_H
 #define __NETBUS_H
+#include "session.h"
 class netbus
 {
 public:
@@ -16,5 +17,6 @@ public:
 	void ws_listen(int port,const char* ip);
 	void udp_listen(int port,const char* ip);
 	void run();
+	void tcp_connect(const char* server_ip,int port,void(*connected)(int err,session*s,void* udata),void* udata);
 };
 #endif

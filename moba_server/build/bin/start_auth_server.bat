@@ -1,0 +1,1 @@
+moba_game_server.exe ../../apps/lua/scripts/ auth_server/main.lua

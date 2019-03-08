@@ -46,17 +46,11 @@
     <Filter Include="3rd\tolua">
       <UniqueIdentifier>{4e79a3d7-010c-403f-baf2-18bd00466990}</UniqueIdentifier>
     </Filter>
-    <Filter Include="apps\cpp_test">
-      <UniqueIdentifier>{ebe45230-6a0e-4997-a5ba-f1002e9c581d}</UniqueIdentifier>
+    <Filter Include="apps\lua">
+      <UniqueIdentifier>{adaf444c-a1ce-4326-a5a8-25a3cb5646c2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="apps\lua_test">
-      <UniqueIdentifier>{8e1843bb-2206-4461-93c6-722b6681111c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="apps\lua_test\proto">
-      <UniqueIdentifier>{787fb5bd-2500-4b73-b664-30c36ce68ae6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="apps\cpp_test\proto">
-      <UniqueIdentifier>{19187cef-092c-41ce-bebc-a004d08dd2d4}</UniqueIdentifier>
+    <Filter Include="apps\lua\proto">
+      <UniqueIdentifier>{f8828cfa-e53d-4984-a007-88c59a018662}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -363,20 +357,14 @@
     <ClCompile Include="..\..\..\lua_wrapper\proto_man_export_to_lua.cc">
       <Filter>lua_wrapper</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\apps\lua_test\main.cc">
-      <Filter>apps\lua_test</Filter>
+    <ClCompile Include="..\..\..\utils\small_alloc.c">
+      <Filter>utils</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\apps\lua_test\proto\game.pb.cc">
-      <Filter>apps\lua_test\proto</Filter>
+    <ClCompile Include="..\..\..\apps\lua\proto\game.pb.cc">
+      <Filter>apps\lua\proto</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\apps\cpp_test\main.cc">
-      <Filter>apps\cpp_test</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\apps\cpp_test\proto\pf_cmd_map.cc">
-      <Filter>apps\cpp_test\proto</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\apps\cpp_test\proto\game.pb.cc">
-      <Filter>apps\cpp_test\proto</Filter>
+    <ClCompile Include="..\..\..\apps\lua\main.cc">
+      <Filter>apps\lua</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -632,14 +620,11 @@
     <ClInclude Include="..\..\..\lua_wrapper\proto_man_export_to_lua.h">
       <Filter>lua_wrapper</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\apps\lua_test\proto\game.pb.h">
-      <Filter>apps\lua_test\proto</Filter>
+    <ClInclude Include="..\..\..\utils\small_alloc.h">
+      <Filter>utils</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\apps\cpp_test\proto\pf_cmd_map.h">
-      <Filter>apps\cpp_test\proto</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\apps\cpp_test\proto\game.pb.h">
-      <Filter>apps\cpp_test\proto</Filter>
+    <ClInclude Include="..\..\..\apps\lua\proto\game.pb.h">
+      <Filter>apps\lua\proto</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

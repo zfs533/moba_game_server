@@ -147,8 +147,8 @@ int register_mysql_export(lua_State* tolua_S)
 	if(lua_istable(tolua_S,-1))
 	{
 		tolua_open(tolua_S);
-		tolua_module(tolua_S,"mysql_wrapper",0);
-		tolua_beginmodule(tolua_S,"mysql_wrapper");
+		tolua_module(tolua_S,"Mysql",0);
+		tolua_beginmodule(tolua_S,"Mysql");
 
 		tolua_function(tolua_S,"connect",lua_mysql_connect);
 		tolua_function(tolua_S,"close",lua_mysql_close);

@@ -7,6 +7,12 @@
 #include "tolua_fix.h"
 #include "../lua_wrapper/lua_wrapper.h"
 #include "scheduler_export_to_lua.h"
+
+#include "../utils/small_alloc.h"
+#define my_malloc small_alloc
+#define my_free small_free
+
+
 using namespace std;
 
 struct lua_timer_Str
@@ -29,7 +35,7 @@ static void on_lua_repeat_timer(void* udata)
 	if(lts->repeat_count<=0)
 	{
 		lua_wrapper::remove_script_handler(lts->handler);
-		free(lts);
+		my_free(lts);
 	}
 }
 
@@ -48,7 +54,7 @@ static int scheduler_tolua(lua_State* tolua_S)
 	int time_offset = tolua_tonumber(tolua_S,3,0);
 	int repeat_count = tolua_tonumber(tolua_S,4,0);
 
-	struct lua_timer_Str* lts = (struct lua_timer_Str*)malloc(sizeof(struct lua_timer_Str));
+	struct lua_timer_Str* lts = (struct lua_timer_Str*)my_malloc(sizeof(struct lua_timer_Str));
 	lts->handler = handler;
 	lts->repeat_count = repeat_count;
 	STimer* tm = LibuvTimer::getInstance()->schedule_repeat(on_lua_repeat_timer,lts,after_time,time_offset,repeat_count);
@@ -76,7 +82,7 @@ static int scheduler_once_tolua(lua_State* tolua_S)
 		goto luafailed;
 	}
 
-	struct lua_timer_Str* lts = (struct lua_timer_Str*)malloc(sizeof(struct lua_timer_Str));
+	struct lua_timer_Str* lts = (struct lua_timer_Str*)my_malloc(sizeof(struct lua_timer_Str));
 	lts->handler = handler;
 	lts->repeat_count = 1;
 	STimer* tm = LibuvTimer::getInstance()->scheduleOnce(on_lua_repeat_timer,lts,after_time);
@@ -100,7 +106,7 @@ static int scheduler_cancel_tolua(lua_State* tolua_S)
 	}
 	struct lua_timer_Str* lts = (struct lua_timer_Str*)st->data;
 	lua_wrapper::remove_script_handler(lts->handler);
-	free(lts);
+	my_free(lts);
 	LibuvTimer::getInstance()->cancel(st);
 lua_failed:
 	return 0;
@@ -113,8 +119,8 @@ int register_scheduler_export(lua_State* tolua_S)
 	if(lua_istable(tolua_S,-1))
 	{
 		tolua_open(tolua_S);
-		tolua_module(tolua_S,"scheduler",0);
-		tolua_beginmodule(tolua_S,"scheduler");
+		tolua_module(tolua_S,"Scheduler",0);
+		tolua_beginmodule(tolua_S,"Scheduler");
 		tolua_function(tolua_S,"scheduler",scheduler_tolua);
 		tolua_function(tolua_S,"once",scheduler_once_tolua);
 		tolua_function(tolua_S,"cancel",scheduler_cancel_tolua);

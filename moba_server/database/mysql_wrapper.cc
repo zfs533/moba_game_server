@@ -12,8 +12,9 @@
 #include "mysql.h"
 #include "mysql_wrapper.h"
 
-#define my_malloc malloc
-#define my_free free
+#include "../utils/small_alloc.h"
+#define my_malloc small_alloc
+#define my_free small_free
 
 struct connect_req
 {

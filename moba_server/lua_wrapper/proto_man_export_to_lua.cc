@@ -62,8 +62,8 @@ int register_proto_man_export(lua_State* tolua_S)
 	if(lua_istable(tolua_S,-1))
 	{
 		tolua_open(tolua_S);
-		tolua_module(tolua_S,"proto_man",0);
-		tolua_beginmodule(tolua_S,"proto_man");
+		tolua_module(tolua_S,"ProtoMan",0);
+		tolua_beginmodule(tolua_S,"ProtoMan");
 		tolua_function(tolua_S,"init",proto_man_init_tolua);
 		tolua_function(tolua_S,"proto_type",proto_type_tolua);
 		tolua_function(tolua_S,"register_protobuf_cmd_map",register_protobuf_cmd_map_tolua);
