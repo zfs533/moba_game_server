@@ -65,6 +65,20 @@ void proto_man::release_message(google::protobuf::Message* m)
 	delete m;
 }
 
+bool proto_man::decode_raw_cmd(unsigned char* cmd, int cmd_len, struct raw_cmd* raw)
+{
+	if(cmd_len < CMD_HEADER)
+	{
+		return false;
+	}
+	raw->stype = cmd[0] | (cmd[1] << 8);
+	raw->ctype = cmd[2] | (cmd[3] << 8);
+	raw->utag = cmd[4] | (cmd[5] << 8) | (cmd[6] << 16) | (cmd[7] << 24);
+	raw->raw_cmd_cmd = cmd;
+	raw->raw_len = cmd_len;
+	return true;
+}
+
 // stype(2 byte) | ctype(2byte) | utag(4byte) | body
 bool proto_man::decode_cmd_msg(unsigned char* cmd, int cmd_len, struct cmd_msg** out_msg) 
 {
@@ -195,3 +209,4 @@ void proto_man::msg_raw_free(unsigned char* raw)
 {
 	cache_free(wbuf_allocer,raw);
 }
+

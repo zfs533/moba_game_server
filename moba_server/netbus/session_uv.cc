@@ -6,12 +6,12 @@
 #include <string>
 
 #include "uv.h"
+#include "proto_man.h"
 #include "session.h"
 #include "session_uv.h"
 #include "../utils/cacke_alloc.h"
 #include "ws_protocal.h"
 #include "tp_protocol.h"
-#include "proto_man.h"
 #include "service_man.h"
 
 using namespace std;
@@ -154,6 +154,10 @@ void uv_session::send_msg(struct cmd_msg* msg)
 	}
 }
 
+void uv_session::send_raw_cmd(struct raw_cmd* raw)
+{
+	this->send_data(raw->raw_cmd_cmd, raw->raw_len);
+}
 
 // c++ new 分配内存空间的同时会调用类的构造函数
 // c malloc不会调用类实例的构造函数

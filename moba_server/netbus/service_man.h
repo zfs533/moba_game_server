@@ -10,7 +10,7 @@ class service_man
 public:
 	static void init();
 	static bool register_service(int stype,service* s);
-	static bool on_recv_cmd_msg(session* s, struct cmd_msg* msg);
+	static bool on_recv_cmd_msg(session* s, struct raw_cmd* raw);
 	static void on_session_disconnect(session* s);
 };
 

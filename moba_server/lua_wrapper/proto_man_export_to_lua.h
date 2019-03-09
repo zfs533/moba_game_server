@@ -11,5 +11,6 @@ extern "C"
 #endif
 
 int register_proto_man_export(lua_State* tolua_S);
+int register_raw_cmd_export(lua_State* tolua_S);
 
 #endif

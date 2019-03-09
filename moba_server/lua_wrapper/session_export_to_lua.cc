@@ -350,6 +350,36 @@ lua_failed:
 	return 0;
 }
 
+
+static int set_uid_tolua(lua_State* tolua_S)
+{
+	session* s = (session*)tolua_touserdata(tolua_S,1,NULL);
+	if(s == NULL)
+	{
+		goto lua_failed;
+	}
+	unsigned int uid = lua_tointeger(tolua_S,2);
+	s->uid = uid;
+
+lua_failed:
+	return 0;
+}
+
+static int get_uid_tolua(lua_State* tolua_S)
+{
+	session* s = (session*)tolua_touserdata(tolua_S,1,NULL);
+	if(s == NULL)
+	{
+		goto lua_failed;
+	}
+	lua_pushinteger(tolua_S,s->uid);
+	return 1;
+
+lua_failed:
+	return 0;
+}
+
+
 static int as_client_tolua(lua_State* tolua_S)
 {
 	session* s = (session*)tolua_touserdata(tolua_S,1,NULL);
@@ -360,6 +390,24 @@ static int as_client_tolua(lua_State* tolua_S)
 	lua_pushinteger(tolua_S,s->as_client);
 	return 1;
 lua_failed:
+	return 0;
+}
+
+static int send_raw_cmd_tolua(lua_State* tolua_S)
+{
+	session* s = (session*)tolua_touserdata(tolua_S,1,NULL);
+	if(s == NULL)
+	{
+		goto lua_failed;
+	}
+	struct raw_cmd* raw = (struct raw_cmd*)tolua_touserdata(tolua_S, 2, NULL);
+	if(raw == NULL)
+	{
+		goto lua_failed;
+	}
+	s->send_raw_cmd(raw);
+lua_failed:
+
 	return 0;
 }
 
@@ -377,7 +425,10 @@ int register_session_export(lua_State* tolua_S)
 		tolua_function(tolua_S,"send_msg",send_msg_tolua);
 		tolua_function(tolua_S,"set_utag",set_utag_tolua);
 		tolua_function(tolua_S,"get_utag",get_utag_tolua);
+		tolua_function(tolua_S,"set_uid",set_uid_tolua);
+		tolua_function(tolua_S,"get_uid",get_uid_tolua);
 		tolua_function(tolua_S,"as_client",as_client_tolua);
+		tolua_function(tolua_S, "send_raw_cmd", send_raw_cmd_tolua);
 
 		tolua_endmodule(tolua_S);
 	}

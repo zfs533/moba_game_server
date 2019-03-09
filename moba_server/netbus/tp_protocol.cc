@@ -19,7 +19,7 @@ bool tp_protocol::read_header(unsigned char* data, int data_len, int* pkg_size, 
 	return true;
 }
 
-unsigned char* tp_protocol::package(const unsigned char* raw_data, int len, int* pkg_len) 
+unsigned char* tp_protocol::package(const unsigned char* raw_data, int len, int* pkg_len)  
 {
 	int head_size = 2;
 	// cache malloc

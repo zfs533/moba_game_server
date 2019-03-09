@@ -1,3 +1,33 @@
+
+local key = ""
+function PrintTable(table , level)
+  level = level or 1
+  local indent = ""
+  for i = 1, level do
+    indent = indent.."  "
+  end
+
+  if key ~= "" then
+    print(indent..key.." ".."=".." ".."{")
+  else
+    print(indent .. "{")
+  end
+
+  key = ""
+  for k,v in pairs(table) do
+     if type(v) == "table" then
+        key = k
+        PrintTable(v, level + 1)
+     else
+        local content = string.format("%s%s = %s", indent .. "  ",tostring(k), tostring(v))
+      print(content)  
+      end
+  end
+  print(indent .. "}")
+
+end
+
+------------------------------------------------------------------------------------
 -- 初始化日志模块
 Logger.init("logger/gateway/","gateway",true);
 -- 初始化协议模块(数据传输协议)
@@ -13,6 +43,7 @@ local gw_service = require("gateway/gw_server")
 --如果是protobuf协议，则注册一下映射表
 if ProtoMan.proto_type() == proto_type.PROTO_BUF then
     if cmd_name_map then
+        PrintTable(cmd_name_map)
         ProtoMan.register_protobuf_cmd_map(cmd_name_map)
     end
 end
@@ -26,7 +57,7 @@ Netbus.ws_listen(game_config.gateway_ws_port,game_config.gateway_ws_ip)
 --register service
 local service = game_config.servers
 for k , v in pairs(service) do
-  local ret = Service.register(v.stype,gw_service)
+  local ret = Service.register_with_raw(v.stype,gw_service)
   if ret then
     Logger.debug("register gw_servce:[" .. v.stype.. "] success!!!")
   else

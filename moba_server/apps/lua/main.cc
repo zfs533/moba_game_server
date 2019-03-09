@@ -33,7 +33,7 @@ int main(int argc,char** argv)
 	{
 		string search_path = "../../../apps/lua/scripts/";
 		lua_wrapper::add_search_path(search_path);
-		string lua_start_file = search_path +"auth_server/main.lua";
+		string lua_start_file = search_path +"gateway/main.lua";
 		lua_wrapper::do_file(lua_start_file);
 	}
 	else

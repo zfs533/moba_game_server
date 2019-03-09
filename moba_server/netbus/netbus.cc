@@ -33,6 +33,16 @@ static void on_recv_client_cmd(session* s,unsigned char* body,int len)
 	printf("recv:%s\n",test_buf);
 	//test
 	//s->send_data(body,len);
+	struct raw_cmd raw;
+	if(proto_man::decode_raw_cmd(body,len,&raw))
+	{
+		if(!service_man::on_recv_cmd_msg((session*)s, &raw))
+		{
+			s->close();
+		}
+	}
+
+	/*
 	struct cmd_msg* msg = NULL;
 	if(proto_man::decode_cmd_msg(body,len,&msg))
 	{
@@ -43,6 +53,7 @@ static void on_recv_client_cmd(session* s,unsigned char* body,int len)
 		//s->send_msg(msg);
 		proto_man::cmd_msg_free(msg);
 	}
+	*/
 }
 
 static void on_recv_tcp_data(uv_session* s)

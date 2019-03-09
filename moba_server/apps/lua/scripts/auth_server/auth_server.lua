@@ -1,6 +1,8 @@
 
 --{stype,ctype,utag,body}
 function on_auth_recv_cmd(s,msg)
+    Logger.debug("auth_recv_cmd..")
+	Logger.debug(msg[1], msg[2], msg[3])
 end
 
 function on_auth_session_disconnect(s)

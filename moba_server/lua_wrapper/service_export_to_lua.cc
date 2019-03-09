@@ -44,9 +44,11 @@ class lua_service : public service
 public:
 	unsigned int lua_recv_cmd_handler;
 	unsigned int lua_disconnect_handler;
+	unsigned int lua_recv_raw_handler;//gateway server
 public :
 	virtual bool on_session_recv_cmd(session* s ,struct cmd_msg* msg);
 	virtual void on_session_disconnect(session* s);
+	virtual bool on_session_recv_raw_cmd(session* s,struct raw_cmd* raw);
 };
 
 static void push_proto_message_tolua(const Message* message) 
@@ -318,6 +320,15 @@ bool lua_service::on_session_recv_cmd(session* s, struct cmd_msg* msg)
 	return true;
 }
 
+bool lua_service::on_session_recv_raw_cmd(session* s, struct raw_cmd* raw)
+{
+	tolua_pushuserdata(lua_wrapper::lua_state(),(void*)s);
+	tolua_pushuserdata(lua_wrapper::lua_state(),(void*)raw);
+
+	execute_service_function(this->lua_recv_raw_handler,2);
+	return true;
+}
+
 void lua_service::on_session_disconnect(session* s)
 {
 	tolua_pushuserdata(lua_wrapper::lua_state(), (void*)s);
@@ -344,8 +355,40 @@ static int register_service_tolua(lua_State* tolua_S)
 		goto lua_failed;
 	}
 	lua_service* s = new lua_service();
+	s->using_raw_cmd = false;
 	s->lua_recv_cmd_handler = lua_recv_cmd_handler;
 	s->lua_disconnect_handler = lua_disconnect_handler;
+	s->lua_recv_raw_handler = 0;
+	ret = service_man::register_service(stype,s);
+
+lua_failed:
+	return 1;
+}
+
+
+static int register_raw_service_tolua(lua_State* tolua_S)
+{
+	int stype = (int)tolua_tonumber(tolua_S,1,0);
+	bool ret = false;
+	if(!lua_istable(tolua_S,2))
+	{
+		goto lua_failed;
+	}
+	unsigned int lua_recv_raw_handler;
+	unsigned int lua_disconnect_handler;
+	lua_getfield(tolua_S,2,"on_session_recv_raw_cmd");//get field from table by key
+	lua_getfield(tolua_S,2,"on_session_disconnect");
+	lua_recv_raw_handler = save_service_function(tolua_S,3,0);
+	lua_disconnect_handler = save_service_function(tolua_S,4,0);
+	if(lua_recv_raw_handler == 0 || lua_disconnect_handler == 0)
+	{
+		goto lua_failed;
+	}
+	lua_service* s = new lua_service();
+	s->using_raw_cmd = true;
+	s->lua_recv_raw_handler = lua_recv_raw_handler;
+	s->lua_disconnect_handler = lua_disconnect_handler;
+	s->lua_recv_cmd_handler = 0;
 	ret = service_man::register_service(stype,s);
 
 lua_failed:
@@ -363,6 +406,7 @@ int register_service_export(lua_State* tolua_S)
 		tolua_beginmodule(tolua_S,"Service");
 
 		tolua_function(tolua_S,"register",register_service_tolua);
+		tolua_function(tolua_S,"register_with_raw",register_raw_service_tolua);
 
 		tolua_endmodule(tolua_S);
 	}

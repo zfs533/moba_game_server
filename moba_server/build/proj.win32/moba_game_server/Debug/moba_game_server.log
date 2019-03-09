@@ -1,21 +1,28 @@
-﻿生成启动时间为 2019/3/8 14:59:05。
+﻿生成启动时间为 2019/3/9 17:52:13。
      1>项目“H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\build\proj.win32\moba_game_server\moba_game_server.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IH:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\3rd\tolua /I"H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\3rd\lua-5.3.4\src" /IH:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\build\proj.win32\hiredis\include /IH:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\build\proj.win32\mysqlclient\x86\include /IH:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\3rd\protobuf\src /IH:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\3rd\libuv\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\utils\logger.cc
-         logger.cc
-     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\utils\logger.cc(36): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : 参见“sprintf”的声明
-     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\utils\logger.cc(47): warning C4996: 'gmtime': This function or variable may be unsafe. Consider using gmtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\time.inl(99) : 参见“gmtime”的声明
-     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\utils\logger.cc(65): warning C4996: 'gmtime': This function or variable may be unsafe. Consider using gmtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\time.inl(99) : 参见“gmtime”的声明
-     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\utils\logger.cc(71): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : 参见“sprintf”的声明
-     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\utils\logger.cc(114): warning C4996: 'vsnprintf': This function or variable may be unsafe. Consider using vsnprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(340) : 参见“vsnprintf”的声明
-     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\utils\logger.cc(117): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : 参见“sprintf”的声明
-     1>cl : 命令行 warning D9028: 最小重新生成失败，正在转换为标准生成
+         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IH:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\3rd\tolua /I"H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\3rd\lua-5.3.4\src" /IH:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\build\proj.win32\hiredis\include /IH:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\build\proj.win32\mysqlclient\x86\include /IH:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\3rd\protobuf\src /IH:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\3rd\libuv\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\lua_wrapper\session_export_to_lua.cc
+         session_export_to_lua.cc
+     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\lua_wrapper\session_export_to_lua.cc(92): warning C4244: “初始化”: 从“lua_Number”转换到“float”，可能丢失数据
+     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\lua_wrapper\session_export_to_lua.cc(98): warning C4244: “初始化”: 从“lua_Number”转换到“int64_t”，可能丢失数据
+     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\lua_wrapper\session_export_to_lua.cc(104): warning C4244: “初始化”: 从“lua_Number”转换到“uint64_t”，可能丢失数据
+     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\lua_wrapper\session_export_to_lua.cc(110): warning C4244: “初始化”: 从“lua_Number”转换到“int32_t”，可能丢失数据
+     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\lua_wrapper\session_export_to_lua.cc(118): warning C4244: “初始化”: 从“lua_Number”转换到“int32_t”，可能丢失数据
+     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\lua_wrapper\session_export_to_lua.cc(124): warning C4244: “初始化”: 从“lua_Number”转换到“uint32_t”，可能丢失数据
+     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\lua_wrapper\session_export_to_lua.cc(137): warning C4800: “int”: 将值强制为布尔值“true”或“false”(性能警告)
+     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\lua_wrapper\session_export_to_lua.cc(187): warning C4244: “初始化”: 从“lua_Number”转换到“float”，可能丢失数据
+     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\lua_wrapper\session_export_to_lua.cc(193): warning C4244: “初始化”: 从“lua_Number”转换到“int64_t”，可能丢失数据
+     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\lua_wrapper\session_export_to_lua.cc(199): warning C4244: “初始化”: 从“lua_Number”转换到“uint64_t”，可能丢失数据
+     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\lua_wrapper\session_export_to_lua.cc(205): warning C4244: “初始化”: 从“lua_Number”转换到“int32_t”，可能丢失数据
+     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\lua_wrapper\session_export_to_lua.cc(213): warning C4244: “初始化”: 从“lua_Number”转换到“int32_t”，可能丢失数据
+     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\lua_wrapper\session_export_to_lua.cc(219): warning C4244: “初始化”: 从“lua_Number”转换到“uint32_t”，可能丢失数据
+     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\lua_wrapper\session_export_to_lua.cc(232): warning C4800: “int”: 将值强制为布尔值“true”或“false”(性能警告)
+     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\lua_wrapper\session_export_to_lua.cc(273): warning C4244: “初始化”: 从“lua_Integer”转换到“int”，可能丢失数据
+     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\lua_wrapper\session_export_to_lua.cc(280): warning C4244: “=”: 从“lua_Integer”转换到“int”，可能丢失数据
+     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\lua_wrapper\session_export_to_lua.cc(284): warning C4244: “=”: 从“lua_Integer”转换到“int”，可能丢失数据
+     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\lua_wrapper\session_export_to_lua.cc(288): warning C4244: “=”: 从“lua_Integer”转换到“unsigned int”，可能丢失数据
+     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\lua_wrapper\session_export_to_lua.cc(332): warning C4244: “初始化”: 从“lua_Integer”转换到“unsigned int”，可能丢失数据
+     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\lua_wrapper\session_export_to_lua.cc(361): warning C4244: “初始化”: 从“lua_Integer”转换到“unsigned int”，可能丢失数据
        Link:
          D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\build\proj.win32\Debug\moba_game_server.exe" /INCREMENTAL /NOLOGO /LIBPATH:H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\build\proj.win32\hiredis\x86_libs /LIBPATH:H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\build\proj.win32\mysqlclient\x86\lib /LIBPATH:H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\build\proj.win32\protobuf_lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\build\proj.win32\Debug\moba_game_server.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\build\proj.win32\Debug\moba_game_server.lib" /MACHINE:X86 /NODEFAULTLIB:libcmt.lib Debug\base64_decoder_zfs.obj
          Debug\base64_encode_zfs.obj
@@ -126,4 +133,4 @@
 
 生成成功。
 
-已用时间 00:00:05.16
+已用时间 00:00:03.63

@@ -83,6 +83,27 @@ class SendMsgRes;
 class SendMsgResDefaultTypeInternal;
 extern SendMsgResDefaultTypeInternal _SendMsgRes_default_instance_;
 
+enum Stype {
+  INVALID_STYPE = 0,
+  Auth = 1,
+  System = 2,
+  Logic = 3
+};
+bool Stype_IsValid(int value);
+const Stype Stype_MIN = INVALID_STYPE;
+const Stype Stype_MAX = Logic;
+const int Stype_ARRAYSIZE = Stype_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* Stype_descriptor();
+inline const ::std::string& Stype_Name(Stype value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    Stype_descriptor(), value);
+}
+inline bool Stype_Parse(
+    const ::std::string& name, Stype* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<Stype>(
+    Stype_descriptor(), name, value);
+}
 enum Cmd {
   INVALID_CMD = 0,
   eLoginReq = 1,
@@ -1308,6 +1329,11 @@ inline void OnSendMsg::set_allocated_content(::std::string* content) {
 namespace google {
 namespace protobuf {
 
+template <> struct is_proto_enum< ::Stype> : ::google::protobuf::internal::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::Stype>() {
+  return ::Stype_descriptor();
+}
 template <> struct is_proto_enum< ::Cmd> : ::google::protobuf::internal::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::Cmd>() {

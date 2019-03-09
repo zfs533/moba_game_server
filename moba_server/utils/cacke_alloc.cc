@@ -71,7 +71,7 @@ void cache_free(struct cache_allocer* allocer,void* mem)
 		&&(unsigned char*)mem<allocer->cache_mem+allocer->capacity*allocer->elem_size)//ÔÚÄÚ´æ³Ø·¶Î§ÄÚ
 	{
 		struct node* node = (struct node*)mem;
-		memset(node,0,sizeof((struct node*)mem));//by zfs
+		//memset(node,0,sizeof((struct node*)mem));//by zfs
 		node->next = allocer->free_list;
 		allocer->free_list = node;
 		return;
