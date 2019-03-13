@@ -81,7 +81,7 @@ function on_trm_recv_cmd_func(s,msg)
     end
 end
 
-function on_trm_sesssion_disconnected(s)
+function on_trm_sesssion_disconnected(s,stype)
     local ip,port = Session.get_address(s)
     Logger.debug(port,ip)
 end

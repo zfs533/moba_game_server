@@ -47,7 +47,7 @@ public:
 	unsigned int lua_recv_raw_handler;//gateway server
 public :
 	virtual bool on_session_recv_cmd(session* s ,struct cmd_msg* msg);
-	virtual void on_session_disconnect(session* s);
+	virtual void on_session_disconnect(session* s,int stype);
 	virtual bool on_session_recv_raw_cmd(session* s,struct raw_cmd* raw);
 };
 
@@ -329,10 +329,11 @@ bool lua_service::on_session_recv_raw_cmd(session* s, struct raw_cmd* raw)
 	return true;
 }
 
-void lua_service::on_session_disconnect(session* s)
+void lua_service::on_session_disconnect(session* s,int stype)
 {
 	tolua_pushuserdata(lua_wrapper::lua_state(), (void*)s);
-	execute_service_function(this->lua_disconnect_handler, 1);
+	lua_pushinteger(lua_wrapper::lua_state(),stype);
+	execute_service_function(this->lua_disconnect_handler, 2);
 }
 
 

@@ -65,6 +65,6 @@ void service_man::on_session_disconnect(session* s)
 		{
 			continue;
 		}
-		g_service_set[i]->on_session_disconnect(s);
+		g_service_set[i]->on_session_disconnect(s,i);
 	}
 }

@@ -50,7 +50,7 @@ public class UnitySingletom<T> : MonoBehaviour where T : Component
 			return _instance;
 		}
 	}
-	void Awake()
+	public virtual void Awake()
 	{
 		DontDestroyOnLoad(this.gameObject);
 		if(_instance == null)

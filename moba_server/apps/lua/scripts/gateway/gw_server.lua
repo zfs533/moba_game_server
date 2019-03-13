@@ -4,6 +4,11 @@ local game_config = require("game_config")
 local server_sesssion_man = {}
 --current connecting and not finish
 local do_connecting = {}
+--临时的ukey 来找client session
+local g_ukey = 1
+local client_sessions_ukey = {}
+--uid来找client session
+local client_session_uid = {}
 
 function connect_to_server(stype,ip,port)
     Netbus.tcp_connect(ip,port,function(err,session) 
@@ -38,12 +43,23 @@ function gw_service_init()
 end
 --session come from server
 function send_to_client(server_session,raw_cmd)
+    local stype,ctype,utag = RawCmd.read_header(raw_cmd)
+    local client_session = nil
+    --很可能是uid来做key，可是同时要排除掉不是ukey来做的？
+    --必须要区分这个命令是登录前还是登录后
+    --只有命令的类型才知道我们是要到uid里查，还是到ukey表里查
+    --暂时先预留出来，因为和登录有关系要衔接好
+    if client_session_uid[utag] ~= nil then
+        client_session = client_session_uid[utag]
+    elseif client_sessions_ukey[utag] ~= nil then
+        client_session = client_sessions_ukey[utag]
+    end
+    RawCmd.set_utag(raw_cmd,0)
+    if client_session then
+        Session.send_raw_cmd(client_session,raw_cmd)
+    end
 end
---临时的ukey 来找client session
-local g_ukey = 1
-local client_sessions_ukey = {}
---uid来找client session
-local client_session_uid = {}
+
 --session come from client
 function send_to_server(client_session,raw_cmd)
     local stype,ctype,utag = RawCmd.read_header(raw_cmd)
@@ -83,7 +99,7 @@ function on_gw_recv_cmd_func(s,raw_cmd)
     end
 end
 
-function on_gw_sesssion_disconnected(s)
+function on_gw_sesssion_disconnected(s,stype)
     local ip,port = Session.get_address(s)
     Logger.debug(port,ip)
     local asclient = Session.as_client(s)
@@ -112,10 +128,12 @@ function on_gw_sesssion_disconnected(s)
     local uid = Session.get_uid(s)
     if client_session_uid[uid] ~= nil then
         client_session_uid[uid] = nil
-        Session.set_uid(s,0)
         table.remove(client_session_uid,uid)
     end
+    --客户端uid用户掉线了，把这个事件告诉和网关连接的stype类型的服务器
+    if uid ~= 0 then
 
+    end
 end
 
 gw_service_init()

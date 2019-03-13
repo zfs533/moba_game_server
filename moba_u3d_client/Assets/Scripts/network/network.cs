@@ -7,7 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class network : MonoBehaviour
+public class network : UnitySingletom<network>
 {
     public string server_ip = "127.0.0.1";
     public int port = 6080;
@@ -29,20 +29,7 @@ public class network : MonoBehaviour
     //监听和监听的map
     private Dictionary<int, net_message_handler> event_listeners = new Dictionary<int, net_message_handler>();
     //----------
-    public static network _instance;
-    public static network instance
-    {
-        get
-        {
-            return _instance;
-        }
-    }
 
-    void Awake()
-    {
-        _instance = this;
-        DontDestroyOnLoad(this.gameObject);
-    }
     void Start()
     {
         this.connect_to_server();

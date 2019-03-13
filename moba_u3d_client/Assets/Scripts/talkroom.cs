@@ -100,7 +100,7 @@ public class talkroom : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        network.instance.add_service_listener(1, this.on_trm_server_return);
+        network.Instance.add_service_listener(1, this.on_trm_server_return);
     }
 
     void test()
@@ -155,12 +155,12 @@ public class talkroom : MonoBehaviour
     }
     public void on_enter_talkroom()
     {
-        network.instance.send_protobuf_cmd(1, (int)Cmd.eLoginReq, null);
+        network.Instance.send_protobuf_cmd(1, (int)Cmd.eLoginReq, null);
     }
 
     public void on_exit_talkroom()
     {
-        network.instance.send_protobuf_cmd(1, (int)Cmd.eExitReq, null);
+        network.Instance.send_protobuf_cmd(1, (int)Cmd.eExitReq, null);
     }
 
     public void on_send_msg() 
@@ -172,6 +172,6 @@ public class talkroom : MonoBehaviour
         SendMsgReq req = new SendMsgReq();
         req.content = this.input.text;
         this.send_msg = this.input.text;
-        network.instance.send_protobuf_cmd(1, (int)Cmd.eSendMsgReq, req);
+        network.Instance.send_protobuf_cmd(1, (int)Cmd.eSendMsgReq, req);
     }
 }

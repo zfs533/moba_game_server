@@ -9,7 +9,7 @@ remote_servers[Stype.Auth] =
 {
 	stype = Stype.Auth,
 	ip = "127.0.0.1",
-	port = 8000,
+	port = 8012,
 	desc = "Auth server",
 }
 --[[
