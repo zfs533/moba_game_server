@@ -9,7 +9,9 @@ public class event_manager : Singletom<event_manager>
     public delegate void on_event_handler(string name, object udata);
     private Dictionary<string, on_event_handler> event_listeners = new Dictionary<string, on_event_handler>();
 
-
+    public void init()
+    { 
+    }
     //订阅/注册事件
     public void add_event_listener(string name, on_event_handler handler)
     {

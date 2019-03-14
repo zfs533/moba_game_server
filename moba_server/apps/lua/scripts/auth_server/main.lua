@@ -1,6 +1,10 @@
 --[[user center server]]
 -- 初始化日志模块
 Logger.init("logger/auth_server/","auth_server",true);
+
+--连接到我们的auth_center database mysql 数据库
+require("database/mysql_auth_center")
+
 -- 初始化协议模块(数据传输协议)
 local proto_type = {
     PROTO_JSON = 0,

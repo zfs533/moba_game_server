@@ -121,14 +121,12 @@ function on_gw_sesssion_disconnected(s,stype)
     if client_sessions_ukey[utag] ~= nil then
         client_sessions_ukey[utag] = nil
         Session.set_utag(s,0)
-        table.remove(client_sessions_ukey,utag)
     end
 
     --把客户端从uid映射表里面移除
     local uid = Session.get_uid(s)
     if client_session_uid[uid] ~= nil then
         client_session_uid[uid] = nil
-        table.remove(client_session_uid,uid)
     end
     --客户端uid用户掉线了，把这个事件告诉和网关连接的stype类型的服务器
     if uid ~= 0 then

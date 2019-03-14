@@ -11,7 +11,7 @@ public class audio_manager : UnitySingletom<audio_manager>
     //存放每个音效的AudioSource
     private Queue<AudioSource> effects = new Queue<AudioSource>();
 
-    void Awake()
+    override public void Awake()
     {
         base.Awake();
         this.music = this.gameObject.AddComponent<AudioSource>();

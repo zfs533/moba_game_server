@@ -31,6 +31,13 @@ local game_config =
 	gateway_ws_port = 3000,
 
 	servers = remote_servers,
+	auth_mysql = {
+		host = "127.0.0.1",--数据库所在的host
+		port = 3306,--数据库所在的端口
+		db_name = "auth_center",--数据库名称
+		uname = "root",--登录数据库账号
+		upwd = "123456",--登录数据库密码
+	}
 }
 
 return game_config
