@@ -36,7 +36,6 @@ function get_guest_uinfo(g_key, ret_handler)
         end
         --没有这条数据
         if ret == nil or #ret <= 0 then
-            print("-------------xixi2")
             if ret_handler ~= nil then
                 ret_handler(nil,nil)
             end

@@ -43,7 +43,7 @@ var TestUI = /** @class */ (function (_super) {
         // EventManager.Instance.remove_event_listener("test",this.event_callback);
         var GuestLoginReq = ProtoManager.Instance.get_protobuf_Data(Cmd.eGuestLoginReq);
         var msg = GuestLoginReq.create({
-            guestkey: "jdslfkjaslkdfjasdklfjaslkdfj",
+            guestkey: utils.get_rand_str(32),
         });
         Network.Instance.send_msg(Cmd.server_type, Cmd.eGuestLoginReq, GuestLoginReq, msg);
     };

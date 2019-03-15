@@ -42,8 +42,8 @@ class TestUI extends ui.test.TestPageUI
 		let GuestLoginReq = ProtoManager.Instance.get_protobuf_Data(Cmd.eGuestLoginReq);
 		let msg = GuestLoginReq.create(
 		{
-			// guestkey:utils.get_rand_str(32);
-			guestkey:"FIUMQSgbsZyHWDYs6hFfkLT1oCABGd8y",
+			guestkey:utils.get_rand_str(32),
+			// guestkey:"FIUMQSgbsZyHWDYs6hFfkLT1oCABGd8y",
 		});
 		Network.Instance.send_msg(Cmd.server_type,Cmd.eGuestLoginReq,GuestLoginReq,msg);
 	}
