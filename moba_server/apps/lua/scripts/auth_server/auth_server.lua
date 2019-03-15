@@ -41,18 +41,30 @@ function TableToStr(t)
 end
 -------------------------------------------------------------------------
 
+local PrintTable = require("utils").print_tb
+-------------------------------------------------------------------------
+
 
 local Stype = require("Stype")
 local Cmd = require("Ctype")
+local guest = require("auth_server/guest")
+
 local proto_type = {
     PROTO_JSON = 0,
     PROTO_BUF = 1,
 }
+
+local auth_service_handlers = {}
+auth_service_handlers[Cmd.eGuestLoginReq] = guest.login
+
 --{stype,ctype,utag,body}
 function on_auth_recv_cmd(s,msg)
     Logger.debug("auth_recv_cmd..")
     if ProtoMan.proto_type() == proto_type.PROTO_BUF then
-        Logger.debug(msg[1], msg[2], msg[3],msg[4].guest_key)
+        -- Logger.debug(msg[1], msg[2], msg[3],msg[4].guest_key)
+        if auth_service_handlers[msg[2]] then
+            auth_service_handlers[msg[2]](s,msg)
+        end
     else
         print(msg[1],msg[2],msg[3],msg[4])
         local msg = {Stype.Auth,Cmd.eOnSendMsg,msg[3],msg[4]}

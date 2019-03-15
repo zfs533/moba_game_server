@@ -21,8 +21,6 @@ var ProtoManager = /** @class */ (function () {
         console.log("success");
         ProtoManager.root = root;
         console.log(ProtoManager.root);
-        var name = Cmd.Instance.get_cmd_data(2).name;
-        var data_module = root.lookup(name);
     };
     ProtoManager.prototype.decode_protobuf = function (ctp, body) {
         if (!ProtoManager.root) {

@@ -18,7 +18,7 @@ class TestUI extends ui.test.TestPageUI
 		this.btn2.on(Laya.Event.CLICK, this, this.onBtn2Click);
 		
 		EventManager.Instance.add_event_listener("test",this.event_callback);
-		EventManager.Instance.register_event_listener(Cmd.eOnSendMsg,this.event_back);
+		EventManager.Instance.register_event_listener(Cmd.eGuestLoginRes,this.event_back);
 	}
 	private event_back(ctype:number,data:Uint8Array):void
 	{
@@ -33,19 +33,19 @@ class TestUI extends ui.test.TestPageUI
 	}
 	private onBtnClick(): void {
 		// EventManager.Instance.dispatch_event("test","hahahha");
-		
+		let guestkey = utils.get_rand_str(32);
+		Logger.debug(guestkey);
 	}
 
 	private onBtn2Click(): void {
 		// EventManager.Instance.remove_event_listener("test",this.event_callback);
-		let OnsendMsg = ProtoManager.Instance.get_protobuf_Data(Cmd.eOnSendMsg);
-		let msg = OnsendMsg.create(
+		let GuestLoginReq = ProtoManager.Instance.get_protobuf_Data(Cmd.eGuestLoginReq);
+		let msg = GuestLoginReq.create(
 		{
-			ip:"127.0.0.1",
-            port:3000,
-            content:"testinfo_中文字符",
+			// guestkey:utils.get_rand_str(32);
+			guestkey:"FIUMQSgbsZyHWDYs6hFfkLT1oCABGd8y",
 		});
-		Network.Instance.send_msg(Cmd.server_type,Cmd.eOnSendMsg,OnsendMsg,msg);
+		Network.Instance.send_msg(Cmd.server_type,Cmd.eGuestLoginReq,GuestLoginReq,msg);
 	}
 
 }

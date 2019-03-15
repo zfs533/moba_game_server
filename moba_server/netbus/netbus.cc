@@ -390,7 +390,7 @@ static void after_connect(uv_connect_t* handle, int status)
 
 
 
-//server as client to connect to other server
+//server as client to connect to other server(eg:gateway server)
 void netbus::tcp_connect(const char* server_ip,int port,void(*connected)(int err,session*s,void* udata),void* udata)
 {
 	struct sockaddr_in bind_addr;

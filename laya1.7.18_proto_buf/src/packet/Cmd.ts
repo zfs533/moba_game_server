@@ -11,35 +11,16 @@ class Cmd
 
     public static server_type = 1;
 
-    public static eLoginReq         = 1;
-	public static eLoginRes         = 2;
-	public static eExitReq      = 3;
-	public static eExitRes      = 4;
-	public static eSendMsgReq       = 5;
-	public static eSendMsgRes    = 6;
-	public static eOnUserLogin   = 7;
-	public static eOnUserExit    = 8;
-	public static eOnSendMsg     = 9;
+    public static eGuestLoginReq         = 1;
+    public static eGuestLoginRes         = 2;
     //-----------------------------------------------------------------------------
-    public static LoginRes      = "LoginRes";
-    public static ExitRes       = "ExitRes";
-    public static SendMsgReq        = "SendMsgReq";
-    public static SendMsgRes    = "SendMsgRes";
-    public static OnUserLogin    = "OnUserLogin";
-    public static OnUserExit    = "OnUserExit";
-    public static OnSendMsg     = "OnSendMsg";
+    public static GuestLoginReq      = "GuestLoginReq";
+    public static GuestLoginRes      = "GuestLoginRes";
     
     private cmd_arr:Array<any> =
     [
-        {ctype:Cmd.eLoginReq   ,name:null},
-        {ctype:Cmd.eLoginRes   ,name:Cmd.LoginRes},
-        {ctype:Cmd.eExitReq    ,name:null},
-        {ctype:Cmd.eExitRes    ,name:Cmd.ExitRes},
-        {ctype:Cmd.eSendMsgReq ,name:Cmd.SendMsgReq },
-        {ctype:Cmd.eSendMsgRes ,name:Cmd.SendMsgRes },
-        {ctype:Cmd.eOnUserLogin,name:Cmd.OnUserLogin},
-        {ctype:Cmd.eOnUserExit ,name:Cmd.OnUserExit },
-        {ctype:Cmd.eOnSendMsg  ,name:Cmd.OnSendMsg  },
+        {ctype:Cmd.eGuestLoginReq   ,name:Cmd.GuestLoginReq},
+        {ctype:Cmd.eGuestLoginRes   ,name:Cmd.GuestLoginRes},
     ];
     constructor()
     {

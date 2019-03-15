@@ -143,6 +143,7 @@
     <Compile Include="Assets\Scripts\game\game_manager.cs" />
     <Compile Include="Assets\Scripts\game\login_scene\login_scene.cs" />
     <Compile Include="Assets\Scripts\game\modules\user_login.cs" />
+    <Compile Include="Assets\Scripts\game\Respones.cs" />
     <Compile Include="Assets\Scripts\managers\audio_manager.cs" />
     <Compile Include="Assets\Scripts\managers\event_manager.cs" />
     <Compile Include="Assets\Scripts\network\data_viewer.cs" />

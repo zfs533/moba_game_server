@@ -25,10 +25,6 @@ class ProtoManager
         console.log("success");
         ProtoManager.root = root;
         console.log(ProtoManager.root);
-
-        let name = Cmd.Instance.get_cmd_data(2).name;
-        let data_module = root.lookup(name);
-
     }
     public decode_protobuf(ctp:number,body:Uint8Array):any
     {
@@ -51,7 +47,7 @@ class ProtoManager
     // {stype:2,ctype:2,utag:4,body:....}
     public encode_protobuf(stype:number,ctype:number,proto_obj:any,proto_data):ArrayBuffer
     {
-        let buffer:Uint8Array = proto_obj.encode(proto_data).finish();
+        let buffer = proto_obj.encode(proto_data).finish();
         let len:number = buffer.length;
         let cmd_len = len + this.HEADER;
         let arrbuf:ArrayBuffer = new ArrayBuffer(cmd_len);

@@ -12,9 +12,25 @@ enum Cmd {
 	INVALID_CMD = 0;
 
 	eGuestLoginReq = 1;//游客登录
+	eGuestLoginRes = 2;//游客登录还回
 }
 
 message GuestLoginReq
 {
-	required string guest_key = 1;
+	required string guestkey = 1;
+}
+
+message UserCenterInfo
+{
+	required string unick = 1;
+	required int32 sex = 2;
+	required int32 face = 3;
+	required int32 uvip = 4;
+	required int32 uid = 5;
+}
+
+message GuestLoginRes
+{
+	required int32 status = 1;
+	optional UserCenterInfo info = 2;
 }

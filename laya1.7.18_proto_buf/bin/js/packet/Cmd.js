@@ -4,15 +4,8 @@
 var Cmd = /** @class */ (function () {
     function Cmd() {
         this.cmd_arr = [
-            { ctype: Cmd.eLoginReq, name: null },
-            { ctype: Cmd.eLoginRes, name: Cmd.LoginRes },
-            { ctype: Cmd.eExitReq, name: null },
-            { ctype: Cmd.eExitRes, name: Cmd.ExitRes },
-            { ctype: Cmd.eSendMsgReq, name: Cmd.SendMsgReq },
-            { ctype: Cmd.eSendMsgRes, name: Cmd.SendMsgRes },
-            { ctype: Cmd.eOnUserLogin, name: Cmd.OnUserLogin },
-            { ctype: Cmd.eOnUserExit, name: Cmd.OnUserExit },
-            { ctype: Cmd.eOnSendMsg, name: Cmd.OnSendMsg },
+            { ctype: Cmd.eGuestLoginReq, name: Cmd.GuestLoginReq },
+            { ctype: Cmd.eGuestLoginRes, name: Cmd.GuestLoginRes },
         ];
     }
     Object.defineProperty(Cmd, "Instance", {
@@ -32,23 +25,11 @@ var Cmd = /** @class */ (function () {
     };
     Cmd._inst = null;
     Cmd.server_type = 1;
-    Cmd.eLoginReq = 1;
-    Cmd.eLoginRes = 2;
-    Cmd.eExitReq = 3;
-    Cmd.eExitRes = 4;
-    Cmd.eSendMsgReq = 5;
-    Cmd.eSendMsgRes = 6;
-    Cmd.eOnUserLogin = 7;
-    Cmd.eOnUserExit = 8;
-    Cmd.eOnSendMsg = 9;
+    Cmd.eGuestLoginReq = 1;
+    Cmd.eGuestLoginRes = 2;
     //-----------------------------------------------------------------------------
-    Cmd.LoginRes = "LoginRes";
-    Cmd.ExitRes = "ExitRes";
-    Cmd.SendMsgReq = "SendMsgReq";
-    Cmd.SendMsgRes = "SendMsgRes";
-    Cmd.OnUserLogin = "OnUserLogin";
-    Cmd.OnUserExit = "OnUserExit";
-    Cmd.OnSendMsg = "OnSendMsg";
+    Cmd.GuestLoginReq = "GuestLoginReq";
+    Cmd.GuestLoginRes = "GuestLoginRes";
     return Cmd;
 }());
 //# sourceMappingURL=Cmd.js.map

@@ -22,7 +22,7 @@ var TestUI = /** @class */ (function (_super) {
         _this.btn.on(Laya.Event.CLICK, _this, _this.onBtnClick);
         _this.btn2.on(Laya.Event.CLICK, _this, _this.onBtn2Click);
         EventManager.Instance.add_event_listener("test", _this.event_callback);
-        EventManager.Instance.register_event_listener(Cmd.eOnSendMsg, _this.event_back);
+        EventManager.Instance.register_event_listener(Cmd.eGuestLoginRes, _this.event_back);
         return _this;
     }
     TestUI.prototype.event_back = function (ctype, data) {
@@ -36,16 +36,16 @@ var TestUI = /** @class */ (function (_super) {
     };
     TestUI.prototype.onBtnClick = function () {
         // EventManager.Instance.dispatch_event("test","hahahha");
+        var guestkey = utils.get_rand_str(32);
+        Logger.debug(guestkey);
     };
     TestUI.prototype.onBtn2Click = function () {
         // EventManager.Instance.remove_event_listener("test",this.event_callback);
-        var OnsendMsg = ProtoManager.Instance.get_protobuf_Data(Cmd.eOnSendMsg);
-        var msg = OnsendMsg.create({
-            ip: "127.0.0.1",
-            port: 3000,
-            content: "testinfo_中文字符",
+        var GuestLoginReq = ProtoManager.Instance.get_protobuf_Data(Cmd.eGuestLoginReq);
+        var msg = GuestLoginReq.create({
+            guestkey: "jdslfkjaslkdfjasdklfjaslkdfj",
         });
-        Network.Instance.send_msg(Cmd.server_type, Cmd.eOnSendMsg, OnsendMsg, msg);
+        Network.Instance.send_msg(Cmd.server_type, Cmd.eGuestLoginReq, GuestLoginReq, msg);
     };
     return TestUI;
 }(ui.test.TestPageUI));
