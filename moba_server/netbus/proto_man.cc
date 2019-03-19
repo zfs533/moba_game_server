@@ -110,7 +110,7 @@ bool proto_man::decode_cmd_msg(unsigned char* cmd, int cmd_len, struct cmd_msg**
 		google::protobuf::Message* p_m = create_message(g_pb_cmd_map[msg->ctype].c_str());
 		if (p_m == NULL) 
 		{
-			my_free(msg);
+			my_free(msg); 
 			*out_msg = NULL;
 			return false;
 		}

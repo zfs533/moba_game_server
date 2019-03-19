@@ -19,6 +19,7 @@ class TestUI extends ui.test.TestPageUI
 		
 		EventManager.Instance.add_event_listener("test",this.event_callback);
 		EventManager.Instance.register_event_listener(Cmd.eGuestLoginRes,this.event_back);
+		EventManager.Instance.register_event_listener(Cmd.eRelogin,this.event_back);
 	}
 	private event_back(ctype:number,data:Uint8Array):void
 	{
@@ -42,8 +43,8 @@ class TestUI extends ui.test.TestPageUI
 		let GuestLoginReq = ProtoManager.Instance.get_protobuf_Data(Cmd.eGuestLoginReq);
 		let msg = GuestLoginReq.create(
 		{
-			guestkey:utils.get_rand_str(32),
-			// guestkey:"FIUMQSgbsZyHWDYs6hFfkLT1oCABGd8y",
+			// guestkey:utils.get_rand_str(32),
+			guestkey:"41pbRR7fwA4986hvx9DcHQpgVTC25TMv",
 		});
 		Network.Instance.send_msg(Cmd.server_type,Cmd.eGuestLoginReq,GuestLoginReq,msg);
 	}

@@ -141,7 +141,10 @@
     <Compile Include="Assets\Scripts\3rd\protobuf\SubItemToken.cs" />
     <Compile Include="Assets\Scripts\3rd\protobuf\WireType.cs" />
     <Compile Include="Assets\Scripts\game\game_manager.cs" />
+    <Compile Include="Assets\Scripts\game\home_scene\home_scene.cs" />
+    <Compile Include="Assets\Scripts\game\home_scene\user_info_dlg.cs" />
     <Compile Include="Assets\Scripts\game\login_scene\login_scene.cs" />
+    <Compile Include="Assets\Scripts\game\modules\ugames.cs" />
     <Compile Include="Assets\Scripts\game\modules\user_login.cs" />
     <Compile Include="Assets\Scripts\game\Respones.cs" />
     <Compile Include="Assets\Scripts\managers\audio_manager.cs" />

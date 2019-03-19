@@ -5,11 +5,17 @@ local Stype = require("Stype")
 local Cmd   = require("Ctype")
 local utils = require("utils")
 --{stype,ctype,utag,body}
-function login(s,msg)
-    local g_key = msg[4].guestkey
-    Logger.debug(msg[1], msg[2], msg[3],msg[4].guestkey)
-    local utag = msg[3]
-    utils.print_tb(msg)
+function login(s,req)
+    local g_key = req[4].guestkey
+    Logger.debug(req[1], req[2], req[3],req[4].guestkey)
+    local utag = req[3]
+    -- utils.print_tb(req)
+    --判断g_key合法性，是否为字符串，且长度为32
+    if type(g_key) ~= "string" or string.len(g_key) ~= 32 then
+        local msg = {Stype.Auth,Cmd.eGuestLoginRes,utag,{status = Respones.InvalidParams}}
+        Session.send_msg(s,msg)
+        return
+    end
     mysql_center.get_guest_uinfo(g_key,function(err,uinfo)
         if err then--告诉客户端系统错误信息;
             local msg = {Stype.Auth,Cmd.eGuestLoginRes,utag,{status = Respones.SystemErr}}
@@ -24,7 +30,7 @@ function login(s,msg)
                     return
                 end
                 --插入之后在调用一次
-                login(s,msg)
+                login(s,req)
             end)
             return
         end

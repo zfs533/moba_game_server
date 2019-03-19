@@ -1,4 +1,6 @@
-
+local Stype = require("Stype")
+local Cmd = require("Ctype")
+local Respones = require("respones")
 local game_config = require("game_config")
 --stype --> session的一个映射
 local server_sesssion_man = {}
@@ -41,49 +43,92 @@ function gw_service_init()
     --start a timer to check connect or break
     Scheduler.scheduler(check_server_connect,1000,3000,-1)
 end
+
+function is_login_return_cmd(ctype)
+    if ctype == Cmd.eGuestLoginRes then
+        return true
+    end
+    return false
+end
+
 --session come from server
 function send_to_client(server_session,raw_cmd)
     local stype,ctype,utag = RawCmd.read_header(raw_cmd)
     local client_session = nil
-    --很可能是uid来做key，可是同时要排除掉不是ukey来做的？
-    --必须要区分这个命令是登录前还是登录后
-    --只有命令的类型才知道我们是要到uid里查，还是到ukey表里查
-    --暂时先预留出来，因为和登录有关系要衔接好
-    if client_session_uid[utag] ~= nil then
-        client_session = client_session_uid[utag]
-    elseif client_sessions_ukey[utag] ~= nil then
+
+    if is_login_return_cmd(ctype) then 
         client_session = client_sessions_ukey[utag]
+        client_sessions_ukey[utag] = nil
+        if client_session == nil then
+            Logger.debug("client_session is nil")
+            return 
+        end
+        local body = RawCmd.read_body(raw_cmd)--return the protobuf data (lua table),to get uid and manager it
+        if body.status ~= Respones.OK then--login failed
+            Logger.debug("login failed......")
+            RawCmd.set_utag(raw_cmd,0)
+            Session.send_raw_cmd(client_session,raw_cmd)
+            return
+        end
+        local uid = body.info.uid
+        Logger.debug("user uid===========================>uid=> "..uid)
+        --relogin
+        --jugement the session is logined??是否有已经登录的session,这种情况应该不会出现吧，多个session用同一个uid
+        -- if client_session_uid[uid] and client_session_uid[uid] ~= client_session then
+        if client_session_uid[uid] and client_session_uid[uid] == client_session then
+            local relogin_cmd = {Stype.Auth,Cmd.eRelogin,0,{status = 1}}
+            Session.send_msg(client_session_uid[uid],relogin_cmd)
+            -- Session.close()
+            return
+        end
+        client_session_uid[uid] = client_session
+        Session.set_uid(client_session,uid)
+        --clear
+        body.info.uid = 0
+        local login_res = {stype,ctype,0,body}
+        Session.send_msg(client_session,login_res)
+        return
     end
+    client_session = client_session_uid[utag]
     RawCmd.set_utag(raw_cmd,0)
     if client_session then
         Session.send_raw_cmd(client_session,raw_cmd)
     end
 end
 
+function is_login_request_cmd(ctype)
+    if ctype == Cmd.eGuestLoginReq then
+        return true
+    end
+    return false
+end
+
 --session come from client
 function send_to_server(client_session,raw_cmd)
     local stype,ctype,utag = RawCmd.read_header(raw_cmd)
     Logger.debug(stype,ctype,utag)
-    local server_session = server_sesssion_man[stype]
+    local server_session = server_sesssion_man[stype]--find current server by stype
     if server_session == nil then
         Logger.error("the server ["..game_config.servers[stype].desc.."]"..ip..":"..port..": is not open")
         return
     end
-    
-    local uid = Session.get_uid(client_session)
-    local utag = Session.get_utag(client_session)
-    if uid == 0 then--not login 登录前
+    --manager uid
+    if is_login_request_cmd(ctype) then
+        utag = Session.get_utag(client_session)
         if utag == 0 then
             utag = g_ukey
             g_ukey = g_ukey + 1
-            client_sessions_ukey[utag] = client_session
             Session.set_utag(client_session,utag)
         end
-    else--logined 登录后
+        client_sessions_ukey[utag] = client_session
+    else
+        local uid = Session.get_uid(client_session)
         utag = uid
-        client_session_uid[utag] = client_session
+        if utag == 0 then --if you want other options,please login first
+            Logger.debug("if you want other options,please login first")
+            return
+        end
     end
-
     --打上utag然后转发给我们的服务器
     --将utag打入数据包,然后转发给服务器
     RawCmd.set_utag(raw_cmd,utag)
@@ -101,8 +146,9 @@ end
 
 function on_gw_sesssion_disconnected(s,stype)
     local ip,port = Session.get_address(s)
-    Logger.debug(port,ip)
     local asclient = Session.as_client(s)
+    print(asclient)
+    Logger.debug(port,ip,asclient)
     --the net break --- the session that connected server
     --连接到网关的服务器(server client)的session断线了
     if asclient == 1 then
@@ -118,19 +164,29 @@ function on_gw_sesssion_disconnected(s,stype)
     --the client net break
     --把客户端从临时映射表里面删除
     local utag = Session.get_utag(s)
-    if client_sessions_ukey[utag] ~= nil then
+    if client_sessions_ukey[utag] ~= nil and client_sessions_ukey == s then
         client_sessions_ukey[utag] = nil
         Session.set_utag(s,0)
+        print("close1")
     end
 
     --把客户端从uid映射表里面移除
     local uid = Session.get_uid(s)
-    if client_session_uid[uid] ~= nil then
+    if client_session_uid[uid] ~= nil and client_session_uid[uid] == s then
         client_session_uid[uid] = nil
+        print("close")
     end
-    --客户端uid用户掉线了，把这个事件告诉和网关连接的stype类型的服务器
-    if uid ~= 0 then
 
+    local server_session = server_sesssion_man[stype]
+    if server_session == nil then
+        return 
+    end
+
+    --客户端uid用户掉线了，把这个事件告诉和网关连接的stype类型的服务器
+    Logger.debug("uid=> "..uid)
+    if uid ~= 0 then
+        local user_lost = {stype,Cmd.eUserLostConn,uid,{status = 0}}
+        Session.send_msg(server_session,user_lost)
     end
 end
 

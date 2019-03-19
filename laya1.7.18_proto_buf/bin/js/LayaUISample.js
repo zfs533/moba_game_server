@@ -23,6 +23,7 @@ var TestUI = /** @class */ (function (_super) {
         _this.btn2.on(Laya.Event.CLICK, _this, _this.onBtn2Click);
         EventManager.Instance.add_event_listener("test", _this.event_callback);
         EventManager.Instance.register_event_listener(Cmd.eGuestLoginRes, _this.event_back);
+        EventManager.Instance.register_event_listener(Cmd.eRelogin, _this.event_back);
         return _this;
     }
     TestUI.prototype.event_back = function (ctype, data) {
@@ -43,7 +44,8 @@ var TestUI = /** @class */ (function (_super) {
         // EventManager.Instance.remove_event_listener("test",this.event_callback);
         var GuestLoginReq = ProtoManager.Instance.get_protobuf_Data(Cmd.eGuestLoginReq);
         var msg = GuestLoginReq.create({
-            guestkey: utils.get_rand_str(32),
+            // guestkey:utils.get_rand_str(32),
+            guestkey: "41pbRR7fwA4986hvx9DcHQpgVTC25TMv",
         });
         Network.Instance.send_msg(Cmd.server_type, Cmd.eGuestLoginReq, GuestLoginReq, msg);
     };

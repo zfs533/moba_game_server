@@ -6,6 +6,8 @@ var Cmd = /** @class */ (function () {
         this.cmd_arr = [
             { ctype: Cmd.eGuestLoginReq, name: Cmd.GuestLoginReq },
             { ctype: Cmd.eGuestLoginRes, name: Cmd.GuestLoginRes },
+            { ctype: Cmd.eRelogin, name: Cmd.Relogin },
+            { ctype: Cmd.eUserLostConn, name: Cmd.UserLostConn },
         ];
     }
     Object.defineProperty(Cmd, "Instance", {
@@ -27,9 +29,13 @@ var Cmd = /** @class */ (function () {
     Cmd.server_type = 1;
     Cmd.eGuestLoginReq = 1;
     Cmd.eGuestLoginRes = 2;
+    Cmd.eRelogin = 3;
+    Cmd.eUserLostConn = 4;
     //-----------------------------------------------------------------------------
     Cmd.GuestLoginReq = "GuestLoginReq";
     Cmd.GuestLoginRes = "GuestLoginRes";
+    Cmd.Relogin = "Relogin";
+    Cmd.UserLostConn = "UserLostConn";
     return Cmd;
 }());
 //# sourceMappingURL=Cmd.js.map

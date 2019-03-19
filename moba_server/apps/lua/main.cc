@@ -50,6 +50,7 @@ int main(int argc,char** argv)
 	}
 	netbus::instance()->run();
 	lua_wrapper::exit();	
+	
 	system("pause");
 	return 0;
 }

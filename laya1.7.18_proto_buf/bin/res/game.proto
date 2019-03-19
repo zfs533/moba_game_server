@@ -13,6 +13,8 @@ enum Cmd {
 
 	eGuestLoginReq = 1;//游客登录
 	eGuestLoginRes = 2;//游客登录还回
+	eRelogin = 3;//重复登录
+	eUserLostConn = 4;//玩家掉线
 }
 
 message GuestLoginReq
@@ -33,4 +35,14 @@ message GuestLoginRes
 {
 	required int32 status = 1;
 	optional UserCenterInfo info = 2;
+}
+
+message UserLostConn
+{
+	required int32 status = 1;
+}
+
+message Relogin
+{
+	required int32 status = 1;
 }
