@@ -7,6 +7,7 @@ public class event_manager : Singletom<event_manager>
     public static string EVT_LOGIN_SUCCESS = "login_success";
     public static string EVT_UPDATE_USERINFO = "update_userinfo";
     public static string EVT_SET_MAIN_USER_INFO = "set_main_user_info";
+    public static string EVT_ACCOUNT_UPGRADE = "account_apgrade";
     //-----------------------------------------------------
     public static string EVENT_TEST = "event_test";
 

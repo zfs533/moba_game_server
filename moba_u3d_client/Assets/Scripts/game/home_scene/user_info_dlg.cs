@@ -14,11 +14,18 @@ public class user_info_dlg : MonoBehaviour {
 
     public GameObject face_dlg = null;
 
+    public GameObject account_ugrade_dlg = null;
+    public InputField uname_edit;
+    public InputField upwd_edit;
+    public InputField upwd_again;
+
     private int usex = 0;
     private int uface = 1;
     
 	// Use this for initialization
 	void Start () {
+        event_manager.Instance.add_event_listener(event_manager.EVT_ACCOUNT_UPGRADE, this.handler_upgrade_success);
+        
 		// 是否显示账号升级的按钮，如果你是游客，那么就要显示;
         if (ugames.Instance.is_guest) {
             this.guest_upgrade.SetActive(true);
@@ -29,22 +36,19 @@ public class user_info_dlg : MonoBehaviour {
         // end
 
         // unick
-        if (ugames.Instance.unick != null)
-        {
+        if (ugames.Instance.unick != null) {
             this.unick_edit.text = ugames.Instance.unick;
         }
 
         // uface
-        if (ugames.Instance.face >= 1 && ugames.Instance.face <= 9)
-        {
-            this.uface = ugames.Instance.face;
+        if (ugames.Instance.uface >= 1 && ugames.Instance.uface <= 9) {
+            this.uface = ugames.Instance.uface;
         }
         this.avator_img.sprite = this.avator_sprites[this.uface - 1];
 
         // usex
-        if (ugames.Instance.sex == 0 || ugames.Instance.sex == 1)
-        {
-            this.usex = ugames.Instance.sex;
+        if (ugames.Instance.usex == 0 || ugames.Instance.usex == 1) {
+            this.usex = ugames.Instance.usex;
         }
         if (this.usex == 0) { // man
             this.male_check.SetActive(true);
@@ -55,6 +59,28 @@ public class user_info_dlg : MonoBehaviour {
             this.womale_check.SetActive(true);
         }
 	}
+
+    public void on_show_account_upgrade() {
+        this.account_ugrade_dlg.SetActive(true);
+    }
+
+    public void on_hide_account_upgrade() {
+        this.account_ugrade_dlg.SetActive(false);
+    }
+
+    public void on_do_account_upgrade() {
+        if (!ugames.Instance.is_guest) {
+            return;
+        }
+
+        if (this.uname_edit.text.Length <= 0 || this.upwd_edit.text.Length <= 0 ||
+            !this.upwd_edit.text.Equals(this.upwd_again.text)) {
+            return;
+        }
+
+        string md5_pwd = utils.md5(this.upwd_edit.text);
+        user_login.Instance.do_account_upgrade(this.uname_edit.text, md5_pwd);
+    }
 
     public void on_sex_change(int usex) {
         this.usex = usex;
@@ -103,9 +129,17 @@ public class user_info_dlg : MonoBehaviour {
 
         this.on_close_uinfo_dlg_click();
     }
-
+    void handler_upgrade_success(string name, object info)
+    {
+        this.on_hide_account_upgrade();
+        this.guest_upgrade.SetActive(false);
+    }
 	// Update is called once per frame
 	void Update () {
 		
 	}
+    void OnDestroy()
+    {
+        event_manager.Instance.remove_event_listener(event_manager.EVT_ACCOUNT_UPGRADE, this.handler_upgrade_success);
+    }
 }

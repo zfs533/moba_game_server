@@ -7,6 +7,8 @@ public class ugames : Singletom<ugames>
 {
     public string unick = "";
     public int sex = 0;
+    public int usex = 0;
+    public int uface = 1;
     public int face = 1;
     public int vip = 0;
     public bool is_guest = false;
@@ -15,6 +17,8 @@ public class ugames : Singletom<ugames>
     {
         this.unick = info.unick;
         this.sex = info.sex;
+        this.usex = info.sex;
+        this.uface = info.face;
         this.face = info.face;
         this.vip = info.uvip;
         this.is_guest = is_guest;

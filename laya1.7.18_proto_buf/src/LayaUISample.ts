@@ -35,7 +35,10 @@ class TestUI extends ui.test.TestPageUI
 	private onBtnClick(): void {
 		// EventManager.Instance.dispatch_event("test","hahahha");
 		let guestkey = utils.get_rand_str(32);
-		Logger.debug(guestkey);
+		Logger.debug(guestkey);	
+		// let str = Md5.get_md5("123456");
+		let str = utils.md5("123456");
+		console.log(str)
 	}
 
 	private onBtn2Click(): void {

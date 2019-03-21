@@ -52,13 +52,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\3rd\tolua;H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\3rd\lua-5.3.4\src;H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\build\proj.win32\hiredis\include;H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\build\proj.win32\mysqlclient\x86\include;H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\3rd\protobuf\src;H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\3rd\libuv\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../..\3rd\tolua;../../..\3rd\lua-5.3.4\src;../../..\build\proj.win32\hiredis\include;../../..\build\proj.win32\mysqlclient\x86\include;../../..\3rd\protobuf\src;../../..\3rd\libuv\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\build\proj.win32\hiredis\x86_libs;H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\build\proj.win32\mysqlclient\x86\lib;H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\build\proj.win32\protobuf_lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../..\build\proj.win32\hiredis\x86_libs;../../..\build\proj.win32\mysqlclient\x86\lib;../../..\build\proj.win32\protobuf_lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>/NODEFAULTLIB:libcmt.lib %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>

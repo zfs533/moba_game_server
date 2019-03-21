@@ -27,6 +27,30 @@ namespace gprotocol
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
+  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"UnameLoginReq")]
+  public partial class UnameLoginReq : global::ProtoBuf.IExtensible
+  {
+    public UnameLoginReq() {}
+    
+    private string _uname;
+    [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"uname", DataFormat = global::ProtoBuf.DataFormat.Default)]
+    public string uname
+    {
+      get { return _uname; }
+      set { _uname = value; }
+    }
+    private string _upwd;
+    [global::ProtoBuf.ProtoMember(2, IsRequired = true, Name=@"upwd", DataFormat = global::ProtoBuf.DataFormat.Default)]
+    public string upwd
+    {
+      get { return _upwd; }
+      set { _upwd = value; }
+    }
+    private global::ProtoBuf.IExtension extensionObject;
+    global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+      { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
+  }
+  
   [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"UserCenterInfo")]
   public partial class UserCenterInfo : global::ProtoBuf.IExtensible
   {
@@ -76,6 +100,31 @@ namespace gprotocol
   public partial class GuestLoginRes : global::ProtoBuf.IExtensible
   {
     public GuestLoginRes() {}
+    
+    private int _status;
+    [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"status", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int status
+    {
+      get { return _status; }
+      set { _status = value; }
+    }
+    private UserCenterInfo _info = null;
+    [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"info", DataFormat = global::ProtoBuf.DataFormat.Default)]
+    [global::System.ComponentModel.DefaultValue(null)]
+    public UserCenterInfo info
+    {
+      get { return _info; }
+      set { _info = value; }
+    }
+    private global::ProtoBuf.IExtension extensionObject;
+    global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+      { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
+  }
+  
+  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"UnameLoginRes")]
+  public partial class UnameLoginRes : global::ProtoBuf.IExtensible
+  {
+    public UnameLoginRes() {}
     
     private int _status;
     [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"status", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
@@ -179,6 +228,47 @@ namespace gprotocol
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
+  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"AccountUpgradeReq")]
+  public partial class AccountUpgradeReq : global::ProtoBuf.IExtensible
+  {
+    public AccountUpgradeReq() {}
+    
+    private string _uname;
+    [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"uname", DataFormat = global::ProtoBuf.DataFormat.Default)]
+    public string uname
+    {
+      get { return _uname; }
+      set { _uname = value; }
+    }
+    private string _upwdmd5;
+    [global::ProtoBuf.ProtoMember(2, IsRequired = true, Name=@"upwdmd5", DataFormat = global::ProtoBuf.DataFormat.Default)]
+    public string upwdmd5
+    {
+      get { return _upwdmd5; }
+      set { _upwdmd5 = value; }
+    }
+    private global::ProtoBuf.IExtension extensionObject;
+    global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+      { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
+  }
+  
+  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"AccountUpgradeRes")]
+  public partial class AccountUpgradeRes : global::ProtoBuf.IExtensible
+  {
+    public AccountUpgradeRes() {}
+    
+    private int _status;
+    [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"status", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int status
+    {
+      get { return _status; }
+      set { _status = value; }
+    }
+    private global::ProtoBuf.IExtension extensionObject;
+    global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+      { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
+  }
+  
     [global::ProtoBuf.ProtoContract(Name=@"Stype")]
     public enum Stype
     {
@@ -219,7 +309,19 @@ namespace gprotocol
       eEditProfileReq = 5,
             
       [global::ProtoBuf.ProtoEnum(Name=@"eEditProfileRes", Value=6)]
-      eEditProfileRes = 6
+      eEditProfileRes = 6,
+            
+      [global::ProtoBuf.ProtoEnum(Name=@"eAccountUpgradeReq", Value=7)]
+      eAccountUpgradeReq = 7,
+            
+      [global::ProtoBuf.ProtoEnum(Name=@"eAccountUpgradeRes", Value=8)]
+      eAccountUpgradeRes = 8,
+            
+      [global::ProtoBuf.ProtoEnum(Name=@"eUnameLoginReq", Value=9)]
+      eUnameLoginReq = 9,
+            
+      [global::ProtoBuf.ProtoEnum(Name=@"eUnameLoginRes", Value=10)]
+      eUnameLoginRes = 10
     }
   
 }

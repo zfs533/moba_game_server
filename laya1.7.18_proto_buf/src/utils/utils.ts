@@ -15,4 +15,9 @@ class utils
         }
         return ret;
     }
+
+    public static md5(str:string):string
+    {
+        return Md5.Instance.get_md5(str);
+    }
 }

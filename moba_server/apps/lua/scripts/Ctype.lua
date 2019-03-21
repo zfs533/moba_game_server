@@ -9,6 +9,10 @@ local Cmd =
 	eUserLostConn = 4,
 	eEditProfileReq = 5,
 	eEditProfileRes = 6,
+	eAccountUpgradeReq = 7,
+	eAccountUpgradeRes = 8,
+	eUnameLoginReq = 9,
+	eUnameLoginRes = 10,
 }
 
 return Cmd
