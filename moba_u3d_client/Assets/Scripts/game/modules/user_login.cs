@@ -17,6 +17,8 @@ public class user_login : Singletom<user_login>
 
     void on_auth_server_return(cmd_msg msg)
     {
+        Debug.Log("------------------------------------------");
+        Debug.Log("recv_msg_type=> " + msg.ctype);
         switch (msg.ctype)
         {
             case (int)Cmd.eGuestLoginRes:
@@ -31,8 +33,11 @@ public class user_login : Singletom<user_login>
             case (int)Cmd.eUnameLoginRes:
                 this.handle_uname_login_res(msg);
                 break;
+            case (int)Cmd.eLoginOutRes:
+                this._handle_login_out_res(msg);
+                break;
             default:
-                Debug.Log("recv_msg not register call function");
+                Debug.Log("recv_msg not register call function===> ctype=> "+msg.ctype);
                 break;
         }
     }
@@ -98,6 +103,11 @@ public class user_login : Singletom<user_login>
         ugames.Instance.save_uinfo(info, ugames.Instance.is_guest);
     }
 
+    void _handle_login_out_res(cmd_msg msg)
+    {
+        event_manager.Instance.dispatch_event(event_manager.EVT_USER_LOGIN_OUT, msg);
+    }
+
     void handle_accout_upgrade_res(cmd_msg msg)
     {
         AccountUpgradeRes res = proto_man.protobuf_deserialize<AccountUpgradeRes>(msg.body);
@@ -152,6 +162,11 @@ public class user_login : Singletom<user_login>
         req.uname = uname;
         req.upwdmd5 = upwd_md5;
         network.Instance.send_protobuf_cmd((int)Stype.Auth, (int)Cmd.eAccountUpgradeReq, req);
+    }
+
+    public void on_login_out()
+    {
+        network.Instance.send_protobuf_cmd((int)Stype.Auth, (int)Cmd.eLoginOutReq, null);
     }
 
 }

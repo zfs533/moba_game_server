@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `uinfo` (
   `guestkey` varchar(64) NOT NULL DEFAULT '0' COMMENT '游客账号的key，游客的唯一的key',
   `status` int(8) NOT NULL DEFAULT '0' COMMENT '0正常，其他根据需求来定',
   PRIMARY KEY (`uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COMMENT='用户中心数据库';
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8 COMMENT='用户中心数据库';
 
 -- 数据导出被取消选择。
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

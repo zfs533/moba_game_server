@@ -10,6 +10,11 @@ local cmd_name_map =
 	"AccountUpgradeRes",
 	"UnameLoginReq",
 	"UnameLoginRes",
+	"LoginOutReq",
+	"LoginOutRes",
+	--------------system server-----------------
+	"GetUgameInfoReq",
+	"GetUgameInfoRes",
 }
 
 return cmd_name_map

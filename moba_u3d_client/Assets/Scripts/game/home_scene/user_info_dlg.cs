@@ -142,4 +142,8 @@ public class user_info_dlg : MonoBehaviour {
     {
         event_manager.Instance.remove_event_listener(event_manager.EVT_ACCOUNT_UPGRADE, this.handler_upgrade_success);
     }
+    public void on_user_login_out()
+    {
+        user_login.Instance.on_login_out();
+    }
 }

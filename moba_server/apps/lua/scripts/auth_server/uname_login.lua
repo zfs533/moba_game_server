@@ -5,8 +5,7 @@ local Cmd   = require("Ctype")
 local utils = require("utils")
 
 --{stype,ctype,utag,body}
-function login(s,req)
-    utils.print_tb(req[4])
+local function login(s,req)
     local utag = req[3]
     local uname = req[4].uname
     local upwd = req[4].upwd
@@ -49,9 +48,6 @@ function login(s,req)
         }
         Session.send_msg(s,msg)
     end)
-    
-
-
 end
 
 local uname_login =

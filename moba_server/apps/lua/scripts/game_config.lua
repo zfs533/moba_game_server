@@ -12,7 +12,7 @@ remote_servers[Stype.Auth] =
 	port = 8012,
 	desc = "Auth server",
 }
---[[
+
 remote_servers[Stype.System] = 
 {
 	stype = Stype.System,
@@ -20,7 +20,6 @@ remote_servers[Stype.System] =
 	port = 8001,
 	desc = "System server"
 }
-]]
 
 local game_config = 
 {

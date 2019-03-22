@@ -269,6 +269,89 @@ namespace gprotocol
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
+  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"LoginOutRes")]
+  public partial class LoginOutRes : global::ProtoBuf.IExtensible
+  {
+    public LoginOutRes() {}
+    
+    private int _status;
+    [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"status", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int status
+    {
+      get { return _status; }
+      set { _status = value; }
+    }
+    private global::ProtoBuf.IExtension extensionObject;
+    global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+      { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
+  }
+  
+  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"GetUgameInfoRes")]
+  public partial class GetUgameInfoRes : global::ProtoBuf.IExtensible
+  {
+    public GetUgameInfoRes() {}
+    
+    private int _uchip;
+    [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"uchip", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int uchip
+    {
+      get { return _uchip; }
+      set { _uchip = value; }
+    }
+    private int _uchip2;
+    [global::ProtoBuf.ProtoMember(2, IsRequired = true, Name=@"uchip2", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int uchip2
+    {
+      get { return _uchip2; }
+      set { _uchip2 = value; }
+    }
+    private int _uchip3;
+    [global::ProtoBuf.ProtoMember(3, IsRequired = true, Name=@"uchip3", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int uchip3
+    {
+      get { return _uchip3; }
+      set { _uchip3 = value; }
+    }
+    private int _udata1;
+    [global::ProtoBuf.ProtoMember(4, IsRequired = true, Name=@"udata1", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int udata1
+    {
+      get { return _udata1; }
+      set { _udata1 = value; }
+    }
+    private int _udata2;
+    [global::ProtoBuf.ProtoMember(5, IsRequired = true, Name=@"udata2", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int udata2
+    {
+      get { return _udata2; }
+      set { _udata2 = value; }
+    }
+    private int _udata3;
+    [global::ProtoBuf.ProtoMember(6, IsRequired = true, Name=@"udata3", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int udata3
+    {
+      get { return _udata3; }
+      set { _udata3 = value; }
+    }
+    private int _uexp;
+    [global::ProtoBuf.ProtoMember(7, IsRequired = true, Name=@"uexp", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int uexp
+    {
+      get { return _uexp; }
+      set { _uexp = value; }
+    }
+    private int _uvip;
+    [global::ProtoBuf.ProtoMember(8, IsRequired = true, Name=@"uvip", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int uvip
+    {
+      get { return _uvip; }
+      set { _uvip = value; }
+    }
+    private global::ProtoBuf.IExtension extensionObject;
+    global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+      { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
+  }
+  
     [global::ProtoBuf.ProtoContract(Name=@"Stype")]
     public enum Stype
     {
@@ -321,7 +404,19 @@ namespace gprotocol
       eUnameLoginReq = 9,
             
       [global::ProtoBuf.ProtoEnum(Name=@"eUnameLoginRes", Value=10)]
-      eUnameLoginRes = 10
+      eUnameLoginRes = 10,
+            
+      [global::ProtoBuf.ProtoEnum(Name=@"eLoginOutReq", Value=11)]
+      eLoginOutReq = 11,
+            
+      [global::ProtoBuf.ProtoEnum(Name=@"eLoginOutRes", Value=12)]
+      eLoginOutRes = 12,
+            
+      [global::ProtoBuf.ProtoEnum(Name=@"eGetUgameInfoReq", Value=13)]
+      eGetUgameInfoReq = 13,
+            
+      [global::ProtoBuf.ProtoEnum(Name=@"eGetUgameInfoRes", Value=14)]
+      eGetUgameInfoRes = 14
     }
   
 }

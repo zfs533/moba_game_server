@@ -55,7 +55,7 @@ end
 function send_to_client(server_session,raw_cmd)
     local stype,ctype,utag = RawCmd.read_header(raw_cmd)
     local client_session = nil
-
+    
     if is_login_return_cmd(ctype) then 
         client_session = client_sessions_ukey[utag]
         client_sessions_ukey[utag] = nil
@@ -90,9 +90,14 @@ function send_to_client(server_session,raw_cmd)
         return
     end
     client_session = client_session_uid[utag]
-    RawCmd.set_utag(raw_cmd,0)
     if client_session then
+        RawCmd.set_utag(raw_cmd,0)
         Session.send_raw_cmd(client_session,raw_cmd)
+        if ctype == Cmd.eLoginOutRes then  -- 注销得消息，转发给其他得服务器
+            Logger.debug(utag,utag)
+            Session.set_uid(client_session,0)
+            client_session_uid[utag] = nil
+        end
     end
 end
 

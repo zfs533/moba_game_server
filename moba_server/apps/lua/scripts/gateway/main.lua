@@ -1,6 +1,8 @@
 
 local PrintTable = require("utils").print_tb
-
+local cmd_name_map = require("cmd_name_map")
+local gw_service = require("gateway/gw_server")
+local game_config = require("game_config")
 ------------------------------------------------------------------------------------
 -- 初始化日志模块
 Logger.init("logger/gateway/","gateway",true);
@@ -11,9 +13,6 @@ local proto_type = {
 }
 ProtoMan.init(proto_type.PROTO_BUF)
 
-local cmd_name_map = require("cmd_name_map")
-local gw_service = require("gateway/gw_server")
-
 --如果是protobuf协议，则注册一下映射表
 if ProtoMan.proto_type() == proto_type.PROTO_BUF then
     if cmd_name_map then
@@ -22,7 +21,6 @@ if ProtoMan.proto_type() == proto_type.PROTO_BUF then
     end
 end
 
-local game_config = require("game_config")
 -- --开启网关端口监听
 Netbus.tcp_listen(game_config.gateway_tcp_port,gateway_tcp_ip)
 Netbus.ws_listen(game_config.gateway_ws_port,game_config.gateway_ws_ip)

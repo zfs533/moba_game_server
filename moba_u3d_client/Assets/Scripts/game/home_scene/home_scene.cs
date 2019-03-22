@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class home_scene : MonoBehaviour
 {
@@ -19,8 +20,10 @@ public class home_scene : MonoBehaviour
     void Start()
     {
         event_manager.Instance.add_event_listener(event_manager.EVT_SET_MAIN_USER_INFO, this.init_user_info);
+        event_manager.Instance.add_event_listener(event_manager.EVT_USER_LOGIN_OUT, this.evt_user_login_out);
         this.init_user_info(event_manager.EVT_SET_MAIN_USER_INFO, null);
     }
+
     private void init_user_info(string name,object data)
     {
         if (ugames.Instance.unick!=null && ugames.Instance.unick.Length > 0)
@@ -42,6 +45,12 @@ public class home_scene : MonoBehaviour
         uinfo_dlg.transform.SetParent(this.transform, false);
     }
 
+    private void evt_user_login_out(string name, object data)
+    {
+        PlayerPrefs.SetString("login_guest_key", "");
+        SceneManager.LoadScene("login");
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -50,5 +59,6 @@ public class home_scene : MonoBehaviour
     void OnDestroy()
     {
         event_manager.Instance.remove_event_listener(event_manager.EVT_SET_MAIN_USER_INFO, this.init_user_info);
+        event_manager.Instance.remove_event_listener(event_manager.EVT_USER_LOGIN_OUT, this.evt_user_login_out);
     }
 }

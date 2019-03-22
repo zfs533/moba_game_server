@@ -13,6 +13,11 @@ local Cmd =
 	eAccountUpgradeRes = 8,
 	eUnameLoginReq = 9,
 	eUnameLoginRes = 10,
+	eLoginOutReq = 11,
+	eLoginOutRes = 12,
+	--------------system server-----------------
+	eGetUgameInfoReq = 13,
+	eGetUgameInfoRes = 14,
 }
 
 return Cmd

@@ -21,6 +21,11 @@ enum Cmd {
 	eAccountUpgradeRes = 8;
 	eUnameLoginReq = 9;//账号登录
 	eUnameLoginRes = 10;
+	eLoginOutReq = 11;
+	eLoginOutRes = 12;
+	//----------------------------系统服务器
+	eGetUgameInfoReq = 13;
+	eGetUgameInfoRes = 14;
 }
 
 message GuestLoginReq
@@ -86,4 +91,21 @@ message AccountUpgradeReq
 message AccountUpgradeRes
 {
 	required int32 status = 1;
+}
+
+message LoginOutRes
+{
+	required int32 status = 1;
+}
+//----------------------------系统服务器
+message GetUgameInfoRes
+{
+	required int32 uchip = 1;
+	required int32 uchip2 = 2;
+	required int32 uchip3 = 3;
+	required int32 udata1 = 4;
+	required int32 udata2 = 5;
+	required int32 udata3 = 6;
+	required int32 uexp = 7;
+	required int32 uvip = 8;
 }

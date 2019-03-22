@@ -4,7 +4,7 @@ local Stype = require("Stype")
 local Cmd   = require("Ctype")
 local utils = require("utils")
 
-function _do_account_upgrade(s,req,uid,uname,upwdmd5)
+local function _do_account_upgrade(s,req,uid,uname,upwdmd5)
     mysql_center.do_guest_account_upgrade(uid,uname,upwdmd5,function(err,ret)
         if err then
             local msg = {Stype.Auth,Cmd.eAccountUpgradeRes,uid,{status = Respones.SystemErr}}
@@ -17,7 +17,7 @@ function _do_account_upgrade(s,req,uid,uname,upwdmd5)
     end)
 end
 
-function _check_is_guest(s,req,uid,uname,upwdmd5)
+local function _check_is_guest(s,req,uid,uname,upwdmd5)
     mysql_center.get_uinfo_by_uid(uid,function(err,uinfo)
         if err then
             local msg = {Stype.Auth,Cmd.eAccountUpgradeRes,uid,{status = Respones.SystemErr}}
@@ -34,7 +34,7 @@ function _check_is_guest(s,req,uid,uname,upwdmd5)
 end
 
 --{stype,ctype,utag,body}
-function do_upgrade(s,req)
+local function do_upgrade(s,req)
     local uid = req[3]
     local account_upgrade_req = req[4]
     local uname = account_upgrade_req.uname

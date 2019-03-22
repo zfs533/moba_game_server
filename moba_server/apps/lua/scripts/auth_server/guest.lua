@@ -5,11 +5,10 @@ local Stype = require("Stype")
 local Cmd   = require("Ctype")
 local utils = require("utils")
 --{stype,ctype,utag,body}
-function login(s,req)
+local function login(s,req)
     local g_key = req[4].guestkey
     Logger.debug(req[1], req[2], req[3],req[4].guestkey)
     local utag = req[3]
-    -- utils.print_tb(req)
     --判断g_key合法性，是否为字符串，且长度为32
     if type(g_key) ~= "string" or string.len(g_key) ~= 32 then
         local msg = {Stype.Auth,Cmd.eGuestLoginRes,utag,{status = Respones.InvalidParams}}
@@ -35,7 +34,7 @@ function login(s,req)
             return
         end
 
-        --找到了g_key所对应的游客数据
+        -- 找到了g_key所对应的游客数据
         if uinfo.status ~= 0 then --账号被查封
             local msg = {Stype.Auth,Cmd.eGuestLoginRes,utag,{status = Respones.UserIsFreeze}}
             Session.send_msg(s,msg)

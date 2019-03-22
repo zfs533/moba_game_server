@@ -17,7 +17,8 @@ public class login_scene : MonoBehaviour
 
     void on_login_success(string name, object udata)
     {
-        SceneManager.LoadScene("home_scene");
+        //SceneManager.LoadScene("home_scene");
+        system_server.Instance.load_user_ugame_info();
     }
 
     // Update is called once per frame
