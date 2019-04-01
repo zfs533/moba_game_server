@@ -42,7 +42,8 @@ class TestUI extends ui.test.TestPageUI {
     }
 }
 //程序入口
-Laya.init(600, 400);
+// Laya.init(600, 400);
+GameConfig.init();
 //激活资源版本控制
 Laya.ResourceVersion.enable("version.json", Handler.create(null, beginLoad), Laya.ResourceVersion.FILENAME_VERSION);
 function beginLoad() {
@@ -62,8 +63,10 @@ function lalal_test() {
 }
 function onLoaded() {
     //实例UI界面
-    var testUI = new TestUI();
-    Laya.stage.addChild(testUI);
+    // var testUI: TestUI = new TestUI();
+    // Laya.stage.addChild(testUI);
     // lalal_test();
+    let gamescene = new GameScene();
+    Laya.stage.addChild(gamescene);
 }
 //# sourceMappingURL=LayaUISample.js.map
