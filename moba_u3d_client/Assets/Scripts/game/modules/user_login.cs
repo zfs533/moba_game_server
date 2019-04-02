@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using gprotocol;
-
+//auth_service_proxy
 public class user_login : Singletom<user_login>
 {
     private string g_key = null;

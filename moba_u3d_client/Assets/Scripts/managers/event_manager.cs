@@ -9,6 +9,9 @@ public class event_manager : Singletom<event_manager>
     public static string EVT_SET_MAIN_USER_INFO = "set_main_user_info";
     public static string EVT_ACCOUNT_UPGRADE = "account_apgrade";
     public static string EVT_USER_LOGIN_OUT = "user_login_out";
+
+    public static string EVT_GET_UGAME_INFO_SUCCESS = "get_ugame_info_success";
+    public static string EVT_UPDATE_UGAME_INFO = "updata_ugame_info";
     //-----------------------------------------------------
     public static string EVENT_TEST = "event_test";
 

@@ -12,13 +12,17 @@ public class login_scene : MonoBehaviour
     public InputField upwd_edit;
     void Start()
     {
-        event_manager.Instance.add_event_listener(event_manager.EVT_LOGIN_SUCCESS, this.on_login_success);
+        event_manager.Instance.add_event_listener(event_manager.EVT_LOGIN_SUCCESS, this.evt_login_success);
+        event_manager.Instance.add_event_listener(event_manager.EVT_GET_UGAME_INFO_SUCCESS, this.evt_get_ugame_info);
     }
-
-    void on_login_success(string name, object udata)
+    
+    void evt_login_success(string name, object udata)
     {
-        //SceneManager.LoadScene("home_scene");
         system_server.Instance.load_user_ugame_info();
+    }
+    void evt_get_ugame_info(string name, object udata)
+    {
+        SceneManager.LoadScene("home_scene");
     }
 
     // Update is called once per frame
@@ -42,5 +46,11 @@ public class login_scene : MonoBehaviour
         pwd = utils.md5(pwd);
         Debug.Log(name + "--" + pwd);
         user_login.Instance.uname_login(name, pwd);
+    }
+
+    void OnDestroy()
+    {
+        event_manager.Instance.remove_event_listener(event_manager.EVT_LOGIN_SUCCESS, this.evt_login_success);
+        event_manager.Instance.remove_event_listener(event_manager.EVT_GET_UGAME_INFO_SUCCESS, this.evt_get_ugame_info);
     }
 }

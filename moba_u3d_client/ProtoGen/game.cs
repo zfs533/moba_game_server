@@ -286,10 +286,10 @@ namespace gprotocol
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"GetUgameInfoRes")]
-  public partial class GetUgameInfoRes : global::ProtoBuf.IExtensible
+  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"UserGameInfo")]
+  public partial class UserGameInfo : global::ProtoBuf.IExtensible
   {
-    public GetUgameInfoRes() {}
+    public UserGameInfo() {}
     
     private int _uchip;
     [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"uchip", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
@@ -298,19 +298,19 @@ namespace gprotocol
       get { return _uchip; }
       set { _uchip = value; }
     }
+    private int _uchip1;
+    [global::ProtoBuf.ProtoMember(2, IsRequired = true, Name=@"uchip1", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int uchip1
+    {
+      get { return _uchip1; }
+      set { _uchip1 = value; }
+    }
     private int _uchip2;
-    [global::ProtoBuf.ProtoMember(2, IsRequired = true, Name=@"uchip2", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    [global::ProtoBuf.ProtoMember(3, IsRequired = true, Name=@"uchip2", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public int uchip2
     {
       get { return _uchip2; }
       set { _uchip2 = value; }
-    }
-    private int _uchip3;
-    [global::ProtoBuf.ProtoMember(3, IsRequired = true, Name=@"uchip3", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
-    public int uchip3
-    {
-      get { return _uchip3; }
-      set { _uchip3 = value; }
     }
     private int _udata1;
     [global::ProtoBuf.ProtoMember(4, IsRequired = true, Name=@"udata1", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
@@ -346,6 +346,69 @@ namespace gprotocol
     {
       get { return _uvip; }
       set { _uvip = value; }
+    }
+    private int _bonues_status;
+    [global::ProtoBuf.ProtoMember(9, IsRequired = true, Name=@"bonues_status", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int bonues_status
+    {
+      get { return _bonues_status; }
+      set { _bonues_status = value; }
+    }
+    private int _bonues;
+    [global::ProtoBuf.ProtoMember(10, IsRequired = true, Name=@"bonues", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int bonues
+    {
+      get { return _bonues; }
+      set { _bonues = value; }
+    }
+    private int _days;
+    [global::ProtoBuf.ProtoMember(11, IsRequired = true, Name=@"days", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int days
+    {
+      get { return _days; }
+      set { _days = value; }
+    }
+    private global::ProtoBuf.IExtension extensionObject;
+    global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+      { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
+  }
+  
+  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"GetUgameInfoRes")]
+  public partial class GetUgameInfoRes : global::ProtoBuf.IExtensible
+  {
+    public GetUgameInfoRes() {}
+    
+    private int _status;
+    [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"status", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int status
+    {
+      get { return _status; }
+      set { _status = value; }
+    }
+    private UserGameInfo _info = null;
+    [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"info", DataFormat = global::ProtoBuf.DataFormat.Default)]
+    [global::System.ComponentModel.DefaultValue(null)]
+    public UserGameInfo info
+    {
+      get { return _info; }
+      set { _info = value; }
+    }
+    private global::ProtoBuf.IExtension extensionObject;
+    global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+      { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
+  }
+  
+  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"RecvLoginBonuesRes")]
+  public partial class RecvLoginBonuesRes : global::ProtoBuf.IExtensible
+  {
+    public RecvLoginBonuesRes() {}
+    
+    private int _status;
+    [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"status", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int status
+    {
+      get { return _status; }
+      set { _status = value; }
     }
     private global::ProtoBuf.IExtension extensionObject;
     global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
@@ -416,7 +479,13 @@ namespace gprotocol
       eGetUgameInfoReq = 13,
             
       [global::ProtoBuf.ProtoEnum(Name=@"eGetUgameInfoRes", Value=14)]
-      eGetUgameInfoRes = 14
+      eGetUgameInfoRes = 14,
+            
+      [global::ProtoBuf.ProtoEnum(Name=@"eRecvLoginBonuesReq", Value=15)]
+      eRecvLoginBonuesReq = 15,
+            
+      [global::ProtoBuf.ProtoEnum(Name=@"eRecvLoginBonuesRes", Value=16)]
+      eRecvLoginBonuesRes = 16
     }
   
 }
