@@ -17,7 +17,7 @@ end
 
 mysql_connect_to_auth_center()
 
-function _check_is_connected_sql(ret_handler)
+local function _check_is_connected_sql(ret_handler)
     if mysql_conn == nil then
         if ret_handler then
             ret_handler("mysql is not connected!!!",nil)

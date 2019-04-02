@@ -15,6 +15,8 @@ local cmd_name_map =
 	--------------system server-----------------
 	"GetUgameInfoReq",
 	"GetUgameInfoRes",
+	"RecvLoginBonuesReq",
+	"RecvLoginBonuesRes",
 }
 
 return cmd_name_map

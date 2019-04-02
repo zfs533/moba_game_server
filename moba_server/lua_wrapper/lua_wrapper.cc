@@ -17,6 +17,7 @@ using namespace std;
 #include "scheduler_export_to_lua.h"
 #include "netbus_export_to_lua.h"
 #include "proto_man_export_to_lua.h"
+#include "timestamp_export_to_lua.h"
 
 lua_State* g_lua_State = NULL;
 //get lua file path,name ,line_num
@@ -116,6 +117,7 @@ void lua_wrapper::init()
 	register_netbus_export(g_lua_State);
 	register_proto_man_export(g_lua_State);
 	register_raw_cmd_export(g_lua_State);
+	register_timestamp_export(g_lua_State);
 }
 
 void lua_wrapper::exit()

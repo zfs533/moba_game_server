@@ -1,0 +1,484 @@
+20190326 19:05:40 DEBUG h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\apps\lua\main.cc:44  
+moba_game_server.exe
+20190326 19:05:40 DEBUG ../../apps/lua/scripts/system_server/main.lua:36  
+register System:[2] success!!!
+20190326 19:05:40 ERRORR trunk:0  
+../../apps/lua/scripts/system_server/main.lua:41: attempt to index a nil value (global 'timestamp')
+20190326 19:05:40 DEBUG ../../apps/lua/scripts/database/mysql_game.lua:13  
+connect to ugame_system database success!!!
+20190326 19:06:35 DEBUG h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\apps\lua\main.cc:44  
+moba_game_server.exe
+20190326 19:06:35 DEBUG ../../apps/lua/scripts/system_server/main.lua:36  
+register System:[2] success!!!
+20190326 19:06:35 DEBUG ../../apps/lua/scripts/database/mysql_game.lua:13  
+connect to ugame_system database success!!!
+20190326 19:07:01 DEBUG h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\apps\lua\main.cc:44  
+moba_game_server.exe
+20190326 19:07:01 DEBUG ../../apps/lua/scripts/system_server/main.lua:36  
+register System:[2] success!!!
+20190326 19:07:01 DEBUG ../../apps/lua/scripts/database/mysql_game.lua:13  
+connect to ugame_system database success!!!
+20190326 19:51:35 DEBUG h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\apps\lua\main.cc:44  
+moba_game_server.exe
+20190326 19:51:35 DEBUG ../../apps/lua/scripts/system_server/main.lua:36  
+register System:[2] success!!!
+20190326 19:51:35 DEBUG ../../apps/lua/scripts/database/mysql_game.lua:14  
+connect to ugame_system database success!!!
+20190326 19:53:51 DEBUG h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\apps\lua\main.cc:44  
+moba_game_server.exe
+20190326 19:53:51 DEBUG ../../apps/lua/scripts/system_server/main.lua:36  
+register System:[2] success!!!
+20190326 19:53:51 DEBUG ../../apps/lua/scripts/database/mysql_game.lua:14  
+connect to ugame_system database success!!!
+20190326 19:53:56 DEBUG h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\apps\lua\main.cc:44  
+moba_game_server.exe
+20190326 19:53:56 DEBUG ../../apps/lua/scripts/auth_server/main.lua:35  
+register auth_server:[1] success!!!
+20190326 19:53:56 DEBUG ../../apps/lua/scripts/database/mysql_auth_center.lua:13  
+connect to auth_center database success!!!
+20190326 19:54:02 DEBUG h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\apps\lua\main.cc:44  
+moba_game_server.exe
+20190326 19:54:02 DEBUG ../..//apps/lua/scripts/gateway/main.lua:34  
+register gw_servce:[1] success!!!
+20190326 19:54:02 DEBUG ../..//apps/lua/scripts/gateway/main.lua:34  
+register gw_servce:[2] success!!!
+20190326 19:54:03 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:31  
+connecting to server [Auth server] 127.0.0.1:8012
+20190326 19:54:03 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:31  
+connecting to server [System server] 127.0.0.1:8001
+20190326 19:54:03 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:23  
+connect success to server [Auth server]127.0.0.1:8012
+20190326 19:54:03 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:23  
+connect success to server [System server]127.0.0.1:8001
+20190326 19:54:44 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:114  
+1	9	0
+20190326 19:54:44 DEBUG ../../apps/lua/scripts/auth_server/auth_server.lua:26  
+current req cmd===================> 9
+20190326 19:54:44 DEBUG ../../apps/lua/scripts/auth_server/uname_login.lua:35  
+43	developer001
+20190326 19:54:44 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:74  
+user uid===========================>uid=> 43
+20190326 19:54:44 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:114  
+2	13	0
+20190326 19:54:44 DEBUG ../../apps/lua/scripts/system_server/system_server.lua:16  
+current system req cmd===================> 13
+20190326 19:54:44 DEBUG ../../apps/lua/scripts/system_server/ugame.lua:42  
+43	2000
+20190326 19:55:02 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:114  
+1	9	0
+20190326 19:55:02 DEBUG ../../apps/lua/scripts/auth_server/auth_server.lua:26  
+current req cmd===================> 9
+20190326 19:55:02 DEBUG ../../apps/lua/scripts/auth_server/uname_login.lua:35  
+43	developer001
+20190326 19:55:03 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:74  
+user uid===========================>uid=> 43
+20190326 19:55:19 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:114  
+1	9	0
+20190326 19:55:19 DEBUG ../../apps/lua/scripts/auth_server/auth_server.lua:26  
+current req cmd===================> 9
+20190326 19:55:19 DEBUG ../../apps/lua/scripts/auth_server/uname_login.lua:35  
+43	developer001
+20190326 19:55:19 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:74  
+user uid===========================>uid=> 43
+20190326 19:55:23 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+63302	127.0.0.1	0
+20190326 19:55:23 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:191  
+uid=> 43
+20190326 19:55:23 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+63302	127.0.0.1	0
+20190326 19:55:23 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:191  
+uid=> 43
+20190326 19:55:23 DEBUG ../../apps/lua/scripts/auth_server/auth_server.lua:26  
+current req cmd===================> 4
+20190326 19:55:23 DEBUG ../../apps/lua/scripts/system_server/system_server.lua:16  
+current system req cmd===================> 4
+20190326 19:55:47 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:114  
+1	9	0
+20190326 19:55:47 DEBUG ../../apps/lua/scripts/auth_server/auth_server.lua:26  
+current req cmd===================> 9
+20190326 19:55:47 DEBUG ../../apps/lua/scripts/auth_server/uname_login.lua:35  
+43	developer001
+20190326 19:55:47 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:74  
+user uid===========================>uid=> 43
+20190326 19:55:47 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:114  
+2	13	0
+20190326 19:55:47 DEBUG ../../apps/lua/scripts/system_server/system_server.lua:16  
+current system req cmd===================> 13
+20190326 19:55:47 DEBUG ../../apps/lua/scripts/system_server/ugame.lua:42  
+43	2000
+20190326 19:56:29 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8001	127.0.0.1	1
+20190326 19:56:29 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:162  
+gateway disconnect [System server]
+20190326 19:56:29 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8001	127.0.0.1	1
+20190326 19:56:30 DEBUG ../../apps/lua/scripts/auth_server/auth_server.lua:41  
+auth_server	63270	127.0.0.1
+20190326 19:59:14 DEBUG h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\apps\lua\main.cc:44  
+moba_game_server.exe
+20190326 19:59:14 DEBUG ../..//apps/lua/scripts/gateway/main.lua:34  
+register gw_servce:[1] success!!!
+20190326 19:59:14 DEBUG ../..//apps/lua/scripts/gateway/main.lua:34  
+register gw_servce:[2] success!!!
+20190326 19:59:15 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:31  
+connecting to server [Auth server] 127.0.0.1:8012
+20190326 19:59:15 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:31  
+connecting to server [System server] 127.0.0.1:8001
+20190326 19:59:16 ERRORR ../..//apps/lua/scripts/gateway/gw_server.lua:19  
+connect error to server [Auth server]127.0.0.1:8012
+20190326 19:59:16 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8012	127.0.0.1	1
+20190326 19:59:16 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8012	127.0.0.1	1
+20190326 19:59:16 ERRORR ../..//apps/lua/scripts/gateway/gw_server.lua:19  
+connect error to server [System server]127.0.0.1:8001
+20190326 19:59:16 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8001	127.0.0.1	1
+20190326 19:59:16 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8001	127.0.0.1	1
+20190326 19:59:18 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:31  
+connecting to server [Auth server] 127.0.0.1:8012
+20190326 19:59:18 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:31  
+connecting to server [System server] 127.0.0.1:8001
+20190326 19:59:19 ERRORR ../..//apps/lua/scripts/gateway/gw_server.lua:19  
+connect error to server [Auth server]127.0.0.1:8012
+20190326 19:59:19 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8012	127.0.0.1	1
+20190326 19:59:19 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8012	127.0.0.1	1
+20190326 19:59:19 ERRORR ../..//apps/lua/scripts/gateway/gw_server.lua:19  
+connect error to server [System server]127.0.0.1:8001
+20190326 19:59:19 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8001	127.0.0.1	1
+20190326 19:59:19 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8001	127.0.0.1	1
+20190326 19:59:21 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:31  
+connecting to server [Auth server] 127.0.0.1:8012
+20190326 19:59:21 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:31  
+connecting to server [System server] 127.0.0.1:8001
+20190326 19:59:22 ERRORR ../..//apps/lua/scripts/gateway/gw_server.lua:19  
+connect error to server [Auth server]127.0.0.1:8012
+20190326 19:59:22 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8012	127.0.0.1	1
+20190326 19:59:22 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8012	127.0.0.1	1
+20190326 19:59:22 ERRORR ../..//apps/lua/scripts/gateway/gw_server.lua:19  
+connect error to server [System server]127.0.0.1:8001
+20190326 19:59:22 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8001	127.0.0.1	1
+20190326 19:59:22 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8001	127.0.0.1	1
+20190326 19:59:23 DEBUG h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\apps\lua\main.cc:44  
+moba_game_server.exe
+20190326 19:59:23 DEBUG ../../apps/lua/scripts/system_server/main.lua:36  
+register System:[2] success!!!
+20190326 19:59:23 DEBUG ../../apps/lua/scripts/database/mysql_game.lua:14  
+connect to ugame_system database success!!!
+20190326 19:59:24 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:31  
+connecting to server [Auth server] 127.0.0.1:8012
+20190326 19:59:24 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:31  
+connecting to server [System server] 127.0.0.1:8001
+20190326 19:59:24 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:23  
+connect success to server [System server]127.0.0.1:8001
+20190326 19:59:25 ERRORR ../..//apps/lua/scripts/gateway/gw_server.lua:19  
+connect error to server [Auth server]127.0.0.1:8012
+20190326 19:59:25 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8012	127.0.0.1	1
+20190326 19:59:25 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8012	127.0.0.1	1
+20190326 19:59:27 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:31  
+connecting to server [Auth server] 127.0.0.1:8012
+20190326 19:59:28 ERRORR ../..//apps/lua/scripts/gateway/gw_server.lua:19  
+connect error to server [Auth server]127.0.0.1:8012
+20190326 19:59:28 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8012	127.0.0.1	1
+20190326 19:59:28 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8012	127.0.0.1	1
+20190326 19:59:30 DEBUG h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\apps\lua\main.cc:44  
+moba_game_server.exe
+20190326 19:59:30 DEBUG ../../apps/lua/scripts/auth_server/main.lua:35  
+register auth_server:[1] success!!!
+20190326 19:59:30 DEBUG ../../apps/lua/scripts/database/mysql_auth_center.lua:13  
+connect to auth_center database success!!!
+20190326 19:59:30 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:31  
+connecting to server [Auth server] 127.0.0.1:8012
+20190326 19:59:30 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:23  
+connect success to server [Auth server]127.0.0.1:8012
+20190326 20:00:00 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:114  
+1	9	0
+20190326 20:00:00 DEBUG ../../apps/lua/scripts/auth_server/auth_server.lua:26  
+current req cmd===================> 9
+20190326 20:00:00 DEBUG ../../apps/lua/scripts/auth_server/uname_login.lua:35  
+43	developer001
+20190326 20:00:00 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:74  
+user uid===========================>uid=> 43
+20190326 20:00:00 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:114  
+2	13	0
+20190326 20:00:00 DEBUG ../../apps/lua/scripts/system_server/system_server.lua:16  
+current system req cmd===================> 13
+20190326 20:00:00 DEBUG ../../apps/lua/scripts/system_server/ugame.lua:42  
+43	2000
+20190326 20:00:00 DEBUG ../../apps/lua/scripts/system_server/login_bonues.lua:10  
+---------hahahha
+20190326 20:01:30 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+63418	127.0.0.1	0
+20190326 20:01:30 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:191  
+uid=> 43
+20190326 20:01:30 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+63418	127.0.0.1	020190326 20:01:30 
+DEBUG ../../apps/lua/scripts/auth_server/auth_server.lua:26  
+current req cmd===================> 4
+20190326 20:01:30 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:191  
+uid=> 43
+20190326 20:01:30 DEBUG ../../apps/lua/scripts/system_server/system_server.lua:16  
+current system req cmd===================> 4
+20190326 20:01:31 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8001	127.0.0.1	1
+20190326 20:01:31 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:162  
+gateway disconnect [System server]
+20190326 20:01:31 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8001	127.0.0.1	1
+20190326 20:01:33 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:31  
+connecting to server [System server] 127.0.0.1:8001
+20190326 20:01:34 ERRORR ../..//apps/lua/scripts/gateway/gw_server.lua:19  
+connect error to server [System server]127.0.0.1:8001
+20190326 20:01:34 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8001	127.0.0.1	1
+20190326 20:01:34 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8001	127.0.0.1	1
+20190326 20:01:36 DEBUG h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\apps\lua\main.cc:44  
+moba_game_server.exe
+20190326 20:01:36 DEBUG ../../apps/lua/scripts/system_server/main.lua:36  
+register System:[2] success!!!
+20190326 20:01:36 DEBUG ../../apps/lua/scripts/database/mysql_game.lua:14  
+connect to ugame_system database success!!!
+20190326 20:01:36 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:31  
+connecting to server [System server] 127.0.0.1:8001
+20190326 20:01:36 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:23  
+connect success to server [System server]127.0.0.1:8001
+20190326 20:02:07 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:114  
+1	9	0
+20190326 20:02:07 DEBUG ../../apps/lua/scripts/auth_server/auth_server.lua:26  
+current req cmd===================> 9
+20190326 20:02:07 DEBUG ../../apps/lua/scripts/auth_server/uname_login.lua:35  
+43	developer001
+20190326 20:02:07 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:74  
+user uid===========================>uid=> 43
+20190326 20:02:07 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:114  
+2	13	0
+20190326 20:02:08 DEBUG ../../apps/lua/scripts/system_server/system_server.lua:16  
+current system req cmd===================> 13
+20190326 20:02:08 DEBUG ../../apps/lua/scripts/system_server/ugame.lua:42  
+43	2000
+20190326 20:02:08 DEBUG ../../apps/lua/scripts/system_server/ugame.lua:44  
+start_check--------------------------------------------
+20190326 20:02:08 DEBUG ../../apps/lua/scripts/system_server/login_bonues.lua:10  
+---------hahahha
+20190326 20:04:06 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8001	127.0.0.1	1
+20190326 20:04:06 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:162  
+gateway disconnect [System server]
+20190326 20:04:06 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8001	127.0.0.1	1
+20190326 20:04:06 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:31  
+connecting to server [System server] 127.0.0.1:8001
+20190326 20:04:07 ERRORR ../..//apps/lua/scripts/gateway/gw_server.lua:19  
+connect error to server [System server]127.0.0.1:8001
+20190326 20:04:07 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8001	127.0.0.1	1
+20190326 20:04:07 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8001	127.0.0.1	1
+20190326 20:04:09 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:31  
+connecting to server [System server] 127.0.0.1:8001
+20190326 20:04:10 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+63469	127.0.0.1	0
+20190326 20:04:10 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:191  
+uid=> 43
+20190326 20:04:10 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+63469	127.0.0.1	0
+20190326 20:04:10 DEBUG ../../apps/lua/scripts/auth_server/auth_server.lua:26  
+current req cmd===================> 4
+20190326 20:04:10 ERRORR ../..//apps/lua/scripts/gateway/gw_server.lua:19  
+connect error to server [System server]127.0.0.1:8001
+20190326 20:04:10 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8001	127.0.0.1	1
+20190326 20:04:10 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8001	127.0.0.1	1
+20190326 20:04:11 DEBUG h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\apps\lua\main.cc:44  
+moba_game_server.exe
+20190326 20:04:11 DEBUG ../../apps/lua/scripts/system_server/main.lua:36  
+register System:[2] success!!!
+20190326 20:04:11 DEBUG ../../apps/lua/scripts/database/mysql_game.lua:14  
+connect to ugame_system database success!!!
+20190326 20:04:12 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:31  
+connecting to server [System server] 127.0.0.1:8001
+20190326 20:04:12 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:23  
+connect success to server [System server]127.0.0.1:8001
+20190326 20:04:26 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:114  
+1	9	0
+20190326 20:04:26 DEBUG ../../apps/lua/scripts/auth_server/auth_server.lua:26  
+current req cmd===================> 9
+20190326 20:04:26 DEBUG ../../apps/lua/scripts/auth_server/uname_login.lua:35  
+43	developer001
+20190326 20:04:26 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:74  
+user uid===========================>uid=> 43
+20190326 20:04:26 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:114  
+2	13	0
+20190326 20:04:26 DEBUG ../../apps/lua/scripts/system_server/system_server.lua:16  
+current system req cmd===================> 13
+20190326 20:04:26 DEBUG ../../apps/lua/scripts/system_server/ugame.lua:42  
+43	2000
+20190326 20:04:26 DEBUG ../../apps/lua/scripts/system_server/ugame.lua:44  
+start_check--------------------------------------------
+20190326 20:04:26 DEBUG ../../apps/lua/scripts/system_server/login_bonues.lua:10  
+---------hahahha
+20190326 20:04:26 DEBUG ../../apps/lua/scripts/system_server/ugame.lua:46  
+start_check-------------------------------------------baci-
+20190326 20:04:26 DEBUG ../../apps/lua/scripts/system_server/ugame.lua:53  
+检查登录奖励完成----------------------
+20190326 20:05:26 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+63503	127.0.0.1	0
+20190326 20:05:26 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:191  
+uid=> 43
+20190326 20:05:26 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+63503	127.0.0.1	0
+20190326 20:05:26 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:191  
+uid=> 43
+20190326 20:05:26 DEBUG ../../apps/lua/scripts/auth_server/auth_server.lua:26  
+current req cmd===================> 4
+20190326 20:05:26 DEBUG ../../apps/lua/scripts/system_server/system_server.lua:16  
+current system req cmd===================> 4
+20190326 20:05:37 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:114  
+1	9	0
+20190326 20:05:37 DEBUG ../../apps/lua/scripts/auth_server/auth_server.lua:26  
+current req cmd===================> 9
+20190326 20:05:37 DEBUG ../../apps/lua/scripts/auth_server/uname_login.lua:35  
+43	developer001
+20190326 20:05:37 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:74  
+user uid===========================>uid=> 43
+20190326 20:05:37 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:114  
+2	13	0
+20190326 20:05:37 DEBUG ../../apps/lua/scripts/system_server/system_server.lua:16  
+current system req cmd===================> 13
+20190326 20:05:37 DEBUG ../../apps/lua/scripts/system_server/ugame.lua:42  
+43	2000
+20190326 20:05:37 DEBUG ../../apps/lua/scripts/system_server/ugame.lua:44  
+start_check--------------------------------------------
+20190326 20:05:37 DEBUG ../../apps/lua/scripts/system_server/login_bonues.lua:10  
+---------hahahha
+20190326 20:05:37 DEBUG ../../apps/lua/scripts/system_server/ugame.lua:46  
+start_check-------------------------------------------baci-
+20190326 20:05:37 DEBUG ../../apps/lua/scripts/system_server/ugame.lua:53  
+检查登录奖励完成----------------------
+20190326 20:06:51 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8001	127.0.0.1	1
+20190326 20:06:51 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:162  
+gateway disconnect [System server]
+20190326 20:06:51 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8001	127.0.0.1	1
+20190326 20:06:52 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:31  
+connecting to server [System server] 127.0.0.1:8001
+20190326 20:06:53 ERRORR ../..//apps/lua/scripts/gateway/gw_server.lua:19  
+connect error to server [System server]127.0.0.1:8001
+20190326 20:06:53 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8001	127.0.0.1	1
+20190326 20:06:53 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8001	127.0.0.1	1
+20190326 20:06:55 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:31  
+connecting to server [System server] 127.0.0.1:8001
+20190326 20:06:56 ERRORR ../..//apps/lua/scripts/gateway/gw_server.lua:19  
+connect error to server [System server]127.0.0.1:8001
+20190326 20:06:56 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8001	127.0.0.1	1
+20190326 20:06:56 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8001	127.0.0.1	1
+20190326 20:06:58 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:31  
+connecting to server [System server] 127.0.0.1:8001
+20190326 20:06:59 ERRORR ../..//apps/lua/scripts/gateway/gw_server.lua:19  
+connect error to server [System server]127.0.0.1:8001
+20190326 20:06:59 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8001	127.0.0.1	1
+20190326 20:06:59 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8001	127.0.0.1	1
+20190326 20:06:59 DEBUG h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\apps\lua\main.cc:44  
+moba_game_server.exe
+20190326 20:06:59 DEBUG ../../apps/lua/scripts/system_server/main.lua:36  
+register System:[2] success!!!
+20190326 20:06:59 DEBUG ../../apps/lua/scripts/database/mysql_game.lua:14  
+connect to ugame_system database success!!!
+20190326 20:07:01 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:31  
+connecting to server [System server] 127.0.0.1:8001
+20190326 20:07:01 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:23  
+connect success to server [System server]127.0.0.1:8001
+20190326 20:07:12 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+63544	127.0.0.1	0
+20190326 20:07:12 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:191  
+uid=> 43
+20190326 20:07:12 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+63544	127.0.0.1	0
+20190326 20:07:12 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:191  
+uid=> 43
+20190326 20:07:12 DEBUG ../../apps/lua/scripts/auth_server/auth_server.lua:26  
+current req cmd===================> 4
+20190326 20:07:12 DEBUG ../../apps/lua/scripts/system_server/system_server.lua:16  
+current system req cmd===================> 4
+20190326 20:07:33 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:114  
+1	9	0
+20190326 20:07:33 DEBUG ../../apps/lua/scripts/auth_server/auth_server.lua:26  
+current req cmd===================> 9
+20190326 20:07:33 DEBUG ../../apps/lua/scripts/auth_server/uname_login.lua:35  
+43	developer001
+20190326 20:07:33 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:74  
+user uid===========================>uid=> 43
+20190326 20:07:33 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:114  
+2	13	0
+20190326 20:07:33 DEBUG ../../apps/lua/scripts/system_server/system_server.lua:16  
+current system req cmd===================> 13
+20190326 20:07:51 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:114  
+1	5	0
+20190326 20:07:51 DEBUG ../../apps/lua/scripts/auth_server/auth_server.lua:26  
+current req cmd===================> 5
+20190326 20:07:51 DEBUG ../../apps/lua/scripts/auth_server/edit_profile.lua:15  
+43	developer001	3	0
+20190326 20:07:55 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:114  
+1	11	0
+20190326 20:07:55 DEBUG ../../apps/lua/scripts/auth_server/auth_server.lua:26  
+current req cmd===================> 11
+20190326 20:07:55 DEBUG ../../apps/lua/scripts/auth_server/login_out.lua:11  
+loginout-------------------------------
+20190326 20:07:55 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:97  
+43	43
+20190326 20:08:05 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:114  
+1	9	0
+20190326 20:08:05 DEBUG ../../apps/lua/scripts/auth_server/auth_server.lua:26  
+current req cmd===================> 9
+20190326 20:08:05 DEBUG ../../apps/lua/scripts/auth_server/uname_login.lua:35  
+43	developer001
+20190326 20:08:05 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:74  
+user uid===========================>uid=> 43
+20190326 20:08:05 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:114  
+2	13	0
+20190326 20:08:05 DEBUG ../../apps/lua/scripts/system_server/system_server.lua:16  
+current system req cmd===================> 13
+20190326 20:08:52 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+63612	127.0.0.1	0
+20190326 20:08:52 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:191  
+uid=> 43
+20190326 20:08:52 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+63612	127.0.0.1	0
+20190326 20:08:52 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:191  
+uid=> 43
+20190326 20:08:52 DEBUG ../../apps/lua/scripts/auth_server/auth_server.lua:26  
+current req cmd===================> 4
+20190326 20:08:52 DEBUG ../../apps/lua/scripts/system_server/system_server.lua:16  
+current system req cmd===================> 4
+20190326 20:09:08 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8001	127.0.0.1	1
+20190326 20:09:08 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:162  
+gateway disconnect [System server]
+20190326 20:09:08 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+8001	127.0.0.1	1
+20190326 20:09:10 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:31  
+connecting to server [System server] 127.0.0.1:8001
+20190326 20:09:10 DEBUG ../../apps/lua/scripts/auth_server/auth_server.lua:41  
+auth_server	63415	127.0.0.1

@@ -19,16 +19,14 @@ using namespace std;
 
 #include "../../netbus/netbus.h"
 #include "../../../lua_wrapper/lua_wrapper.h"
-#include "../../../utils/logger.h"
+#include "../../utils/logger.h"
+#include "../../utils/timestamp.h"
 
 //lua script develop main func
 int main(int argc,char** argv)
 {
 	netbus::instance()->init();
 	lua_wrapper::init();
-
-	//netbus::instance()->tcp_connect("127.0.0.1",8877,NULL,NULL);
-
 	if(argc != 3)
 	{
 		string search_path = "../../../apps/lua/scripts/";

@@ -6,7 +6,7 @@ local Stype = require("Stype")
 Logger.init("logger/system_server/","system_server",true);
 
 --连接到我们的system_center database mysql 数据库
--- require("database/mysql_system_center")
+require("database/mysql_game")
 
 -- 初始化协议模块(数据传输协议)
 local proto_type = {
@@ -38,3 +38,6 @@ Netbus.tcp_listen(servers[Stype.System].port,servers[Stype.System].ip)
     Logger.debug("register System:[" .. Stype.System.. "] failed!!!")
   end
 
+print(TimeStamp.timestamp())
+print(TimeStamp.timestamp_today())
+print(TimeStamp.timestamp_yesterday())

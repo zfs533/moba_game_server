@@ -1,0 +1,78 @@
+20190328 21:10:58 DEBUG h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\apps\lua\main.cc:39  
+moba_game_server.exe
+20190328 21:10:58 DEBUG ../../apps/lua/scripts/auth_server/main.lua:35  
+register auth_server:[1] success!!!
+20190328 21:10:58 DEBUG ../../apps/lua/scripts/database/mysql_auth_center.lua:13  
+connect to auth_center database success!!!
+20190328 21:11:03 DEBUG h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\apps\lua\main.cc:39  
+moba_game_server.exe
+20190328 21:11:03 DEBUG ../../apps/lua/scripts/system_server/main.lua:36  
+register System:[2] success!!!
+20190328 21:11:03 DEBUG ../../apps/lua/scripts/database/mysql_game.lua:14  
+connect to ugame_system database success!!!
+20190328 21:11:09 DEBUG h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\apps\lua\main.cc:39  
+moba_game_server.exe
+20190328 21:11:09 DEBUG ../..//apps/lua/scripts/gateway/main.lua:34  
+register gw_servce:[1] success!!!
+20190328 21:11:09 DEBUG ../..//apps/lua/scripts/gateway/main.lua:34  
+register gw_servce:[2] success!!!
+20190328 21:11:10 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:31  
+connecting to server [Auth server] 127.0.0.1:8012
+20190328 21:11:10 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:31  
+connecting to server [System server] 127.0.0.1:8001
+20190328 21:11:10 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:23  
+connect success to server [Auth server]127.0.0.1:8012
+20190328 21:11:10 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:23  
+connect success to server [System server]127.0.0.1:8001
+20190328 21:11:45 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:114  
+1	9	0
+20190328 21:11:45 DEBUG ../../apps/lua/scripts/auth_server/auth_server.lua:26  
+current req cmd===================> 9
+20190328 21:11:45 DEBUG ../../apps/lua/scripts/auth_server/uname_login.lua:35  
+43	developer001
+20190328 21:11:45 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:74  
+user uid===========================>uid=> 43
+20190328 21:11:45 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:114  
+2	13	0
+20190328 21:11:45 DEBUG ../../apps/lua/scripts/system_server/system_server.lua:18  
+current system req cmd===================> 13
+20190328 21:11:49 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:114  
+2	15	0
+20190328 21:11:49 DEBUG ../../apps/lua/scripts/system_server/system_server.lua:18  
+current system req cmd===================> 15
+20190328 21:12:00 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:114  
+1	11	0
+20190328 21:12:00 DEBUG ../../apps/lua/scripts/auth_server/auth_server.lua:26  
+current req cmd===================> 11
+20190328 21:12:00 DEBUG ../../apps/lua/scripts/auth_server/login_out.lua:11  
+loginout-------------------------------
+20190328 21:12:00 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:97  
+43	43
+20190328 21:12:09 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:114  
+1	9	0
+20190328 21:12:09 DEBUG ../../apps/lua/scripts/auth_server/auth_server.lua:26  
+current req cmd===================> 9
+20190328 21:12:09 DEBUG ../../apps/lua/scripts/auth_server/uname_login.lua:35  
+43	developer001
+20190328 21:12:09 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:74  
+user uid===========================>uid=> 43
+20190328 21:12:09 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:114  
+2	13	0
+20190328 21:12:09 DEBUG ../../apps/lua/scripts/system_server/system_server.lua:18  
+current system req cmd===================> 13
+20190328 21:12:11 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+56697	127.0.0.1	0
+20190328 21:12:11 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:191  
+uid=> 43
+20190328 21:12:11 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:156  
+56697	127.0.0.1	0
+20190328 21:12:11 DEBUG ../..//apps/lua/scripts/gateway/gw_server.lua:191  
+uid=> 43
+20190328 21:12:11 DEBUG ../../apps/lua/scripts/auth_server/auth_server.lua:26  
+current req cmd===================> 4
+20190328 21:12:11 DEBUG ../../apps/lua/scripts/system_server/system_server.lua:18  
+current system req cmd===================> 4
+20190328 21:12:55 DEBUG ../../apps/lua/scripts/auth_server/auth_server.lua:41  
+auth_server	56668	127.0.0.1
+20190328 21:12:55 DEBUG ../../apps/lua/scripts/system_server/system_server.lua:29  
+system_server	56669	127.0.0.1
