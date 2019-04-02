@@ -191,6 +191,13 @@ class ChessMgr {
         }
         return false;
     }
+    static remove_grid_chess(hor, ver) {
+        let chess_all = Grid.Instance.check_arr;
+        if (chess_all[hor][ver]) {
+            chess_all[hor][ver].destroy();
+            chess_all[hor][ver] = null;
+        }
+    }
 }
 ChessMgr.type_white = 1;
 ChessMgr.type_black = 2;

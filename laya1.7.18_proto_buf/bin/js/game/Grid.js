@@ -6,6 +6,7 @@ class Grid extends Laya.Image {
         this.check_arr = new Array();
         //--------------------------
         this._gap = GameConfig.grid_size;
+        this._pole = GameConfig.grid_size * 2;
         Grid._inst = this;
         this.size(GameConfig.grid_width, GameConfig.grid_height);
         this._draw_chess_grid();
@@ -45,21 +46,31 @@ class Grid extends Laya.Image {
         this._touch_panel.on(Laya.Event.MOUSE_MOVE, this, this._on_mouse_move);
         this._touch_panel.on(Laya.Event.MOUSE_UP, this, this._on_mouse_up);
     }
+    _get_chess_posY(mouseY) {
+        // if(mouseY<=this._pole || mouseY + this._pole >= this.ver_count*this._gap)
+        // {
+        //     return mouseY;
+        // }
+        return mouseY - this._pole;
+    }
     _on_mouse_down(event) {
         let target = event.currentTarget;
         this._is_mouse_down = true;
         this._chess = ChessMgr.createChess();
-        this._chess.pos(target.mouseX, target.mouseY);
+        let mouseY = this._get_chess_posY(target.mouseY);
+        this._chess.pos(target.mouseX, mouseY);
     }
     _on_mouse_move(event) {
         let target = event.currentTarget;
         if (this._is_mouse_down) {
-            this._chess.pos(target.mouseX, target.mouseY);
+            let mouseY = this._get_chess_posY(target.mouseY);
+            this._chess.pos(target.mouseX, mouseY);
         }
     }
     _on_mouse_up(event) {
         let target = event.currentTarget;
-        let point = new Laya.Point(target.mouseX, target.mouseY);
+        let mouseY = this._get_chess_posY(target.mouseY);
+        let point = new Laya.Point(target.mouseX, mouseY);
         this._is_mouse_down = false;
         let hor = 0;
         let ver = 0;
@@ -76,15 +87,23 @@ class Grid extends Laya.Image {
             ver = forwardy;
         }
         if (hor >= this.hor_count || ver >= this.ver_count) {
-            this._chess.destroy();
-            this._chess = null;
-            Logger.debug("超出范围-----------------");
+            this._clear_current_chess();
+            Logger.debug("超出棋盘范围！！！");
+            return;
+        }
+        if (this.check_arr[hor][ver]) {
+            this._clear_current_chess();
+            Logger.debug("当前位置不能落子！！！");
             return;
         }
         this._chess.pos(hor * this._gap, ver * this._gap);
         this._chess.set_hor_ver(hor, ver);
         this.check_arr[hor][ver] = this._chess;
         this._check_game_over(this._chess);
+    }
+    _clear_current_chess() {
+        this._chess.destroy();
+        this._chess = null;
     }
     _check_game_over(chess) {
         let is_game_over = ChessMgr.check_game_over(chess.hor, chess.ver, chess.type);

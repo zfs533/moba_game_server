@@ -245,4 +245,13 @@ class ChessMgr
         }
         return false
     }
+    public static remove_grid_chess(hor:number,ver:number):void
+    {
+        let chess_all = Grid.Instance.check_arr;
+        if(chess_all[hor][ver])
+        {
+            chess_all[hor][ver].destroy();
+            chess_all[hor][ver] = null;
+        }
+    }
 }
