@@ -31,7 +31,16 @@ CREATE TABLE IF NOT EXISTS `ugame` (
   `uexp` int(32) NOT NULL DEFAULT '0' COMMENT '用户的经验值',
   `ustatus` int(8) NOT NULL DEFAULT '0' COMMENT '用户账号状态，0正常，其他不正常',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='存放玩家在moba这个游戏中的玩家的游戏数据，主要的游戏数据；\r\n金币，其他货币，道具，游戏中的vip等级，账号状态，玩家经验；\r\nuid:标识玩家的，id:作为自增长得唯一id号';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='存放玩家在moba这个游戏中的玩家的游戏数据，主要的游戏数据；\r\n金币，其他货币，道具，游戏中的vip等级，账号状态，玩家经验；\r\nuid:标识玩家的，id:作为自增长得唯一id号';
+
+-- 数据导出被取消选择。
+-- 导出  表 moba_game.ulevel 结构
+CREATE TABLE IF NOT EXISTS `ulevel` (
+  `id` int(8) NOT NULL DEFAULT '0' COMMENT '唯一id标识',
+  `ulevel` int(8) DEFAULT '0' COMMENT '当前经验对应的等级',
+  `uexp` int(32) DEFAULT '0' COMMENT '升级所需对应的经验值',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='游戏玩家等级配置，每升一级需要多少经验';
 
 -- 数据导出被取消选择。
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
