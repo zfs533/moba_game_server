@@ -415,6 +415,92 @@ namespace gprotocol
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
+  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"WorldChipRankInfo")]
+  public partial class WorldChipRankInfo : global::ProtoBuf.IExtensible
+  {
+    public WorldChipRankInfo() {}
+    
+    private string _unick;
+    [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"unick", DataFormat = global::ProtoBuf.DataFormat.Default)]
+    public string unick
+    {
+      get { return _unick; }
+      set { _unick = value; }
+    }
+    private int _uface;
+    [global::ProtoBuf.ProtoMember(2, IsRequired = true, Name=@"uface", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int uface
+    {
+      get { return _uface; }
+      set { _uface = value; }
+    }
+    private int _usex;
+    [global::ProtoBuf.ProtoMember(3, IsRequired = true, Name=@"usex", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int usex
+    {
+      get { return _usex; }
+      set { _usex = value; }
+    }
+    private int _uvip;
+    [global::ProtoBuf.ProtoMember(4, IsRequired = true, Name=@"uvip", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int uvip
+    {
+      get { return _uvip; }
+      set { _uvip = value; }
+    }
+    private int _uchip;
+    [global::ProtoBuf.ProtoMember(5, IsRequired = true, Name=@"uchip", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int uchip
+    {
+      get { return _uchip; }
+      set { _uchip = value; }
+    }
+    private global::ProtoBuf.IExtension extensionObject;
+    global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+      { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
+  }
+  
+  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"GetWorldRankUchipReq")]
+  public partial class GetWorldRankUchipReq : global::ProtoBuf.IExtensible
+  {
+    public GetWorldRankUchipReq() {}
+    
+    private int _rankNum;
+    [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"rankNum", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int rankNum
+    {
+      get { return _rankNum; }
+      set { _rankNum = value; }
+    }
+    private global::ProtoBuf.IExtension extensionObject;
+    global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+      { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
+  }
+  
+  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"GetWorldRankUchipRes")]
+  public partial class GetWorldRankUchipRes : global::ProtoBuf.IExtensible
+  {
+    public GetWorldRankUchipRes() {}
+    
+    private int _status;
+    [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"status", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int status
+    {
+      get { return _status; }
+      set { _status = value; }
+    }
+    private readonly global::System.Collections.Generic.List<WorldChipRankInfo> _rankinfo = new global::System.Collections.Generic.List<WorldChipRankInfo>();
+    [global::ProtoBuf.ProtoMember(2, Name=@"rankinfo", DataFormat = global::ProtoBuf.DataFormat.Default)]
+    public global::System.Collections.Generic.List<WorldChipRankInfo> rankinfo
+    {
+      get { return _rankinfo; }
+    }
+  
+    private global::ProtoBuf.IExtension extensionObject;
+    global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+      { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
+  }
+  
     [global::ProtoBuf.ProtoContract(Name=@"Stype")]
     public enum Stype
     {
@@ -485,7 +571,13 @@ namespace gprotocol
       eRecvLoginBonuesReq = 15,
             
       [global::ProtoBuf.ProtoEnum(Name=@"eRecvLoginBonuesRes", Value=16)]
-      eRecvLoginBonuesRes = 16
+      eRecvLoginBonuesRes = 16,
+            
+      [global::ProtoBuf.ProtoEnum(Name=@"eGetWorldRankUchipReq", Value=17)]
+      eGetWorldRankUchipReq = 17,
+            
+      [global::ProtoBuf.ProtoEnum(Name=@"eGetWorldRankUchipRes", Value=18)]
+      eGetWorldRankUchipRes = 18
     }
   
 }
