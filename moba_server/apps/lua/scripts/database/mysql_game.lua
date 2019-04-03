@@ -1,6 +1,7 @@
 local game_config = require("game_config")
 local mysql_conn = nil
 local moba_ugame_config = require("moba_game_config")
+local utils = require("utils")
 
 local function mysql_connect_to_system_center()
     local conf = game_config.game_mysql
@@ -27,7 +28,7 @@ local function _check_is_connected_sql(ret_handler)
     return true
 end
 --get info by uid
-function get_ugame_system_uinfo(uid, ret_handler)
+local function get_ugame_system_uinfo(uid, ret_handler)
     if _check_is_connected_sql(ret_handler) == nil then 
         return 
     end
@@ -65,8 +66,38 @@ function get_ugame_system_uinfo(uid, ret_handler)
     end)
 
 end
+
+
+local function insert_world_rank_info(uid,uchip,uvip)
+    if _check_is_connected_sql(ret_handler) == nil then 
+        return 
+    end
+    local sql = "insert into urank(`uid`, `uchip`, `uvip`)values(%d, %d, %d)"
+	local cmd_sql = string.format(sql, uid, uchip, uvip)
+    Mysql.query(mysql_conn,cmd_sql,function(err,ret) 
+        if err then 
+            Logger.debug("insert_rank_data err")
+            Logger.debug(err)
+        end
+    end)
+end
+local function update_world_rank_info(uid,chip)
+    if _check_is_connected_sql(ret_handler) == nil then 
+        return 
+    end
+    local sql = "update urank set uchip = uchip + %d where uid = %d"
+	local cmd_sql = string.format(sql,chip,uid)
+    Mysql.query(mysql_conn,cmd_sql,function(err,ret) 
+        if err then 
+            Logger.debug("update_rank_data err")
+            Logger.debug(err)
+        end
+    end)
+end
+
+
 --insert info
-function insert_ugame_system_user(uid,uchip,uvip,uexp,ret_handler)
+local function insert_ugame_system_user(uid,uchip,uvip,uexp,ret_handler)
     if _check_is_connected_sql(ret_handler) == nil then 
         return 
     end
@@ -81,6 +112,7 @@ function insert_ugame_system_user(uid,uchip,uvip,uexp,ret_handler)
             end
         else
             ret_handler(nil,nil)
+            insert_world_rank_info(uid,uchip,uvip)
         end
     end)
 end
@@ -181,7 +213,7 @@ local function add_chip(uid,chip,ret_handler)
     
     local sql = "update ugame set uchip = uchip + %d where uid = %d"
 	local cmd_sql = string.format(sql,chip,uid)
-
+    update_world_rank_info(uid,chip)
     Mysql.query(mysql_conn,cmd_sql,function(err,ret) 
         if err then 
             if ret_handler then
@@ -194,6 +226,42 @@ local function add_chip(uid,chip,ret_handler)
         end
     end)
 end
+--获取金币排行前rank_num的数据
+local function get_world_rank_with_uchip(rank_num,ret_handler)
+    if _check_is_connected_sql(ret_handler) == nil then 
+        return 
+    end
+    --DESC降序 ASC升序
+    local sql = "select * from urank order by uchip DESC limit %d"
+	local cmd_sql = string.format(sql,rank_num)
+
+    Mysql.query(mysql_conn,cmd_sql,function(err,ret) 
+        if err then 
+            if ret_handler then
+                ret_handler(err,nil)
+                return
+            end
+        end
+        
+        --end
+        local i = 0
+        local rank_data = {}
+        for i = 1,#ret do 
+            local result = ret[i]
+            local rank_info = {}
+            rank_info.uid = tonumber(result[1])
+            rank_info.unick = tostring(result[2])
+            rank_info.usex = tonumber(result[3])
+            rank_info.uvip = tonumber(result[4])
+            rank_info.uchip= tonumber(result[5])
+            rank_info.uface= tonumber(result[6])
+            table.insert(rank_data,rank_info)
+        end
+        Logger.debug("---------------------get_rank_data")
+        utils.print_tb(rank_data)
+        ret_handler(nil,rank_data)
+    end)
+end
 
 local mysql_game_tb = 
 {
@@ -204,6 +272,10 @@ local mysql_game_tb =
     update_login_bonues = update_login_bonues,
     update_login_bonues_status = update_login_bonues_status,
     add_chip = add_chip,
+    --排行
+    get_world_rank_with_uchip = get_world_rank_with_uchip,
+    insert_world_rank_info = insert_world_rank_info,
+    update_world_rank_info = update_world_rank_info,
 }
 
 return mysql_game_tb

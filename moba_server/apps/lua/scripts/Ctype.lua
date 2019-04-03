@@ -20,6 +20,8 @@ local Cmd =
 	eGetUgameInfoRes = 14,
 	eRecvLoginBonuesReq = 15,
 	eRecvLoginBonuesRes = 16,
+	eGetWorldRankUchipReq = 17,
+	eGetWorldRankUchipRes = 18,
 }
 
 return Cmd

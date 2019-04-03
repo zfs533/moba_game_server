@@ -37,7 +37,7 @@ namespace protobuf_game_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[15];
+  static const ::google::protobuf::internal::ParseTable schema[18];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -73,6 +73,12 @@ void InitDefaultsGetUgameInfoResImpl();
 void InitDefaultsGetUgameInfoRes();
 void InitDefaultsRecvLoginBonuesResImpl();
 void InitDefaultsRecvLoginBonuesRes();
+void InitDefaultsWorldChipRankInfoImpl();
+void InitDefaultsWorldChipRankInfo();
+void InitDefaultsGetWorldRankUchipReqImpl();
+void InitDefaultsGetWorldRankUchipReq();
+void InitDefaultsGetWorldRankUchipResImpl();
+void InitDefaultsGetWorldRankUchipRes();
 inline void InitDefaults() {
   InitDefaultsGuestLoginReq();
   InitDefaultsUnameLoginReq();
@@ -89,6 +95,9 @@ inline void InitDefaults() {
   InitDefaultsUserGameInfo();
   InitDefaultsGetUgameInfoRes();
   InitDefaultsRecvLoginBonuesRes();
+  InitDefaultsWorldChipRankInfo();
+  InitDefaultsGetWorldRankUchipReq();
+  InitDefaultsGetWorldRankUchipRes();
 }
 }  // namespace protobuf_game_2eproto
 class AccountUpgradeReq;
@@ -106,6 +115,12 @@ extern EditProfileResDefaultTypeInternal _EditProfileRes_default_instance_;
 class GetUgameInfoRes;
 class GetUgameInfoResDefaultTypeInternal;
 extern GetUgameInfoResDefaultTypeInternal _GetUgameInfoRes_default_instance_;
+class GetWorldRankUchipReq;
+class GetWorldRankUchipReqDefaultTypeInternal;
+extern GetWorldRankUchipReqDefaultTypeInternal _GetWorldRankUchipReq_default_instance_;
+class GetWorldRankUchipRes;
+class GetWorldRankUchipResDefaultTypeInternal;
+extern GetWorldRankUchipResDefaultTypeInternal _GetWorldRankUchipRes_default_instance_;
 class GuestLoginReq;
 class GuestLoginReqDefaultTypeInternal;
 extern GuestLoginReqDefaultTypeInternal _GuestLoginReq_default_instance_;
@@ -136,6 +151,9 @@ extern UserGameInfoDefaultTypeInternal _UserGameInfo_default_instance_;
 class UserLostConn;
 class UserLostConnDefaultTypeInternal;
 extern UserLostConnDefaultTypeInternal _UserLostConn_default_instance_;
+class WorldChipRankInfo;
+class WorldChipRankInfoDefaultTypeInternal;
+extern WorldChipRankInfoDefaultTypeInternal _WorldChipRankInfo_default_instance_;
 
 enum Stype {
   INVALID_STYPE = 0,
@@ -175,11 +193,13 @@ enum Cmd {
   eGetUgameInfoReq = 13,
   eGetUgameInfoRes = 14,
   eRecvLoginBonuesReq = 15,
-  eRecvLoginBonuesRes = 16
+  eRecvLoginBonuesRes = 16,
+  eGetWorldRankUchipReq = 17,
+  eGetWorldRankUchipRes = 18
 };
 bool Cmd_IsValid(int value);
 const Cmd Cmd_MIN = INVALID_CMD;
-const Cmd Cmd_MAX = eRecvLoginBonuesRes;
+const Cmd Cmd_MAX = eGetWorldRankUchipRes;
 const int Cmd_ARRAYSIZE = Cmd_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* Cmd_descriptor();
@@ -2129,6 +2149,400 @@ class RecvLoginBonuesRes : public ::google::protobuf::Message /* @@protoc_insert
   friend struct ::protobuf_game_2eproto::TableStruct;
   friend void ::protobuf_game_2eproto::InitDefaultsRecvLoginBonuesResImpl();
 };
+// -------------------------------------------------------------------
+
+class WorldChipRankInfo : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:WorldChipRankInfo) */ {
+ public:
+  WorldChipRankInfo();
+  virtual ~WorldChipRankInfo();
+
+  WorldChipRankInfo(const WorldChipRankInfo& from);
+
+  inline WorldChipRankInfo& operator=(const WorldChipRankInfo& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  WorldChipRankInfo(WorldChipRankInfo&& from) noexcept
+    : WorldChipRankInfo() {
+    *this = ::std::move(from);
+  }
+
+  inline WorldChipRankInfo& operator=(WorldChipRankInfo&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields();
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const WorldChipRankInfo& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const WorldChipRankInfo* internal_default_instance() {
+    return reinterpret_cast<const WorldChipRankInfo*>(
+               &_WorldChipRankInfo_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    15;
+
+  void Swap(WorldChipRankInfo* other);
+  friend void swap(WorldChipRankInfo& a, WorldChipRankInfo& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline WorldChipRankInfo* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  WorldChipRankInfo* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const WorldChipRankInfo& from);
+  void MergeFrom(const WorldChipRankInfo& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(WorldChipRankInfo* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required string unick = 1;
+  bool has_unick() const;
+  void clear_unick();
+  static const int kUnickFieldNumber = 1;
+  const ::std::string& unick() const;
+  void set_unick(const ::std::string& value);
+  #if LANG_CXX11
+  void set_unick(::std::string&& value);
+  #endif
+  void set_unick(const char* value);
+  void set_unick(const char* value, size_t size);
+  ::std::string* mutable_unick();
+  ::std::string* release_unick();
+  void set_allocated_unick(::std::string* unick);
+
+  // required int32 uface = 2;
+  bool has_uface() const;
+  void clear_uface();
+  static const int kUfaceFieldNumber = 2;
+  ::google::protobuf::int32 uface() const;
+  void set_uface(::google::protobuf::int32 value);
+
+  // required int32 usex = 3;
+  bool has_usex() const;
+  void clear_usex();
+  static const int kUsexFieldNumber = 3;
+  ::google::protobuf::int32 usex() const;
+  void set_usex(::google::protobuf::int32 value);
+
+  // required int32 uvip = 4;
+  bool has_uvip() const;
+  void clear_uvip();
+  static const int kUvipFieldNumber = 4;
+  ::google::protobuf::int32 uvip() const;
+  void set_uvip(::google::protobuf::int32 value);
+
+  // required int32 uchip = 5;
+  bool has_uchip() const;
+  void clear_uchip();
+  static const int kUchipFieldNumber = 5;
+  ::google::protobuf::int32 uchip() const;
+  void set_uchip(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:WorldChipRankInfo)
+ private:
+  void set_has_unick();
+  void clear_has_unick();
+  void set_has_uface();
+  void clear_has_uface();
+  void set_has_usex();
+  void clear_has_usex();
+  void set_has_uvip();
+  void clear_has_uvip();
+  void set_has_uchip();
+  void clear_has_uchip();
+
+  // helper for ByteSizeLong()
+  size_t RequiredFieldsByteSizeFallback() const;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::HasBits<1> _has_bits_;
+  mutable int _cached_size_;
+  ::google::protobuf::internal::ArenaStringPtr unick_;
+  ::google::protobuf::int32 uface_;
+  ::google::protobuf::int32 usex_;
+  ::google::protobuf::int32 uvip_;
+  ::google::protobuf::int32 uchip_;
+  friend struct ::protobuf_game_2eproto::TableStruct;
+  friend void ::protobuf_game_2eproto::InitDefaultsWorldChipRankInfoImpl();
+};
+// -------------------------------------------------------------------
+
+class GetWorldRankUchipReq : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GetWorldRankUchipReq) */ {
+ public:
+  GetWorldRankUchipReq();
+  virtual ~GetWorldRankUchipReq();
+
+  GetWorldRankUchipReq(const GetWorldRankUchipReq& from);
+
+  inline GetWorldRankUchipReq& operator=(const GetWorldRankUchipReq& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  GetWorldRankUchipReq(GetWorldRankUchipReq&& from) noexcept
+    : GetWorldRankUchipReq() {
+    *this = ::std::move(from);
+  }
+
+  inline GetWorldRankUchipReq& operator=(GetWorldRankUchipReq&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields();
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const GetWorldRankUchipReq& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetWorldRankUchipReq* internal_default_instance() {
+    return reinterpret_cast<const GetWorldRankUchipReq*>(
+               &_GetWorldRankUchipReq_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    16;
+
+  void Swap(GetWorldRankUchipReq* other);
+  friend void swap(GetWorldRankUchipReq& a, GetWorldRankUchipReq& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetWorldRankUchipReq* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  GetWorldRankUchipReq* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const GetWorldRankUchipReq& from);
+  void MergeFrom(const GetWorldRankUchipReq& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(GetWorldRankUchipReq* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required int32 rankNum = 1;
+  bool has_ranknum() const;
+  void clear_ranknum();
+  static const int kRankNumFieldNumber = 1;
+  ::google::protobuf::int32 ranknum() const;
+  void set_ranknum(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:GetWorldRankUchipReq)
+ private:
+  void set_has_ranknum();
+  void clear_has_ranknum();
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::HasBits<1> _has_bits_;
+  mutable int _cached_size_;
+  ::google::protobuf::int32 ranknum_;
+  friend struct ::protobuf_game_2eproto::TableStruct;
+  friend void ::protobuf_game_2eproto::InitDefaultsGetWorldRankUchipReqImpl();
+};
+// -------------------------------------------------------------------
+
+class GetWorldRankUchipRes : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GetWorldRankUchipRes) */ {
+ public:
+  GetWorldRankUchipRes();
+  virtual ~GetWorldRankUchipRes();
+
+  GetWorldRankUchipRes(const GetWorldRankUchipRes& from);
+
+  inline GetWorldRankUchipRes& operator=(const GetWorldRankUchipRes& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  GetWorldRankUchipRes(GetWorldRankUchipRes&& from) noexcept
+    : GetWorldRankUchipRes() {
+    *this = ::std::move(from);
+  }
+
+  inline GetWorldRankUchipRes& operator=(GetWorldRankUchipRes&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields();
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const GetWorldRankUchipRes& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetWorldRankUchipRes* internal_default_instance() {
+    return reinterpret_cast<const GetWorldRankUchipRes*>(
+               &_GetWorldRankUchipRes_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    17;
+
+  void Swap(GetWorldRankUchipRes* other);
+  friend void swap(GetWorldRankUchipRes& a, GetWorldRankUchipRes& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetWorldRankUchipRes* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  GetWorldRankUchipRes* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const GetWorldRankUchipRes& from);
+  void MergeFrom(const GetWorldRankUchipRes& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(GetWorldRankUchipRes* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .WorldChipRankInfo rankinfo = 2;
+  int rankinfo_size() const;
+  void clear_rankinfo();
+  static const int kRankinfoFieldNumber = 2;
+  const ::WorldChipRankInfo& rankinfo(int index) const;
+  ::WorldChipRankInfo* mutable_rankinfo(int index);
+  ::WorldChipRankInfo* add_rankinfo();
+  ::google::protobuf::RepeatedPtrField< ::WorldChipRankInfo >*
+      mutable_rankinfo();
+  const ::google::protobuf::RepeatedPtrField< ::WorldChipRankInfo >&
+      rankinfo() const;
+
+  // required int32 status = 1;
+  bool has_status() const;
+  void clear_status();
+  static const int kStatusFieldNumber = 1;
+  ::google::protobuf::int32 status() const;
+  void set_status(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:GetWorldRankUchipRes)
+ private:
+  void set_has_status();
+  void clear_has_status();
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::HasBits<1> _has_bits_;
+  mutable int _cached_size_;
+  ::google::protobuf::RepeatedPtrField< ::WorldChipRankInfo > rankinfo_;
+  ::google::protobuf::int32 status_;
+  friend struct ::protobuf_game_2eproto::TableStruct;
+  friend void ::protobuf_game_2eproto::InitDefaultsGetWorldRankUchipResImpl();
+};
 // ===================================================================
 
 
@@ -3423,9 +3837,264 @@ inline void RecvLoginBonuesRes::set_status(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:RecvLoginBonuesRes.status)
 }
 
+// -------------------------------------------------------------------
+
+// WorldChipRankInfo
+
+// required string unick = 1;
+inline bool WorldChipRankInfo::has_unick() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void WorldChipRankInfo::set_has_unick() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void WorldChipRankInfo::clear_has_unick() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void WorldChipRankInfo::clear_unick() {
+  unick_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_unick();
+}
+inline const ::std::string& WorldChipRankInfo::unick() const {
+  // @@protoc_insertion_point(field_get:WorldChipRankInfo.unick)
+  return unick_.GetNoArena();
+}
+inline void WorldChipRankInfo::set_unick(const ::std::string& value) {
+  set_has_unick();
+  unick_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:WorldChipRankInfo.unick)
+}
+#if LANG_CXX11
+inline void WorldChipRankInfo::set_unick(::std::string&& value) {
+  set_has_unick();
+  unick_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:WorldChipRankInfo.unick)
+}
+#endif
+inline void WorldChipRankInfo::set_unick(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  set_has_unick();
+  unick_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:WorldChipRankInfo.unick)
+}
+inline void WorldChipRankInfo::set_unick(const char* value, size_t size) {
+  set_has_unick();
+  unick_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:WorldChipRankInfo.unick)
+}
+inline ::std::string* WorldChipRankInfo::mutable_unick() {
+  set_has_unick();
+  // @@protoc_insertion_point(field_mutable:WorldChipRankInfo.unick)
+  return unick_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* WorldChipRankInfo::release_unick() {
+  // @@protoc_insertion_point(field_release:WorldChipRankInfo.unick)
+  clear_has_unick();
+  return unick_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void WorldChipRankInfo::set_allocated_unick(::std::string* unick) {
+  if (unick != NULL) {
+    set_has_unick();
+  } else {
+    clear_has_unick();
+  }
+  unick_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), unick);
+  // @@protoc_insertion_point(field_set_allocated:WorldChipRankInfo.unick)
+}
+
+// required int32 uface = 2;
+inline bool WorldChipRankInfo::has_uface() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void WorldChipRankInfo::set_has_uface() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void WorldChipRankInfo::clear_has_uface() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void WorldChipRankInfo::clear_uface() {
+  uface_ = 0;
+  clear_has_uface();
+}
+inline ::google::protobuf::int32 WorldChipRankInfo::uface() const {
+  // @@protoc_insertion_point(field_get:WorldChipRankInfo.uface)
+  return uface_;
+}
+inline void WorldChipRankInfo::set_uface(::google::protobuf::int32 value) {
+  set_has_uface();
+  uface_ = value;
+  // @@protoc_insertion_point(field_set:WorldChipRankInfo.uface)
+}
+
+// required int32 usex = 3;
+inline bool WorldChipRankInfo::has_usex() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void WorldChipRankInfo::set_has_usex() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void WorldChipRankInfo::clear_has_usex() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void WorldChipRankInfo::clear_usex() {
+  usex_ = 0;
+  clear_has_usex();
+}
+inline ::google::protobuf::int32 WorldChipRankInfo::usex() const {
+  // @@protoc_insertion_point(field_get:WorldChipRankInfo.usex)
+  return usex_;
+}
+inline void WorldChipRankInfo::set_usex(::google::protobuf::int32 value) {
+  set_has_usex();
+  usex_ = value;
+  // @@protoc_insertion_point(field_set:WorldChipRankInfo.usex)
+}
+
+// required int32 uvip = 4;
+inline bool WorldChipRankInfo::has_uvip() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void WorldChipRankInfo::set_has_uvip() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void WorldChipRankInfo::clear_has_uvip() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void WorldChipRankInfo::clear_uvip() {
+  uvip_ = 0;
+  clear_has_uvip();
+}
+inline ::google::protobuf::int32 WorldChipRankInfo::uvip() const {
+  // @@protoc_insertion_point(field_get:WorldChipRankInfo.uvip)
+  return uvip_;
+}
+inline void WorldChipRankInfo::set_uvip(::google::protobuf::int32 value) {
+  set_has_uvip();
+  uvip_ = value;
+  // @@protoc_insertion_point(field_set:WorldChipRankInfo.uvip)
+}
+
+// required int32 uchip = 5;
+inline bool WorldChipRankInfo::has_uchip() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void WorldChipRankInfo::set_has_uchip() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void WorldChipRankInfo::clear_has_uchip() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void WorldChipRankInfo::clear_uchip() {
+  uchip_ = 0;
+  clear_has_uchip();
+}
+inline ::google::protobuf::int32 WorldChipRankInfo::uchip() const {
+  // @@protoc_insertion_point(field_get:WorldChipRankInfo.uchip)
+  return uchip_;
+}
+inline void WorldChipRankInfo::set_uchip(::google::protobuf::int32 value) {
+  set_has_uchip();
+  uchip_ = value;
+  // @@protoc_insertion_point(field_set:WorldChipRankInfo.uchip)
+}
+
+// -------------------------------------------------------------------
+
+// GetWorldRankUchipReq
+
+// required int32 rankNum = 1;
+inline bool GetWorldRankUchipReq::has_ranknum() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void GetWorldRankUchipReq::set_has_ranknum() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void GetWorldRankUchipReq::clear_has_ranknum() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void GetWorldRankUchipReq::clear_ranknum() {
+  ranknum_ = 0;
+  clear_has_ranknum();
+}
+inline ::google::protobuf::int32 GetWorldRankUchipReq::ranknum() const {
+  // @@protoc_insertion_point(field_get:GetWorldRankUchipReq.rankNum)
+  return ranknum_;
+}
+inline void GetWorldRankUchipReq::set_ranknum(::google::protobuf::int32 value) {
+  set_has_ranknum();
+  ranknum_ = value;
+  // @@protoc_insertion_point(field_set:GetWorldRankUchipReq.rankNum)
+}
+
+// -------------------------------------------------------------------
+
+// GetWorldRankUchipRes
+
+// required int32 status = 1;
+inline bool GetWorldRankUchipRes::has_status() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void GetWorldRankUchipRes::set_has_status() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void GetWorldRankUchipRes::clear_has_status() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void GetWorldRankUchipRes::clear_status() {
+  status_ = 0;
+  clear_has_status();
+}
+inline ::google::protobuf::int32 GetWorldRankUchipRes::status() const {
+  // @@protoc_insertion_point(field_get:GetWorldRankUchipRes.status)
+  return status_;
+}
+inline void GetWorldRankUchipRes::set_status(::google::protobuf::int32 value) {
+  set_has_status();
+  status_ = value;
+  // @@protoc_insertion_point(field_set:GetWorldRankUchipRes.status)
+}
+
+// repeated .WorldChipRankInfo rankinfo = 2;
+inline int GetWorldRankUchipRes::rankinfo_size() const {
+  return rankinfo_.size();
+}
+inline void GetWorldRankUchipRes::clear_rankinfo() {
+  rankinfo_.Clear();
+}
+inline const ::WorldChipRankInfo& GetWorldRankUchipRes::rankinfo(int index) const {
+  // @@protoc_insertion_point(field_get:GetWorldRankUchipRes.rankinfo)
+  return rankinfo_.Get(index);
+}
+inline ::WorldChipRankInfo* GetWorldRankUchipRes::mutable_rankinfo(int index) {
+  // @@protoc_insertion_point(field_mutable:GetWorldRankUchipRes.rankinfo)
+  return rankinfo_.Mutable(index);
+}
+inline ::WorldChipRankInfo* GetWorldRankUchipRes::add_rankinfo() {
+  // @@protoc_insertion_point(field_add:GetWorldRankUchipRes.rankinfo)
+  return rankinfo_.Add();
+}
+inline ::google::protobuf::RepeatedPtrField< ::WorldChipRankInfo >*
+GetWorldRankUchipRes::mutable_rankinfo() {
+  // @@protoc_insertion_point(field_mutable_list:GetWorldRankUchipRes.rankinfo)
+  return &rankinfo_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::WorldChipRankInfo >&
+GetWorldRankUchipRes::rankinfo() const {
+  // @@protoc_insertion_point(field_list:GetWorldRankUchipRes.rankinfo)
+  return rankinfo_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
