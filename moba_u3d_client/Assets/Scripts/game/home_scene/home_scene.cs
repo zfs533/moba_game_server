@@ -22,6 +22,7 @@ public class home_scene : MonoBehaviour
     private int vip = 0;
     public GameObject uinfo_dlg_prefab;
     public GameObject login_bonues;
+    public GameObject rank_list_prefab;
 
     void Start()
     {
@@ -94,6 +95,12 @@ public class home_scene : MonoBehaviour
     {
         PlayerPrefs.SetString("login_guest_key", "");
         SceneManager.LoadScene("login");
+    }
+
+    public void game_rank_test()
+    {
+        GameObject rank_list = GameObject.Instantiate(this.rank_list_prefab);
+        rank_list.transform.SetParent(this.transform, false);
     }
 
     // Update is called once per frame

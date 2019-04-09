@@ -21,6 +21,9 @@ public class system_server : Singletom<system_server>
             case (int)Cmd.eRecvLoginBonuesRes:
                 this.handle_recv_login_bonues(msg);
                 break;
+            case (int)Cmd.eGetWorldRankUchipRes:
+                this.handle_recv_world_rank(msg);
+                break;
             default:
                 Debug.Log("recv_msg not register call function===> ctype=> " + msg.ctype);
                 break;
@@ -61,6 +64,23 @@ public class system_server : Singletom<system_server>
         event_manager.Instance.dispatch_event(event_manager.EVT_GET_UGAME_INFO_SUCCESS, info);
     }
 
+    public void handle_recv_world_rank(cmd_msg msg)
+    {
+        GetWorldRankUchipRes res = proto_man.protobuf_deserialize<GetWorldRankUchipRes>(msg.body);
+        Debug.Log(res);
+        if (res == null)
+        {
+            return;
+        }
+        if (res.status != Respones.OK)
+        {
+            Debug.Log("world_rank_status " + res.status);
+            return;
+        }
+        List<WorldChipRankInfo> list = res.rankinfo;
+        event_manager.Instance.dispatch_event(event_manager.EVT_GET_RANK_LIST, list);
+    }
+
     public void load_user_ugame_info()
     {
         network.Instance.send_protobuf_cmd((int)Stype.System, (int)Cmd.eGetUgameInfoReq, null);
@@ -69,5 +89,12 @@ public class system_server : Singletom<system_server>
     public void recv_login_bonues()
     {
         network.Instance.send_protobuf_cmd((int)Stype.System, (int)Cmd.eRecvLoginBonuesReq, null);
+    }
+
+    public void game_rank_test()
+    {
+        GetWorldRankUchipReq req = new GetWorldRankUchipReq();
+        req.rankNum = 10;
+        network.Instance.send_protobuf_cmd((int)Stype.System, (int)Cmd.eGetWorldRankUchipReq, req);
     }
 }
