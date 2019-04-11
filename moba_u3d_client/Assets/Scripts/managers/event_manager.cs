@@ -13,6 +13,7 @@ public class event_manager : Singletom<event_manager>
     public static string EVT_GET_UGAME_INFO_SUCCESS = "get_ugame_info_success";
     public static string EVT_UPDATE_UGAME_INFO = "updata_ugame_info";
     public static string EVT_GET_RANK_LIST = "get_rank_list";
+    public static string EVT_GET_SYS_EMAIL = "get_sys_email";
     //-----------------------------------------------------
     public static string EVENT_TEST = "event_test";
 

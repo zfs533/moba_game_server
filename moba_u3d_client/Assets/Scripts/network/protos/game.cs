@@ -465,12 +465,12 @@ namespace gprotocol
   {
     public GetWorldRankUchipReq() {}
     
-    private int _rankNum;
-    [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"rankNum", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
-    public int rankNum
+    private int _ranknum;
+    [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"ranknum", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int ranknum
     {
-      get { return _rankNum; }
-      set { _rankNum = value; }
+      get { return _ranknum; }
+      set { _ranknum = value; }
     }
     private global::ProtoBuf.IExtension extensionObject;
     global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
@@ -494,6 +494,54 @@ namespace gprotocol
     public global::System.Collections.Generic.List<WorldChipRankInfo> rankinfo
     {
       get { return _rankinfo; }
+    }
+  
+    private global::ProtoBuf.IExtension extensionObject;
+    global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+      { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
+  }
+  
+  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"GetSystemMessageReq")]
+  public partial class GetSystemMessageReq : global::ProtoBuf.IExtensible
+  {
+    public GetSystemMessageReq() {}
+    
+    private int _vernum;
+    [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"vernum", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int vernum
+    {
+      get { return _vernum; }
+      set { _vernum = value; }
+    }
+    private global::ProtoBuf.IExtension extensionObject;
+    global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+      { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
+  }
+  
+  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"GetSystemMessageRes")]
+  public partial class GetSystemMessageRes : global::ProtoBuf.IExtensible
+  {
+    public GetSystemMessageRes() {}
+    
+    private int _status;
+    [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"status", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int status
+    {
+      get { return _status; }
+      set { _status = value; }
+    }
+    private int _vernum;
+    [global::ProtoBuf.ProtoMember(2, IsRequired = true, Name=@"vernum", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int vernum
+    {
+      get { return _vernum; }
+      set { _vernum = value; }
+    }
+    private readonly global::System.Collections.Generic.List<string> _info = new global::System.Collections.Generic.List<string>();
+    [global::ProtoBuf.ProtoMember(3, Name=@"info", DataFormat = global::ProtoBuf.DataFormat.Default)]
+    public global::System.Collections.Generic.List<string> info
+    {
+      get { return _info; }
     }
   
     private global::ProtoBuf.IExtension extensionObject;
@@ -577,7 +625,13 @@ namespace gprotocol
       eGetWorldRankUchipReq = 17,
             
       [global::ProtoBuf.ProtoEnum(Name=@"eGetWorldRankUchipRes", Value=18)]
-      eGetWorldRankUchipRes = 18
+      eGetWorldRankUchipRes = 18,
+            
+      [global::ProtoBuf.ProtoEnum(Name=@"eGetSystemMessageReq", Value=19)]
+      eGetSystemMessageReq = 19,
+            
+      [global::ProtoBuf.ProtoEnum(Name=@"eGetSystemMessageRes", Value=20)]
+      eGetSystemMessageRes = 20
     }
   
 }

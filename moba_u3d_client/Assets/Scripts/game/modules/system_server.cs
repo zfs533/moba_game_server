@@ -5,6 +5,8 @@ using gprotocol;
 //system_service_proxy
 public class system_server : Singletom<system_server>
 {
+    private int sys_msg_version = 0;
+    private List<string> sys_msgs = null;
     public void init()
     {
         network.Instance.add_service_listener((int)Stype.System, this.on_system_server_return);
@@ -23,6 +25,9 @@ public class system_server : Singletom<system_server>
                 break;
             case (int)Cmd.eGetWorldRankUchipRes:
                 this.handle_recv_world_rank(msg);
+                break;
+            case (int)Cmd.eGetSystemMessageRes:
+                this.handle_recv_sys_msg(msg);
                 break;
             default:
                 Debug.Log("recv_msg not register call function===> ctype=> " + msg.ctype);
@@ -81,6 +86,31 @@ public class system_server : Singletom<system_server>
         event_manager.Instance.dispatch_event(event_manager.EVT_GET_RANK_LIST, list);
     }
 
+    public void handle_recv_sys_msg(cmd_msg msg)
+    {
+        GetSystemMessageRes res = proto_man.protobuf_deserialize<GetSystemMessageRes>(msg.body);
+        Debug.Log(res);
+        if (res == null)
+        {
+            return;
+        }
+        if (res.status != Respones.OK)
+        {
+            Debug.Log("sys_msg_status: " + res.status);
+            return;
+        }
+        if (this.sys_msg_version == res.vernum)
+        {
+            Debug.Log("use the local data");
+        }
+        else
+        {
+            this.sys_msg_version = res.vernum;
+            this.sys_msgs = res.info;//List<string> info = res.info;
+        }
+        event_manager.Instance.dispatch_event(event_manager.EVT_GET_SYS_EMAIL, this.sys_msgs);
+    }
+
     public void load_user_ugame_info()
     {
         network.Instance.send_protobuf_cmd((int)Stype.System, (int)Cmd.eGetUgameInfoReq, null);
@@ -94,7 +124,13 @@ public class system_server : Singletom<system_server>
     public void game_rank_test()
     {
         GetWorldRankUchipReq req = new GetWorldRankUchipReq();
-        req.rankNum = 10;
+        req.ranknum = 10;
         network.Instance.send_protobuf_cmd((int)Stype.System, (int)Cmd.eGetWorldRankUchipReq, req);
+    }
+    public void get_sys_msg_info()
+    {
+        GetSystemMessageReq req = new GetSystemMessageReq();
+        req.vernum = this.sys_msg_version;
+        network.Instance.send_protobuf_cmd((int)Stype.System, (int)Cmd.eGetSystemMessageReq, req);
     }
 }

@@ -37,7 +37,7 @@ namespace protobuf_game_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[18];
+  static const ::google::protobuf::internal::ParseTable schema[20];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -79,6 +79,10 @@ void InitDefaultsGetWorldRankUchipReqImpl();
 void InitDefaultsGetWorldRankUchipReq();
 void InitDefaultsGetWorldRankUchipResImpl();
 void InitDefaultsGetWorldRankUchipRes();
+void InitDefaultsGetSystemMessageReqImpl();
+void InitDefaultsGetSystemMessageReq();
+void InitDefaultsGetSystemMessageResImpl();
+void InitDefaultsGetSystemMessageRes();
 inline void InitDefaults() {
   InitDefaultsGuestLoginReq();
   InitDefaultsUnameLoginReq();
@@ -98,6 +102,8 @@ inline void InitDefaults() {
   InitDefaultsWorldChipRankInfo();
   InitDefaultsGetWorldRankUchipReq();
   InitDefaultsGetWorldRankUchipRes();
+  InitDefaultsGetSystemMessageReq();
+  InitDefaultsGetSystemMessageRes();
 }
 }  // namespace protobuf_game_2eproto
 class AccountUpgradeReq;
@@ -112,6 +118,12 @@ extern EditProfileReqDefaultTypeInternal _EditProfileReq_default_instance_;
 class EditProfileRes;
 class EditProfileResDefaultTypeInternal;
 extern EditProfileResDefaultTypeInternal _EditProfileRes_default_instance_;
+class GetSystemMessageReq;
+class GetSystemMessageReqDefaultTypeInternal;
+extern GetSystemMessageReqDefaultTypeInternal _GetSystemMessageReq_default_instance_;
+class GetSystemMessageRes;
+class GetSystemMessageResDefaultTypeInternal;
+extern GetSystemMessageResDefaultTypeInternal _GetSystemMessageRes_default_instance_;
 class GetUgameInfoRes;
 class GetUgameInfoResDefaultTypeInternal;
 extern GetUgameInfoResDefaultTypeInternal _GetUgameInfoRes_default_instance_;
@@ -195,11 +207,13 @@ enum Cmd {
   eRecvLoginBonuesReq = 15,
   eRecvLoginBonuesRes = 16,
   eGetWorldRankUchipReq = 17,
-  eGetWorldRankUchipRes = 18
+  eGetWorldRankUchipRes = 18,
+  eGetSystemMessageReq = 19,
+  eGetSystemMessageRes = 20
 };
 bool Cmd_IsValid(int value);
 const Cmd Cmd_MIN = INVALID_CMD;
-const Cmd Cmd_MAX = eGetWorldRankUchipRes;
+const Cmd Cmd_MAX = eGetSystemMessageRes;
 const int Cmd_ARRAYSIZE = Cmd_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* Cmd_descriptor();
@@ -2401,10 +2415,10 @@ class GetWorldRankUchipReq : public ::google::protobuf::Message /* @@protoc_inse
 
   // accessors -------------------------------------------------------
 
-  // required int32 rankNum = 1;
+  // required int32 ranknum = 1;
   bool has_ranknum() const;
   void clear_ranknum();
-  static const int kRankNumFieldNumber = 1;
+  static const int kRanknumFieldNumber = 1;
   ::google::protobuf::int32 ranknum() const;
   void set_ranknum(::google::protobuf::int32 value);
 
@@ -2542,6 +2556,262 @@ class GetWorldRankUchipRes : public ::google::protobuf::Message /* @@protoc_inse
   ::google::protobuf::int32 status_;
   friend struct ::protobuf_game_2eproto::TableStruct;
   friend void ::protobuf_game_2eproto::InitDefaultsGetWorldRankUchipResImpl();
+};
+// -------------------------------------------------------------------
+
+class GetSystemMessageReq : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GetSystemMessageReq) */ {
+ public:
+  GetSystemMessageReq();
+  virtual ~GetSystemMessageReq();
+
+  GetSystemMessageReq(const GetSystemMessageReq& from);
+
+  inline GetSystemMessageReq& operator=(const GetSystemMessageReq& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  GetSystemMessageReq(GetSystemMessageReq&& from) noexcept
+    : GetSystemMessageReq() {
+    *this = ::std::move(from);
+  }
+
+  inline GetSystemMessageReq& operator=(GetSystemMessageReq&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields();
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const GetSystemMessageReq& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetSystemMessageReq* internal_default_instance() {
+    return reinterpret_cast<const GetSystemMessageReq*>(
+               &_GetSystemMessageReq_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    18;
+
+  void Swap(GetSystemMessageReq* other);
+  friend void swap(GetSystemMessageReq& a, GetSystemMessageReq& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetSystemMessageReq* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  GetSystemMessageReq* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const GetSystemMessageReq& from);
+  void MergeFrom(const GetSystemMessageReq& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(GetSystemMessageReq* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required int32 vernum = 1;
+  bool has_vernum() const;
+  void clear_vernum();
+  static const int kVernumFieldNumber = 1;
+  ::google::protobuf::int32 vernum() const;
+  void set_vernum(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:GetSystemMessageReq)
+ private:
+  void set_has_vernum();
+  void clear_has_vernum();
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::HasBits<1> _has_bits_;
+  mutable int _cached_size_;
+  ::google::protobuf::int32 vernum_;
+  friend struct ::protobuf_game_2eproto::TableStruct;
+  friend void ::protobuf_game_2eproto::InitDefaultsGetSystemMessageReqImpl();
+};
+// -------------------------------------------------------------------
+
+class GetSystemMessageRes : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:GetSystemMessageRes) */ {
+ public:
+  GetSystemMessageRes();
+  virtual ~GetSystemMessageRes();
+
+  GetSystemMessageRes(const GetSystemMessageRes& from);
+
+  inline GetSystemMessageRes& operator=(const GetSystemMessageRes& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  GetSystemMessageRes(GetSystemMessageRes&& from) noexcept
+    : GetSystemMessageRes() {
+    *this = ::std::move(from);
+  }
+
+  inline GetSystemMessageRes& operator=(GetSystemMessageRes&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields();
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const GetSystemMessageRes& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetSystemMessageRes* internal_default_instance() {
+    return reinterpret_cast<const GetSystemMessageRes*>(
+               &_GetSystemMessageRes_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    19;
+
+  void Swap(GetSystemMessageRes* other);
+  friend void swap(GetSystemMessageRes& a, GetSystemMessageRes& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetSystemMessageRes* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  GetSystemMessageRes* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const GetSystemMessageRes& from);
+  void MergeFrom(const GetSystemMessageRes& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(GetSystemMessageRes* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated string info = 3;
+  int info_size() const;
+  void clear_info();
+  static const int kInfoFieldNumber = 3;
+  const ::std::string& info(int index) const;
+  ::std::string* mutable_info(int index);
+  void set_info(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_info(int index, ::std::string&& value);
+  #endif
+  void set_info(int index, const char* value);
+  void set_info(int index, const char* value, size_t size);
+  ::std::string* add_info();
+  void add_info(const ::std::string& value);
+  #if LANG_CXX11
+  void add_info(::std::string&& value);
+  #endif
+  void add_info(const char* value);
+  void add_info(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField< ::std::string>& info() const;
+  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_info();
+
+  // required int32 status = 1;
+  bool has_status() const;
+  void clear_status();
+  static const int kStatusFieldNumber = 1;
+  ::google::protobuf::int32 status() const;
+  void set_status(::google::protobuf::int32 value);
+
+  // required int32 vernum = 2;
+  bool has_vernum() const;
+  void clear_vernum();
+  static const int kVernumFieldNumber = 2;
+  ::google::protobuf::int32 vernum() const;
+  void set_vernum(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:GetSystemMessageRes)
+ private:
+  void set_has_status();
+  void clear_has_status();
+  void set_has_vernum();
+  void clear_has_vernum();
+
+  // helper for ByteSizeLong()
+  size_t RequiredFieldsByteSizeFallback() const;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::HasBits<1> _has_bits_;
+  mutable int _cached_size_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> info_;
+  ::google::protobuf::int32 status_;
+  ::google::protobuf::int32 vernum_;
+  friend struct ::protobuf_game_2eproto::TableStruct;
+  friend void ::protobuf_game_2eproto::InitDefaultsGetSystemMessageResImpl();
 };
 // ===================================================================
 
@@ -4004,7 +4274,7 @@ inline void WorldChipRankInfo::set_uchip(::google::protobuf::int32 value) {
 
 // GetWorldRankUchipReq
 
-// required int32 rankNum = 1;
+// required int32 ranknum = 1;
 inline bool GetWorldRankUchipReq::has_ranknum() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -4019,13 +4289,13 @@ inline void GetWorldRankUchipReq::clear_ranknum() {
   clear_has_ranknum();
 }
 inline ::google::protobuf::int32 GetWorldRankUchipReq::ranknum() const {
-  // @@protoc_insertion_point(field_get:GetWorldRankUchipReq.rankNum)
+  // @@protoc_insertion_point(field_get:GetWorldRankUchipReq.ranknum)
   return ranknum_;
 }
 inline void GetWorldRankUchipReq::set_ranknum(::google::protobuf::int32 value) {
   set_has_ranknum();
   ranknum_ = value;
-  // @@protoc_insertion_point(field_set:GetWorldRankUchipReq.rankNum)
+  // @@protoc_insertion_point(field_set:GetWorldRankUchipReq.ranknum)
 }
 
 // -------------------------------------------------------------------
@@ -4086,9 +4356,162 @@ GetWorldRankUchipRes::rankinfo() const {
   return rankinfo_;
 }
 
+// -------------------------------------------------------------------
+
+// GetSystemMessageReq
+
+// required int32 vernum = 1;
+inline bool GetSystemMessageReq::has_vernum() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void GetSystemMessageReq::set_has_vernum() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void GetSystemMessageReq::clear_has_vernum() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void GetSystemMessageReq::clear_vernum() {
+  vernum_ = 0;
+  clear_has_vernum();
+}
+inline ::google::protobuf::int32 GetSystemMessageReq::vernum() const {
+  // @@protoc_insertion_point(field_get:GetSystemMessageReq.vernum)
+  return vernum_;
+}
+inline void GetSystemMessageReq::set_vernum(::google::protobuf::int32 value) {
+  set_has_vernum();
+  vernum_ = value;
+  // @@protoc_insertion_point(field_set:GetSystemMessageReq.vernum)
+}
+
+// -------------------------------------------------------------------
+
+// GetSystemMessageRes
+
+// required int32 status = 1;
+inline bool GetSystemMessageRes::has_status() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void GetSystemMessageRes::set_has_status() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void GetSystemMessageRes::clear_has_status() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void GetSystemMessageRes::clear_status() {
+  status_ = 0;
+  clear_has_status();
+}
+inline ::google::protobuf::int32 GetSystemMessageRes::status() const {
+  // @@protoc_insertion_point(field_get:GetSystemMessageRes.status)
+  return status_;
+}
+inline void GetSystemMessageRes::set_status(::google::protobuf::int32 value) {
+  set_has_status();
+  status_ = value;
+  // @@protoc_insertion_point(field_set:GetSystemMessageRes.status)
+}
+
+// required int32 vernum = 2;
+inline bool GetSystemMessageRes::has_vernum() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void GetSystemMessageRes::set_has_vernum() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void GetSystemMessageRes::clear_has_vernum() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void GetSystemMessageRes::clear_vernum() {
+  vernum_ = 0;
+  clear_has_vernum();
+}
+inline ::google::protobuf::int32 GetSystemMessageRes::vernum() const {
+  // @@protoc_insertion_point(field_get:GetSystemMessageRes.vernum)
+  return vernum_;
+}
+inline void GetSystemMessageRes::set_vernum(::google::protobuf::int32 value) {
+  set_has_vernum();
+  vernum_ = value;
+  // @@protoc_insertion_point(field_set:GetSystemMessageRes.vernum)
+}
+
+// repeated string info = 3;
+inline int GetSystemMessageRes::info_size() const {
+  return info_.size();
+}
+inline void GetSystemMessageRes::clear_info() {
+  info_.Clear();
+}
+inline const ::std::string& GetSystemMessageRes::info(int index) const {
+  // @@protoc_insertion_point(field_get:GetSystemMessageRes.info)
+  return info_.Get(index);
+}
+inline ::std::string* GetSystemMessageRes::mutable_info(int index) {
+  // @@protoc_insertion_point(field_mutable:GetSystemMessageRes.info)
+  return info_.Mutable(index);
+}
+inline void GetSystemMessageRes::set_info(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:GetSystemMessageRes.info)
+  info_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void GetSystemMessageRes::set_info(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:GetSystemMessageRes.info)
+  info_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void GetSystemMessageRes::set_info(int index, const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  info_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:GetSystemMessageRes.info)
+}
+inline void GetSystemMessageRes::set_info(int index, const char* value, size_t size) {
+  info_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:GetSystemMessageRes.info)
+}
+inline ::std::string* GetSystemMessageRes::add_info() {
+  // @@protoc_insertion_point(field_add_mutable:GetSystemMessageRes.info)
+  return info_.Add();
+}
+inline void GetSystemMessageRes::add_info(const ::std::string& value) {
+  info_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:GetSystemMessageRes.info)
+}
+#if LANG_CXX11
+inline void GetSystemMessageRes::add_info(::std::string&& value) {
+  info_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:GetSystemMessageRes.info)
+}
+#endif
+inline void GetSystemMessageRes::add_info(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  info_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:GetSystemMessageRes.info)
+}
+inline void GetSystemMessageRes::add_info(const char* value, size_t size) {
+  info_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:GetSystemMessageRes.info)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+GetSystemMessageRes::info() const {
+  // @@protoc_insertion_point(field_list:GetSystemMessageRes.info)
+  return info_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+GetSystemMessageRes::mutable_info() {
+  // @@protoc_insertion_point(field_mutable_list:GetSystemMessageRes.info)
+  return &info_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

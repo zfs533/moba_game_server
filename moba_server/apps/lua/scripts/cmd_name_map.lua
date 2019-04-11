@@ -19,6 +19,8 @@ local cmd_name_map =
 	"RecvLoginBonuesRes",
 	"GetWorldRankUchipReq",
 	"GetWorldRankUchipRes",
+	"GetSystemMessageReq",
+	"GetSystemMessageRes",
 }
 
 return cmd_name_map

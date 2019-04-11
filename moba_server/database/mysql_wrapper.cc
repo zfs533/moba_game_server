@@ -48,6 +48,7 @@ static void connect_work(uv_work_t* req)
 		uv_mutex_init(&c->lock);
 		r->context = c;
 		r->err = NULL;
+		mysql_set_character_set(pConn, "utf8");
 	}
 	else
 	{

@@ -141,6 +141,7 @@
     <Compile Include="Assets\Scripts\3rd\protobuf\SubItemToken.cs" />
     <Compile Include="Assets\Scripts\3rd\protobuf\WireType.cs" />
     <Compile Include="Assets\Scripts\game\game_manager.cs" />
+    <Compile Include="Assets\Scripts\game\home_scene\email_info.cs" />
     <Compile Include="Assets\Scripts\game\home_scene\home_scene.cs" />
     <Compile Include="Assets\Scripts\game\home_scene\login_bonues.cs" />
     <Compile Include="Assets\Scripts\game\home_scene\rank_list.cs" />

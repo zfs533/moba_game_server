@@ -30,6 +30,8 @@ enum Cmd {
 	eRecvLoginBonuesRes = 16;
 	eGetWorldRankUchipReq = 17;
 	eGetWorldRankUchipRes = 18;
+	eGetSystemMessageReq = 19;
+	eGetSystemMessageRes = 20;
 }
 
 message GuestLoginReq
@@ -140,11 +142,23 @@ message WorldChipRankInfo
 
 message GetWorldRankUchipReq
 {
-	required int32 rankNum = 1;
+	required int32 ranknum = 1;
 }
 
 message GetWorldRankUchipRes
 {
 	required int32 status = 1;
 	repeated WorldChipRankInfo rankinfo = 2;
+}
+
+message GetSystemMessageReq
+{
+	required int32 vernum = 1;
+}
+
+message GetSystemMessageRes
+{
+	required int32 status = 1;
+	required int32 vernum = 2;
+	repeated string info = 3;
 }

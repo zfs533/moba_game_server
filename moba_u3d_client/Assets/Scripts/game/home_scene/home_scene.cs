@@ -23,6 +23,12 @@ public class home_scene : MonoBehaviour
     public GameObject uinfo_dlg_prefab;
     public GameObject login_bonues;
     public GameObject rank_list_prefab;
+    public GameObject sys_email_prefab;
+    public GameObject home_page;
+    public GameObject war_page;
+    public Sprite[] btn_normal;
+    public Sprite[] btn_selected;
+    public Image[] tab_bottom_btns;
 
     void Start()
     {
@@ -31,6 +37,7 @@ public class home_scene : MonoBehaviour
         event_manager.Instance.add_event_listener(event_manager.EVT_UPDATE_UGAME_INFO, this.evt_update_ugame_info);
         this.init_user_info(event_manager.EVT_SET_MAIN_USER_INFO, null);
         this.evt_update_ugame_info(event_manager.EVT_UPDATE_UGAME_INFO, null);
+        this.show_home_page_ui();
     }
 
     private void init_user_info(string name,object data)
@@ -76,13 +83,18 @@ public class home_scene : MonoBehaviour
         //login bonues info
         if (ugames.Instance.ugameInfo.bonues_status == 0)
         {
-            this.login_bonues.SetActive(true);
-            this.login_bonues.GetComponent<login_bonues>().show_login_bonues(ugames.Instance.ugameInfo.days);
+            GameObject login_bonues = GameObject.Instantiate(this.login_bonues);
+            login_bonues.SetActive(true);
+            login_bonues.transform.SetParent(this.transform, false);
+            login_bonues.GetComponent<login_bonues>().show_login_bonues(ugames.Instance.ugameInfo.days);
         }
-        else
-        {
-            this.login_bonues.SetActive(false);
-        }
+    }
+    public void show_login_bonues_ui()
+    {
+        GameObject login_bonues = GameObject.Instantiate(this.login_bonues);
+        login_bonues.SetActive(true);
+        login_bonues.transform.SetParent(this.transform, false);
+        login_bonues.GetComponent<login_bonues>().show_login_bonues(ugames.Instance.ugameInfo.days);
     }
 
     public void on_uinfo_click()
@@ -97,10 +109,32 @@ public class home_scene : MonoBehaviour
         SceneManager.LoadScene("login");
     }
 
-    public void game_rank_test()
+    public void show_game_rank_ui()
     {
         GameObject rank_list = GameObject.Instantiate(this.rank_list_prefab);
         rank_list.transform.SetParent(this.transform, false);
+    }
+
+    public void show_sys_email_ui()
+    {
+        GameObject sys_email = GameObject.Instantiate(this.sys_email_prefab);
+        sys_email.transform.SetParent(this.transform, false);
+    }
+
+    public void show_home_page_ui()
+    {
+        this.home_page.SetActive(true);
+        this.war_page.SetActive(false);
+        this.tab_bottom_btns[0].sprite = this.btn_selected[0];
+        this.tab_bottom_btns[1].sprite = this.btn_normal[1];
+    }
+
+    public void show_war_page_ui()
+    {
+        this.home_page.SetActive(false);
+        this.war_page.SetActive(true);
+        this.tab_bottom_btns[0].sprite = this.btn_normal[0];
+        this.tab_bottom_btns[1].sprite = this.btn_selected[1];
     }
 
     // Update is called once per frame

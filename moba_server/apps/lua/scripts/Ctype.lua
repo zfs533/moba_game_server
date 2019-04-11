@@ -22,6 +22,8 @@ local Cmd =
 	eRecvLoginBonuesRes = 16,
 	eGetWorldRankUchipReq = 17,
 	eGetWorldRankUchipRes = 18,
+	eGetSystemMessageReq = 19,
+	eGetSystemMessageRes = 20,
 }
 
 return Cmd
