@@ -19,7 +19,8 @@ system_service_handlers[Cmd.eGetWorldRankUchipReq] = game_rank.get_world_uchip_r
 system_service_handlers[Cmd.eGetSystemMessageReq] = sys_msg.get_sys_message
 --{stype,ctype,utag,body}
 local function on_system_recv_cmd(s,msg)
-    Logger.debug("current system req cmd===================> "..msg[2])
+    Logger.debug("---------------------------recv_system_cmd")
+    utils.print_tb(msg)
     if ProtoMan.proto_type() == proto_type.PROTO_BUF then
         if system_service_handlers[msg[2]] then
             system_service_handlers[msg[2]](s,msg)

@@ -1,5 +1,5 @@
 local TableToStr = require("utils").table_to_str
-local PrintTable = require("utils").print_tb
+local utils = require("utils")
 
 local Stype = require("Stype")
 local Cmd = require("Ctype")
@@ -23,7 +23,8 @@ auth_service_handlers[Cmd.eLoginOutReq] = login_out.login_out
 
 --{stype,ctype,utag,body}
 function on_auth_recv_cmd(s,msg)
-    Logger.debug("current req cmd===================> "..msg[2])
+    Logger.debug("---------------------------recv_auth_cmd")
+    utils.print_tb(msg)
     if ProtoMan.proto_type() == proto_type.PROTO_BUF then
         if auth_service_handlers[msg[2]] then
             auth_service_handlers[msg[2]](s,msg)

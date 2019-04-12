@@ -10,6 +10,7 @@ public class game_manager :UnitySingletom<game_manager>
         event_manager.Instance.init();
         user_login.Instance.init();
         system_server.Instance.init();
+        logic_service.Instance.init();
         ulevel.Instance.init();
     }
 

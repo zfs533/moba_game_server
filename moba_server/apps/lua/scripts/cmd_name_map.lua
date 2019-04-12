@@ -21,6 +21,8 @@ local cmd_name_map =
 	"GetWorldRankUchipRes",
 	"GetSystemMessageReq",
 	"GetSystemMessageRes",
+	"LoginLogicReq",
+	"LoginLogicRes",
 }
 
 return cmd_name_map

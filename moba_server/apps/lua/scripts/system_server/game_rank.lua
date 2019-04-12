@@ -18,8 +18,6 @@ local function send_rank_info_to_client(s,uid,ret,center_info,ugame_data)
         info.uchip = ugame_data[i].uchip
         rank_info[i] = info
     end
-    Logger.debug("----------------------------------rank_info----------------------------------")
-    utils.print_tb(rank_info)
     local msg = {Stype.System,Cmd.eGetWorldRankUchipRes,uid,{status = Respones.OK,rankinfo = rank_info}}
     Session.send_msg(s,msg)
 end

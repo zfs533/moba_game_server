@@ -549,6 +549,23 @@ namespace gprotocol
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
+  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"LoginLogicRes")]
+  public partial class LoginLogicRes : global::ProtoBuf.IExtensible
+  {
+    public LoginLogicRes() {}
+    
+    private int _status;
+    [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"status", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int status
+    {
+      get { return _status; }
+      set { _status = value; }
+    }
+    private global::ProtoBuf.IExtension extensionObject;
+    global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+      { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
+  }
+  
     [global::ProtoBuf.ProtoContract(Name=@"Stype")]
     public enum Stype
     {
@@ -631,7 +648,13 @@ namespace gprotocol
       eGetSystemMessageReq = 19,
             
       [global::ProtoBuf.ProtoEnum(Name=@"eGetSystemMessageRes", Value=20)]
-      eGetSystemMessageRes = 20
+      eGetSystemMessageRes = 20,
+            
+      [global::ProtoBuf.ProtoEnum(Name=@"eLoginLogicReq", Value=21)]
+      eLoginLogicReq = 21,
+            
+      [global::ProtoBuf.ProtoEnum(Name=@"eLoginLogicRes", Value=22)]
+      eLoginLogicRes = 22
     }
   
 }

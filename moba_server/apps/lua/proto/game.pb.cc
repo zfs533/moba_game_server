@@ -119,6 +119,11 @@ class GetSystemMessageResDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<GetSystemMessageRes>
       _instance;
 } _GetSystemMessageRes_default_instance_;
+class LoginLogicResDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<LoginLogicRes>
+      _instance;
+} _LoginLogicRes_default_instance_;
 namespace protobuf_game_2eproto {
 void InitDefaultsGuestLoginReqImpl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -544,7 +549,28 @@ void InitDefaultsGetSystemMessageRes() {
   ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsGetSystemMessageResImpl);
 }
 
-::google::protobuf::Metadata file_level_metadata[20];
+void InitDefaultsLoginLogicResImpl() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
+#else
+  ::google::protobuf::internal::InitProtobufDefaults();
+#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  {
+    void* ptr = &::_LoginLogicRes_default_instance_;
+    new (ptr) ::LoginLogicRes();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::LoginLogicRes::InitAsDefaultInstance();
+}
+
+void InitDefaultsLoginLogicRes() {
+  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
+  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsLoginLogicResImpl);
+}
+
+::google::protobuf::Metadata file_level_metadata[21];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[2];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
@@ -744,6 +770,13 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   0,
   1,
   ~0u,
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::LoginLogicRes, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::LoginLogicRes, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::LoginLogicRes, status_),
+  0,
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, 6, sizeof(::GuestLoginReq)},
@@ -766,6 +799,7 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 169, 176, sizeof(::GetWorldRankUchipRes)},
   { 178, 184, sizeof(::GetSystemMessageReq)},
   { 185, 193, sizeof(::GetSystemMessageRes)},
+  { 196, 202, sizeof(::LoginLogicRes)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -789,6 +823,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::_GetWorldRankUchipRes_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_GetSystemMessageReq_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_GetSystemMessageRes_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::_LoginLogicRes_default_instance_),
 };
 
 void protobuf_AssignDescriptors() {
@@ -807,7 +842,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 20);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 21);
 }
 
 void AddDescriptorsImpl() {
@@ -843,23 +878,24 @@ void AddDescriptorsImpl() {
       "ChipRankInfo\"%\n\023GetSystemMessageReq\022\016\n\006v"
       "ernum\030\001 \002(\005\"C\n\023GetSystemMessageRes\022\016\n\006st"
       "atus\030\001 \002(\005\022\016\n\006vernum\030\002 \002(\005\022\014\n\004info\030\003 \003(\t"
-      "*;\n\005Stype\022\021\n\rINVALID_STYPE\020\000\022\010\n\004Auth\020\001\022\n"
-      "\n\006System\020\002\022\t\n\005Logic\020\003*\315\003\n\003Cmd\022\017\n\013INVALID"
-      "_CMD\020\000\022\022\n\016eGuestLoginReq\020\001\022\022\n\016eGuestLogi"
-      "nRes\020\002\022\014\n\010eRelogin\020\003\022\021\n\reUserLostConn\020\004\022"
-      "\023\n\017eEditProfileReq\020\005\022\023\n\017eEditProfileRes\020"
-      "\006\022\026\n\022eAccountUpgradeReq\020\007\022\026\n\022eAccountUpg"
-      "radeRes\020\010\022\022\n\016eUnameLoginReq\020\t\022\022\n\016eUnameL"
-      "oginRes\020\n\022\020\n\014eLoginOutReq\020\013\022\020\n\014eLoginOut"
-      "Res\020\014\022\024\n\020eGetUgameInfoReq\020\r\022\024\n\020eGetUgame"
-      "InfoRes\020\016\022\027\n\023eRecvLoginBonuesReq\020\017\022\027\n\023eR"
-      "ecvLoginBonuesRes\020\020\022\031\n\025eGetWorldRankUchi"
-      "pReq\020\021\022\031\n\025eGetWorldRankUchipRes\020\022\022\030\n\024eGe"
-      "tSystemMessageReq\020\023\022\030\n\024eGetSystemMessage"
-      "Res\020\024"
+      "\"\037\n\rLoginLogicRes\022\016\n\006status\030\001 \002(\005*;\n\005Sty"
+      "pe\022\021\n\rINVALID_STYPE\020\000\022\010\n\004Auth\020\001\022\n\n\006Syste"
+      "m\020\002\022\t\n\005Logic\020\003*\365\003\n\003Cmd\022\017\n\013INVALID_CMD\020\000\022"
+      "\022\n\016eGuestLoginReq\020\001\022\022\n\016eGuestLoginRes\020\002\022"
+      "\014\n\010eRelogin\020\003\022\021\n\reUserLostConn\020\004\022\023\n\017eEdi"
+      "tProfileReq\020\005\022\023\n\017eEditProfileRes\020\006\022\026\n\022eA"
+      "ccountUpgradeReq\020\007\022\026\n\022eAccountUpgradeRes"
+      "\020\010\022\022\n\016eUnameLoginReq\020\t\022\022\n\016eUnameLoginRes"
+      "\020\n\022\020\n\014eLoginOutReq\020\013\022\020\n\014eLoginOutRes\020\014\022\024"
+      "\n\020eGetUgameInfoReq\020\r\022\024\n\020eGetUgameInfoRes"
+      "\020\016\022\027\n\023eRecvLoginBonuesReq\020\017\022\027\n\023eRecvLogi"
+      "nBonuesRes\020\020\022\031\n\025eGetWorldRankUchipReq\020\021\022"
+      "\031\n\025eGetWorldRankUchipRes\020\022\022\030\n\024eGetSystem"
+      "MessageReq\020\023\022\030\n\024eGetSystemMessageRes\020\024\022\022"
+      "\n\016eLoginLogicReq\020\025\022\022\n\016eLoginLogicRes\020\026"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 1725);
+      descriptor, 1798);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "game.proto", &protobuf_RegisterTypes);
 }
@@ -918,6 +954,8 @@ bool Cmd_IsValid(int value) {
     case 18:
     case 19:
     case 20:
+    case 21:
+    case 22:
       return true;
     default:
       return false;
@@ -7374,6 +7412,249 @@ void GetSystemMessageRes::InternalSwap(GetSystemMessageRes* other) {
 }
 
 ::google::protobuf::Metadata GetSystemMessageRes::GetMetadata() const {
+  protobuf_game_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_game_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void LoginLogicRes::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int LoginLogicRes::kStatusFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+LoginLogicRes::LoginLogicRes()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    ::protobuf_game_2eproto::InitDefaultsLoginLogicRes();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:LoginLogicRes)
+}
+LoginLogicRes::LoginLogicRes(const LoginLogicRes& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      _has_bits_(from._has_bits_),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  status_ = from.status_;
+  // @@protoc_insertion_point(copy_constructor:LoginLogicRes)
+}
+
+void LoginLogicRes::SharedCtor() {
+  _cached_size_ = 0;
+  status_ = 0;
+}
+
+LoginLogicRes::~LoginLogicRes() {
+  // @@protoc_insertion_point(destructor:LoginLogicRes)
+  SharedDtor();
+}
+
+void LoginLogicRes::SharedDtor() {
+}
+
+void LoginLogicRes::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* LoginLogicRes::descriptor() {
+  ::protobuf_game_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_game_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const LoginLogicRes& LoginLogicRes::default_instance() {
+  ::protobuf_game_2eproto::InitDefaultsLoginLogicRes();
+  return *internal_default_instance();
+}
+
+LoginLogicRes* LoginLogicRes::New(::google::protobuf::Arena* arena) const {
+  LoginLogicRes* n = new LoginLogicRes;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void LoginLogicRes::Clear() {
+// @@protoc_insertion_point(message_clear_start:LoginLogicRes)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  status_ = 0;
+  _has_bits_.Clear();
+  _internal_metadata_.Clear();
+}
+
+bool LoginLogicRes::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:LoginLogicRes)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required int32 status = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+          set_has_status();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &status_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:LoginLogicRes)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:LoginLogicRes)
+  return false;
+#undef DO_
+}
+
+void LoginLogicRes::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:LoginLogicRes)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // required int32 status = 1;
+  if (cached_has_bits & 0x00000001u) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->status(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:LoginLogicRes)
+}
+
+::google::protobuf::uint8* LoginLogicRes::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:LoginLogicRes)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // required int32 status = 1;
+  if (cached_has_bits & 0x00000001u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->status(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:LoginLogicRes)
+  return target;
+}
+
+size_t LoginLogicRes::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:LoginLogicRes)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  // required int32 status = 1;
+  if (has_status()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->status());
+  }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void LoginLogicRes::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:LoginLogicRes)
+  GOOGLE_DCHECK_NE(&from, this);
+  const LoginLogicRes* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const LoginLogicRes>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:LoginLogicRes)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:LoginLogicRes)
+    MergeFrom(*source);
+  }
+}
+
+void LoginLogicRes::MergeFrom(const LoginLogicRes& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:LoginLogicRes)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.has_status()) {
+    set_status(from.status());
+  }
+}
+
+void LoginLogicRes::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:LoginLogicRes)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void LoginLogicRes::CopyFrom(const LoginLogicRes& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:LoginLogicRes)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool LoginLogicRes::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+  return true;
+}
+
+void LoginLogicRes::Swap(LoginLogicRes* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void LoginLogicRes::InternalSwap(LoginLogicRes* other) {
+  using std::swap;
+  swap(status_, other->status_);
+  swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata LoginLogicRes::GetMetadata() const {
   protobuf_game_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_game_2eproto::file_level_metadata[kIndexInFileMessages];
 }

@@ -32,6 +32,8 @@ enum Cmd {
 	eGetWorldRankUchipRes = 18;
 	eGetSystemMessageReq = 19;
 	eGetSystemMessageRes = 20;
+	eLoginLogicReq = 21;
+	eLoginLogicRes = 22;
 }
 
 message GuestLoginReq
@@ -161,4 +163,9 @@ message GetSystemMessageRes
 	required int32 status = 1;
 	required int32 vernum = 2;
 	repeated string info = 3;
+}
+
+message LoginLogicRes
+{
+	required int32 status = 1;
 }

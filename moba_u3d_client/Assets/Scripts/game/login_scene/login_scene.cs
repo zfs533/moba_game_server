@@ -14,6 +14,7 @@ public class login_scene : MonoBehaviour
     {
         event_manager.Instance.add_event_listener(event_manager.EVT_LOGIN_SUCCESS, this.evt_login_success);
         event_manager.Instance.add_event_listener(event_manager.EVT_GET_UGAME_INFO_SUCCESS, this.evt_get_ugame_info);
+        event_manager.Instance.add_event_listener(event_manager.EVT_LOGIN_LOGIC_SERVER_SUCCESS, this.evt_login_logic_server);
     }
     
     void evt_login_success(string name, object udata)
@@ -21,6 +22,11 @@ public class login_scene : MonoBehaviour
         system_server.Instance.load_user_ugame_info();
     }
     void evt_get_ugame_info(string name, object udata)
+    {
+//        SceneManager.LoadScene("home_scene");
+        logic_service.Instance.login_logic_server();
+    }
+    void evt_login_logic_server(string name, object udata)
     {
         SceneManager.LoadScene("home_scene");
     }
@@ -52,5 +58,6 @@ public class login_scene : MonoBehaviour
     {
         event_manager.Instance.remove_event_listener(event_manager.EVT_LOGIN_SUCCESS, this.evt_login_success);
         event_manager.Instance.remove_event_listener(event_manager.EVT_GET_UGAME_INFO_SUCCESS, this.evt_get_ugame_info);
+        event_manager.Instance.remove_event_listener(event_manager.EVT_LOGIN_LOGIC_SERVER_SUCCESS, this.evt_login_logic_server);
     }
 }
