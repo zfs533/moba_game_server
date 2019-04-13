@@ -29,11 +29,10 @@ local Stype = require("Stype")
 Netbus.tcp_listen(servers[Stype.Logic].port,servers[Stype.Logic].ip)
 
 --register service
-
-  local ret = Service.register(Stype.Logic,logic_server)
+local ret = Service.register(Stype.Logic,logic_server)
   if ret then
     Logger.debug("register logic_server:[" .. Stype.Logic.. "] success!!!")
   else
     Logger.debug("register logic_server:[" .. Stype.Logic.. "] failed!!!")
-  end
+end
 

@@ -276,6 +276,7 @@ static void uv_connection(uv_stream_t* server, int status)
 	//告诉event loop，让他帮你管理哪个事件
 	//将client交给libuv event loop管理
 	uv_read_start((uv_stream_t*)client,uv_alloc_buf,after_read);
+	service_man::on_session_connect((session*)s);
 }
 
 }

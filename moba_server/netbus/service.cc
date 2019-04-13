@@ -24,3 +24,8 @@ bool service::on_session_recv_raw_cmd(session* s,struct raw_cmd* raw)
 {
 	return false;
 }
+
+void service::on_session_connect(session* s,int stype)
+{
+
+}

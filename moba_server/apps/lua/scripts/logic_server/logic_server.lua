@@ -12,10 +12,10 @@ local game_mgr = require("logic_server/game_mgr")
 
 local logic_service_handlers = {}
 logic_service_handlers[Cmd.eLoginLogicReq] = game_mgr.login_logic_server
-logic_service_handlers[Cmd.eUserLostConn] = game_mgr.user_lost_connect--玩家掉线
+logic_service_handlers[Cmd.eUserLostConn] = game_mgr.client_disconnect--玩家掉线
 
 --{stype,ctype,utag,body}
-function on_logic_recv_cmd(s,msg)
+local function on_logic_recv_cmd(s,msg)
     Logger.debug("---------------------------recv_logic_cmd")
     utils.print_tb(msg)
     if ProtoMan.proto_type() == proto_type.PROTO_BUF then
@@ -30,15 +30,19 @@ function on_logic_recv_cmd(s,msg)
     end
 end
 
-function on_logic_session_disconnect(s,stype)
-    local ip,port = Session.get_address(s)
-    Logger.debug("logic_server",port,ip)
+local function on_logic_session_disconnect(s,stype)
+    game_mgr.gatway_disconnect(s,stype)
+end
+
+local function on_logic_session_connect(s,stype)
+    game_mgr.gatway_connect(s,stype)
 end
 
 local logic_server = 
 {
     on_session_recv_cmd = on_logic_recv_cmd,
     on_session_disconnect = on_logic_session_disconnect,
+    on_session_connect = on_logic_session_connect,
 }
 
 return logic_server

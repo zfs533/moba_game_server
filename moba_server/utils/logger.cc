@@ -124,7 +124,7 @@ logger::log(const char* file_name,
 	buf[5] = uv_buf_init(&new_line, 1);
 
 	uv_fs_t writeReq;
-	int result = uv_fs_write(uv_default_loop(), &writeReq, g_file_handle.result, buf, sizeof(buf) / sizeof(buf[0]), -1, NULL);
+	int result = uv_fs_write(NULL, &writeReq, g_file_handle.result, buf, sizeof(buf) / sizeof(buf[0]), -1, NULL);
 	if (result < 0) {
 		fprintf(stderr, "log failed %s%s%s%s", g_format_time, g_log_level[level], msg_meta_info, msg_content);
 	}

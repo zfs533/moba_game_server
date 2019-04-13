@@ -271,7 +271,7 @@ static int send_msg_tolua(lua_State* tolua_S)
 	//read table key-value and push in lua stack
 	struct cmd_msg msg;
 	int n = luaL_len(tolua_S,2);
-	if(n != 4)
+	if(n != 4 && n !=3 )
 	{
 		goto lua_failed;
 	}
@@ -289,6 +289,13 @@ static int send_msg_tolua(lua_State* tolua_S)
 
 	lua_pushnumber(tolua_S, 4);
 	lua_gettable(tolua_S, 2);
+
+	if (n == 3)
+	{
+		msg.body = NULL;
+		s->send_msg(&msg);
+		return 0;
+	}
 
 	if(proto_man::proto_type() == PROTO_JSON)
 	{

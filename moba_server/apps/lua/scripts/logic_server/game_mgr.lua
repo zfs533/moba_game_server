@@ -34,7 +34,7 @@ local function login_logic_server(s,req)
     end)
 end
 --{stype,ctype,utag,body}
-local function user_lost_connect(e,req)
+local function client_disconnect(e,req)
     local uid = req[3]
     if logic_server_players[uid] then
         logic_server_players[uid] = nil
@@ -42,9 +42,25 @@ local function user_lost_connect(e,req)
     end
 end
 
+local function gatway_disconnect(s,stype)
+    local k,v 
+    for k,v in pairs(logic_server_players) do
+        v:set_session(nil)
+    end
+end
+
+local function gatway_connect(s,stype)
+    local k,v 
+    for k,v in pairs(logic_server_players) do
+        v:set_session(s)
+    end
+end
+
 local game_mgr = {
     login_logic_server = login_logic_server,
-    user_lost_connect = user_lost_connect,
+    client_disconnect = client_disconnect,
+    gatway_disconnect = gatway_disconnect,
+    gatway_connect = gatway_connect,
 }
 
 return game_mgr

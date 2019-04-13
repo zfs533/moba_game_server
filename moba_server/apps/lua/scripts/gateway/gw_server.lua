@@ -188,9 +188,9 @@ function on_gw_sesssion_disconnected(s,stype)
     end
 
     --客户端uid用户掉线了，把这个事件告诉和网关连接的stype类型的服务器
-    Logger.debug("uid=> "..uid)
+    Logger.debug("lose player uid=> "..uid)
     if uid ~= 0 then
-        local user_lost = {stype,Cmd.eUserLostConn,uid,{status = 0}}
+        local user_lost = {stype,Cmd.eUserLostConn,uid,nil}
         Session.send_msg(server_session,user_lost)
     end
 end
