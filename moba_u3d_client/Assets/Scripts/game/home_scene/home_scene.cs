@@ -24,6 +24,7 @@ public class home_scene : MonoBehaviour
     public GameObject login_bonues;
     public GameObject rank_list_prefab;
     public GameObject sys_email_prefab;
+    public GameObject match_prefab;
     public GameObject home_page;
     public GameObject war_page;
     public Sprite[] btn_normal;
@@ -135,6 +136,20 @@ public class home_scene : MonoBehaviour
         this.war_page.SetActive(true);
         this.tab_bottom_btns[0].sprite = this.btn_normal[0];
         this.tab_bottom_btns[1].sprite = this.btn_selected[1];
+    }
+
+    public void math_sgyd()
+    {
+        ugames.Instance.set_zid(Zone.SGYD);
+        GameObject math = GameObject.Instantiate(this.match_prefab);
+        math.transform.SetParent(this.transform, false);
+    }
+
+    public void math_assy()
+    {
+        ugames.Instance.set_zid(Zone.ASSY);
+        GameObject math = GameObject.Instantiate(this.match_prefab);
+        math.transform.SetParent(this.transform, false);
     }
 
     // Update is called once per frame

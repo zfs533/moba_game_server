@@ -566,6 +566,95 @@ namespace gprotocol
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
+  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"EnterZoneReq")]
+  public partial class EnterZoneReq : global::ProtoBuf.IExtensible
+  {
+    public EnterZoneReq() {}
+    
+    private int _zid;
+    [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"zid", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int zid
+    {
+      get { return _zid; }
+      set { _zid = value; }
+    }
+    private global::ProtoBuf.IExtension extensionObject;
+    global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+      { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
+  }
+  
+  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"EnterZoneRes")]
+  public partial class EnterZoneRes : global::ProtoBuf.IExtensible
+  {
+    public EnterZoneRes() {}
+    
+    private int _status;
+    [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"status", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int status
+    {
+      get { return _status; }
+      set { _status = value; }
+    }
+    private global::ProtoBuf.IExtension extensionObject;
+    global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+      { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
+  }
+  
+  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"EnterMatch")]
+  public partial class EnterMatch : global::ProtoBuf.IExtensible
+  {
+    public EnterMatch() {}
+    
+    private int _zid;
+    [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"zid", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int zid
+    {
+      get { return _zid; }
+      set { _zid = value; }
+    }
+    private int _matchid;
+    [global::ProtoBuf.ProtoMember(2, IsRequired = true, Name=@"matchid", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int matchid
+    {
+      get { return _matchid; }
+      set { _matchid = value; }
+    }
+    private global::ProtoBuf.IExtension extensionObject;
+    global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+      { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
+  }
+  
+  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"UserArrived")]
+  public partial class UserArrived : global::ProtoBuf.IExtensible
+  {
+    public UserArrived() {}
+    
+    private string _unick;
+    [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"unick", DataFormat = global::ProtoBuf.DataFormat.Default)]
+    public string unick
+    {
+      get { return _unick; }
+      set { _unick = value; }
+    }
+    private int _uface;
+    [global::ProtoBuf.ProtoMember(2, IsRequired = true, Name=@"uface", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int uface
+    {
+      get { return _uface; }
+      set { _uface = value; }
+    }
+    private int _usex;
+    [global::ProtoBuf.ProtoMember(3, IsRequired = true, Name=@"usex", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
+    public int usex
+    {
+      get { return _usex; }
+      set { _usex = value; }
+    }
+    private global::ProtoBuf.IExtension extensionObject;
+    global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+      { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
+  }
+  
     [global::ProtoBuf.ProtoContract(Name=@"Stype")]
     public enum Stype
     {
@@ -654,7 +743,19 @@ namespace gprotocol
       eLoginLogicReq = 21,
             
       [global::ProtoBuf.ProtoEnum(Name=@"eLoginLogicRes", Value=22)]
-      eLoginLogicRes = 22
+      eLoginLogicRes = 22,
+            
+      [global::ProtoBuf.ProtoEnum(Name=@"eEnterZoneReq", Value=23)]
+      eEnterZoneReq = 23,
+            
+      [global::ProtoBuf.ProtoEnum(Name=@"eEnterZoneRes", Value=24)]
+      eEnterZoneRes = 24,
+            
+      [global::ProtoBuf.ProtoEnum(Name=@"eEnterMatch", Value=25)]
+      eEnterMatch = 25,
+            
+      [global::ProtoBuf.ProtoEnum(Name=@"eUserArrived", Value=26)]
+      eUserArrived = 26
     }
   
 }

@@ -2,18 +2,20 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{5CD12733-A4EB-74C0-AA10-ACB36210EE88}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
   </PropertyGroup>
@@ -53,684 +55,686 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\3rd\protobuf\BclHelpers.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\BufferExtension.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\BufferPool.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\CallbackAttributes.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Compiler\CompilerContext.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Compiler\CompilerDelegates.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Compiler\Local.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\DataFormat.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Extensible.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\ExtensibleUtil.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\GlobalSuppressions.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Helpers.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\IExtensible.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\IExtension.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\ImplicitFields.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\KeyValuePairProxy.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Meta\AttributeMap.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Meta\BasicList.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Meta\CallbackSet.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Meta\MetaType.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Meta\RuntimeTypeModel.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Meta\SubType.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Meta\TypeFormatEventArgs.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Meta\TypeModel.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Meta\ValueMember.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\NetObjectCache.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\PrefixStyle.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\ProtoContractAttribute.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\ProtoEnumAttribute.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\ProtoException.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\ProtoIgnoreAttribute.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\ProtoIncludeAttribute.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\ProtoMemberAttribute.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\ProtoReader.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\ProtoWriter.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\SerializationContext.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializer.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\ArrayDecorator.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\BlobSerializer.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\BooleanSerializer(1).cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\ByteSerializer.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\CharSerializer.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\CompiledSerializer.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\DateTimeSerializer.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\DecimalSerializer.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\DefaultValueDecorator.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\DoubleSerializer.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\EnumSerializer.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\FieldDecorator.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\GuidSerializer.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\Int16Serializer.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\Int32Serializer.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\Int64Serializer.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\IProtoSerializer.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\IProtoTypeSerializer.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\ISerializerProxy.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\KeyValuePairDecorator.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\ListDecorator.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\MemberSpecifiedDecorator.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\NetObjectSerializer.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\NullDecorator.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\ParseableSerializer.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\PropertyDecorator.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\ProtoDecoratorBase.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\SByteSerializer.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\SingleSerializer.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\StringSerializer.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\SubItemSerializer.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\SurrogateSerializer.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\SystemTypeSerializer.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\TagDecorator.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\TimeSpanSerializer.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\TupleSerializer.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\TypeSerializer.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\UInt16Serializer.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\UInt32Serializer.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\UInt64Serializer.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\UriDecorator.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\ServiceModel\ProtoBehaviorAttribute.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\ServiceModel\ProtoBehaviorExtensionElement.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\ServiceModel\ProtoEndpointBehavior.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\ServiceModel\ProtoOperationBehavior.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\ServiceModel\XmlProtoSerializer.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\SubItemToken.cs" />
-     <Compile Include="Assets\Scripts\3rd\protobuf\WireType.cs" />
-     <Compile Include="Assets\Scripts\game\game_manager.cs" />
-     <Compile Include="Assets\Scripts\game\home_scene\email_info.cs" />
-     <Compile Include="Assets\Scripts\game\home_scene\home_scene.cs" />
-     <Compile Include="Assets\Scripts\game\home_scene\login_bonues.cs" />
-     <Compile Include="Assets\Scripts\game\home_scene\rank_list.cs" />
-     <Compile Include="Assets\Scripts\game\home_scene\user_info_dlg.cs" />
-     <Compile Include="Assets\Scripts\game\login_scene\login_scene.cs" />
-     <Compile Include="Assets\Scripts\game\modules\logic_service.cs" />
-     <Compile Include="Assets\Scripts\game\modules\system_server.cs" />
-     <Compile Include="Assets\Scripts\game\modules\ugames.cs" />
-     <Compile Include="Assets\Scripts\game\modules\ulevel.cs" />
-     <Compile Include="Assets\Scripts\game\modules\user_login.cs" />
-     <Compile Include="Assets\Scripts\game\Respones.cs" />
-     <Compile Include="Assets\Scripts\managers\audio_manager.cs" />
-     <Compile Include="Assets\Scripts\managers\event_manager.cs" />
-     <Compile Include="Assets\Scripts\network\data_viewer.cs" />
-     <Compile Include="Assets\Scripts\network\network.cs" />
-     <Compile Include="Assets\Scripts\network\proto_man.cs" />
-     <Compile Include="Assets\Scripts\network\protos\game.cs" />
-     <Compile Include="Assets\Scripts\network\tcp_packer.cs" />
-     <Compile Include="Assets\Scripts\utils\ShowFPS.cs" />
-     <Compile Include="Assets\Scripts\utils\Singleton.cs" />
-     <Compile Include="Assets\Scripts\utils\utils.cs" />
- <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>H:/Apan_WorkAbout/duokemeng/mytest/server/moba_game_server/moba_u3d_client/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>H:/Apan_WorkAbout/duokemeng/mytest/server/moba_game_server/moba_u3d_client/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>H:/Apan_WorkAbout/duokemeng/mytest/server/moba_game_server/moba_u3d_client/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.TextMeshPro">
- <HintPath>H:/Apan_WorkAbout/duokemeng/mytest/server/moba_game_server/moba_u3d_client/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Analytics.DataPrivacy">
- <HintPath>H:/Apan_WorkAbout/duokemeng/mytest/server/moba_game_server/moba_u3d_client/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.AIModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.ARModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.AccessibilityModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AccessibilityModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.AnimationModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AnimationModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.AssetBundleModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AssetBundleModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.AudioModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AudioModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.BaselibModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.BaselibModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.ClothModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ClothModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.ClusterInputModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.ClusterRendererModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.CoreModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.CrashReportingModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.DirectorModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.DirectorModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.FileSystemHttpModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.FileSystemHttpModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.GameCenterModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.GameCenterModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.GridModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.GridModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.HotReloadModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.HotReloadModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.IMGUIModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.IMGUIModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.ImageConversionModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ImageConversionModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.InputModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.InputModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.JSONSerializeModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.JSONSerializeModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.LocalizationModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.LocalizationModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.ParticleSystemModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.PerformanceReportingModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.PhysicsModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.PhysicsModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Physics2DModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.Physics2DModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.ProfilerModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ProfilerModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.ScreenCaptureModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.SharedInternalsModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.SpriteMaskModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.SpriteShapeModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.StreamingModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.StreamingModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.StyleSheetsModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.StyleSheetsModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.SubstanceModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.SubstanceModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.TLSModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.TLSModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.TerrainModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.TerrainPhysicsModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainPhysicsModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.TextCoreModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.TextCoreModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.TextRenderingModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.TilemapModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.TilemapModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.TimelineModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.TimelineModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.UIModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UIModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.UIElementsModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.UNETModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UNETModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.UmbraModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UmbraModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.UnityAnalyticsModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.UnityConnectModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityConnectModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.UnityTestProtocolModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityTestProtocolModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.UnityWebRequestModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.UnityWebRequestAudioModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.UnityWebRequestTextureModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.UnityWebRequestWWWModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.VFXModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.VFXModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.VRModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.VRModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.VehiclesModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.VehiclesModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.VideoModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.VideoModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.WindModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.WindModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.XRModule">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Locator">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/Unity.Locator.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.UI">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.TestRunner">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
- </Reference>
- <Reference Include="nunit.framework">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Timeline">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Networking">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.GoogleAudioSpatializer">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.SpatialTracking">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Analytics.Editor">
- <HintPath>H:/Apan_WorkAbout/duokemeng/mytest/server/moba_game_server/moba_u3d_client/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Analytics.StandardEvents">
- <HintPath>H:/Apan_WorkAbout/duokemeng/mytest/server/moba_game_server/moba_u3d_client/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Analytics.Tracker">
- <HintPath>H:/Apan_WorkAbout/duokemeng/mytest/server/moba_game_server/moba_u3d_client/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
- </Reference>
- <Reference Include="netstandard">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
- </Reference>
- <Reference Include="Microsoft.Win32.Primitives">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/Microsoft.Win32.Primitives.dll</HintPath>
- </Reference>
- <Reference Include="System.AppContext">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.AppContext.dll</HintPath>
- </Reference>
- <Reference Include="System.Collections.Concurrent">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Collections.Concurrent.dll</HintPath>
- </Reference>
- <Reference Include="System.Collections">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Collections.dll</HintPath>
- </Reference>
- <Reference Include="System.Collections.NonGeneric">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Collections.NonGeneric.dll</HintPath>
- </Reference>
- <Reference Include="System.Collections.Specialized">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Collections.Specialized.dll</HintPath>
- </Reference>
- <Reference Include="System.ComponentModel">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.ComponentModel.dll</HintPath>
- </Reference>
- <Reference Include="System.ComponentModel.EventBasedAsync">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.ComponentModel.EventBasedAsync.dll</HintPath>
- </Reference>
- <Reference Include="System.ComponentModel.Primitives">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.ComponentModel.Primitives.dll</HintPath>
- </Reference>
- <Reference Include="System.ComponentModel.TypeConverter">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.ComponentModel.TypeConverter.dll</HintPath>
- </Reference>
- <Reference Include="System.Console">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Console.dll</HintPath>
- </Reference>
- <Reference Include="System.Data.Common">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Data.Common.dll</HintPath>
- </Reference>
- <Reference Include="System.Diagnostics.Contracts">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.Contracts.dll</HintPath>
- </Reference>
- <Reference Include="System.Diagnostics.Debug">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.Debug.dll</HintPath>
- </Reference>
- <Reference Include="System.Diagnostics.FileVersionInfo">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.FileVersionInfo.dll</HintPath>
- </Reference>
- <Reference Include="System.Diagnostics.Process">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.Process.dll</HintPath>
- </Reference>
- <Reference Include="System.Diagnostics.StackTrace">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.StackTrace.dll</HintPath>
- </Reference>
- <Reference Include="System.Diagnostics.TextWriterTraceListener">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.TextWriterTraceListener.dll</HintPath>
- </Reference>
- <Reference Include="System.Diagnostics.Tools">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.Tools.dll</HintPath>
- </Reference>
- <Reference Include="System.Diagnostics.TraceSource">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.TraceSource.dll</HintPath>
- </Reference>
- <Reference Include="System.Diagnostics.Tracing">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.Tracing.dll</HintPath>
- </Reference>
- <Reference Include="System.Drawing.Primitives">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Drawing.Primitives.dll</HintPath>
- </Reference>
- <Reference Include="System.Dynamic.Runtime">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Dynamic.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="System.Globalization.Calendars">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Globalization.Calendars.dll</HintPath>
- </Reference>
- <Reference Include="System.Globalization">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Globalization.dll</HintPath>
- </Reference>
- <Reference Include="System.Globalization.Extensions">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Globalization.Extensions.dll</HintPath>
- </Reference>
- <Reference Include="System.IO.Compression">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.Compression.dll</HintPath>
- </Reference>
- <Reference Include="System.IO.Compression.ZipFile">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.Compression.ZipFile.dll</HintPath>
- </Reference>
- <Reference Include="System.IO">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.dll</HintPath>
- </Reference>
- <Reference Include="System.IO.FileSystem">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.FileSystem.dll</HintPath>
- </Reference>
- <Reference Include="System.IO.FileSystem.DriveInfo">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.FileSystem.DriveInfo.dll</HintPath>
- </Reference>
- <Reference Include="System.IO.FileSystem.Primitives">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.FileSystem.Primitives.dll</HintPath>
- </Reference>
- <Reference Include="System.IO.FileSystem.Watcher">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.FileSystem.Watcher.dll</HintPath>
- </Reference>
- <Reference Include="System.IO.IsolatedStorage">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.IsolatedStorage.dll</HintPath>
- </Reference>
- <Reference Include="System.IO.MemoryMappedFiles">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.MemoryMappedFiles.dll</HintPath>
- </Reference>
- <Reference Include="System.IO.Pipes">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.Pipes.dll</HintPath>
- </Reference>
- <Reference Include="System.IO.UnmanagedMemoryStream">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.UnmanagedMemoryStream.dll</HintPath>
- </Reference>
- <Reference Include="System.Linq">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Linq.dll</HintPath>
- </Reference>
- <Reference Include="System.Linq.Expressions">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Linq.Expressions.dll</HintPath>
- </Reference>
- <Reference Include="System.Linq.Parallel">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Linq.Parallel.dll</HintPath>
- </Reference>
- <Reference Include="System.Linq.Queryable">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Linq.Queryable.dll</HintPath>
- </Reference>
- <Reference Include="System.Net.Http">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.Http.dll</HintPath>
- </Reference>
- <Reference Include="System.Net.NameResolution">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.NameResolution.dll</HintPath>
- </Reference>
- <Reference Include="System.Net.NetworkInformation">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.NetworkInformation.dll</HintPath>
- </Reference>
- <Reference Include="System.Net.Ping">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.Ping.dll</HintPath>
- </Reference>
- <Reference Include="System.Net.Primitives">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.Primitives.dll</HintPath>
- </Reference>
- <Reference Include="System.Net.Requests">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.Requests.dll</HintPath>
- </Reference>
- <Reference Include="System.Net.Security">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.Security.dll</HintPath>
- </Reference>
- <Reference Include="System.Net.Sockets">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.Sockets.dll</HintPath>
- </Reference>
- <Reference Include="System.Net.WebHeaderCollection">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.WebHeaderCollection.dll</HintPath>
- </Reference>
- <Reference Include="System.Net.WebSockets.Client">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.WebSockets.Client.dll</HintPath>
- </Reference>
- <Reference Include="System.Net.WebSockets">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.WebSockets.dll</HintPath>
- </Reference>
- <Reference Include="System.ObjectModel">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.ObjectModel.dll</HintPath>
- </Reference>
- <Reference Include="System.Reflection">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Reflection.dll</HintPath>
- </Reference>
- <Reference Include="System.Reflection.Extensions">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Reflection.Extensions.dll</HintPath>
- </Reference>
- <Reference Include="System.Reflection.Primitives">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Reflection.Primitives.dll</HintPath>
- </Reference>
- <Reference Include="System.Resources.Reader">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Resources.Reader.dll</HintPath>
- </Reference>
- <Reference Include="System.Resources.ResourceManager">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Resources.ResourceManager.dll</HintPath>
- </Reference>
- <Reference Include="System.Resources.Writer">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Resources.Writer.dll</HintPath>
- </Reference>
- <Reference Include="System.Runtime.CompilerServices.VisualC">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.CompilerServices.VisualC.dll</HintPath>
- </Reference>
- <Reference Include="System.Runtime">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="System.Runtime.Extensions">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.Extensions.dll</HintPath>
- </Reference>
- <Reference Include="System.Runtime.Handles">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.Handles.dll</HintPath>
- </Reference>
- <Reference Include="System.Runtime.InteropServices">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.InteropServices.dll</HintPath>
- </Reference>
- <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
- </Reference>
- <Reference Include="System.Runtime.Numerics">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.Numerics.dll</HintPath>
- </Reference>
- <Reference Include="System.Runtime.Serialization.Formatters">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.Serialization.Formatters.dll</HintPath>
- </Reference>
- <Reference Include="System.Runtime.Serialization.Json">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.Serialization.Json.dll</HintPath>
- </Reference>
- <Reference Include="System.Runtime.Serialization.Primitives">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.Serialization.Primitives.dll</HintPath>
- </Reference>
- <Reference Include="System.Runtime.Serialization.Xml">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.Serialization.Xml.dll</HintPath>
- </Reference>
- <Reference Include="System.Security.Claims">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.Claims.dll</HintPath>
- </Reference>
- <Reference Include="System.Security.Cryptography.Algorithms">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.Cryptography.Algorithms.dll</HintPath>
- </Reference>
- <Reference Include="System.Security.Cryptography.Csp">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.Cryptography.Csp.dll</HintPath>
- </Reference>
- <Reference Include="System.Security.Cryptography.Encoding">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.Cryptography.Encoding.dll</HintPath>
- </Reference>
- <Reference Include="System.Security.Cryptography.Primitives">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.Cryptography.Primitives.dll</HintPath>
- </Reference>
- <Reference Include="System.Security.Cryptography.X509Certificates">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.Cryptography.X509Certificates.dll</HintPath>
- </Reference>
- <Reference Include="System.Security.Principal">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.Principal.dll</HintPath>
- </Reference>
- <Reference Include="System.Security.SecureString">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.SecureString.dll</HintPath>
- </Reference>
- <Reference Include="System.Text.Encoding">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Text.Encoding.dll</HintPath>
- </Reference>
- <Reference Include="System.Text.Encoding.Extensions">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Text.Encoding.Extensions.dll</HintPath>
- </Reference>
- <Reference Include="System.Text.RegularExpressions">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Text.RegularExpressions.dll</HintPath>
- </Reference>
- <Reference Include="System.Threading">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Threading.dll</HintPath>
- </Reference>
- <Reference Include="System.Threading.Overlapped">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Threading.Overlapped.dll</HintPath>
- </Reference>
- <Reference Include="System.Threading.Tasks">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Threading.Tasks.dll</HintPath>
- </Reference>
- <Reference Include="System.Threading.Tasks.Parallel">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Threading.Tasks.Parallel.dll</HintPath>
- </Reference>
- <Reference Include="System.Threading.Thread">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Threading.Thread.dll</HintPath>
- </Reference>
- <Reference Include="System.Threading.ThreadPool">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Threading.ThreadPool.dll</HintPath>
- </Reference>
- <Reference Include="System.Threading.Timer">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Threading.Timer.dll</HintPath>
- </Reference>
- <Reference Include="System.ValueTuple">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.ValueTuple.dll</HintPath>
- </Reference>
- <Reference Include="System.Xml.ReaderWriter">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Xml.ReaderWriter.dll</HintPath>
- </Reference>
- <Reference Include="System.Xml.XDocument">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Xml.XDocument.dll</HintPath>
- </Reference>
- <Reference Include="System.Xml.XmlDocument">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Xml.XmlDocument.dll</HintPath>
- </Reference>
- <Reference Include="System.Xml.XmlSerializer">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Xml.XmlSerializer.dll</HintPath>
- </Reference>
- <Reference Include="System.Xml.XPath">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Xml.XPath.dll</HintPath>
- </Reference>
- <Reference Include="System.Xml.XPath.XDocument">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Xml.XPath.XDocument.dll</HintPath>
- </Reference>
- <Reference Include="System.Numerics.Vectors">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/Extensions/2.0.0/System.Numerics.Vectors.dll</HintPath>
- </Reference>
- <Reference Include="System.Runtime.InteropServices.WindowsRuntime">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll</HintPath>
- </Reference>
- <Reference Include="mscorlib">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/mscorlib.dll</HintPath>
- </Reference>
- <Reference Include="System.ComponentModel.Composition">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.ComponentModel.Composition.dll</HintPath>
- </Reference>
- <Reference Include="System.Core">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Core.dll</HintPath>
- </Reference>
- <Reference Include="System.Data">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Data.dll</HintPath>
- </Reference>
- <Reference Include="System">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.dll</HintPath>
- </Reference>
- <Reference Include="System.Drawing">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Drawing.dll</HintPath>
- </Reference>
- <Reference Include="System.IO.Compression.FileSystem">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.IO.Compression.FileSystem.dll</HintPath>
- </Reference>
- <Reference Include="System.Net">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Net.dll</HintPath>
- </Reference>
- <Reference Include="System.Numerics">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Numerics.dll</HintPath>
- </Reference>
- <Reference Include="System.Runtime.Serialization">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Runtime.Serialization.dll</HintPath>
- </Reference>
- <Reference Include="System.ServiceModel.Web">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.ServiceModel.Web.dll</HintPath>
- </Reference>
- <Reference Include="System.Transactions">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Transactions.dll</HintPath>
- </Reference>
- <Reference Include="System.Web">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Web.dll</HintPath>
- </Reference>
- <Reference Include="System.Windows">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Windows.dll</HintPath>
- </Reference>
- <Reference Include="System.Xml">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.dll</HintPath>
- </Reference>
- <Reference Include="System.Xml.Linq">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Linq.dll</HintPath>
- </Reference>
- <Reference Include="System.Xml.Serialization">
- <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
- </Reference>
+    <Compile Include="Assets\Scripts\3rd\protobuf\BclHelpers.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\BufferExtension.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\BufferPool.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\CallbackAttributes.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Compiler\CompilerContext.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Compiler\CompilerDelegates.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Compiler\Local.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\DataFormat.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Extensible.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\ExtensibleUtil.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\GlobalSuppressions.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Helpers.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\IExtensible.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\IExtension.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\ImplicitFields.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\KeyValuePairProxy.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Meta\AttributeMap.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Meta\BasicList.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Meta\CallbackSet.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Meta\MetaType.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Meta\RuntimeTypeModel.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Meta\SubType.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Meta\TypeFormatEventArgs.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Meta\TypeModel.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Meta\ValueMember.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\NetObjectCache.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\PrefixStyle.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\ProtoContractAttribute.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\ProtoEnumAttribute.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\ProtoException.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\ProtoIgnoreAttribute.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\ProtoIncludeAttribute.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\ProtoMemberAttribute.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\ProtoReader.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\ProtoWriter.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\SerializationContext.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializer.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\ArrayDecorator.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\BlobSerializer.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\BooleanSerializer(1).cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\ByteSerializer.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\CharSerializer.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\CompiledSerializer.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\DateTimeSerializer.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\DecimalSerializer.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\DefaultValueDecorator.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\DoubleSerializer.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\EnumSerializer.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\FieldDecorator.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\GuidSerializer.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\Int16Serializer.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\Int32Serializer.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\Int64Serializer.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\IProtoSerializer.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\IProtoTypeSerializer.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\ISerializerProxy.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\KeyValuePairDecorator.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\ListDecorator.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\MemberSpecifiedDecorator.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\NetObjectSerializer.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\NullDecorator.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\ParseableSerializer.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\PropertyDecorator.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\ProtoDecoratorBase.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\SByteSerializer.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\SingleSerializer.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\StringSerializer.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\SubItemSerializer.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\SurrogateSerializer.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\SystemTypeSerializer.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\TagDecorator.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\TimeSpanSerializer.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\TupleSerializer.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\TypeSerializer.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\UInt16Serializer.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\UInt32Serializer.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\UInt64Serializer.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\Serializers\UriDecorator.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\ServiceModel\ProtoBehaviorAttribute.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\ServiceModel\ProtoBehaviorExtensionElement.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\ServiceModel\ProtoEndpointBehavior.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\ServiceModel\ProtoOperationBehavior.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\ServiceModel\XmlProtoSerializer.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\SubItemToken.cs" />
+    <Compile Include="Assets\Scripts\3rd\protobuf\WireType.cs" />
+    <Compile Include="Assets\Scripts\game\game_manager.cs" />
+    <Compile Include="Assets\Scripts\game\home_scene\email_info.cs" />
+    <Compile Include="Assets\Scripts\game\home_scene\home_scene.cs" />
+    <Compile Include="Assets\Scripts\game\home_scene\login_bonues.cs" />
+    <Compile Include="Assets\Scripts\game\home_scene\rank_list.cs" />
+    <Compile Include="Assets\Scripts\game\home_scene\team_match.cs" />
+    <Compile Include="Assets\Scripts\game\home_scene\user_info_dlg.cs" />
+    <Compile Include="Assets\Scripts\game\login_scene\login_scene.cs" />
+    <Compile Include="Assets\Scripts\game\modules\logic_service.cs" />
+    <Compile Include="Assets\Scripts\game\modules\system_server.cs" />
+    <Compile Include="Assets\Scripts\game\modules\ugames.cs" />
+    <Compile Include="Assets\Scripts\game\modules\ulevel.cs" />
+    <Compile Include="Assets\Scripts\game\modules\user_login.cs" />
+    <Compile Include="Assets\Scripts\game\Respones.cs" />
+    <Compile Include="Assets\Scripts\game\Zone.cs" />
+    <Compile Include="Assets\Scripts\managers\audio_manager.cs" />
+    <Compile Include="Assets\Scripts\managers\event_manager.cs" />
+    <Compile Include="Assets\Scripts\network\data_viewer.cs" />
+    <Compile Include="Assets\Scripts\network\network.cs" />
+    <Compile Include="Assets\Scripts\network\proto_man.cs" />
+    <Compile Include="Assets\Scripts\network\protos\game.cs" />
+    <Compile Include="Assets\Scripts\network\tcp_packer.cs" />
+    <Compile Include="Assets\Scripts\utils\ShowFPS.cs" />
+    <Compile Include="Assets\Scripts\utils\Singleton.cs" />
+    <Compile Include="Assets\Scripts\utils\utils.cs" />
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>H:/Apan_WorkAbout/duokemeng/mytest/server/moba_game_server/moba_u3d_client/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PackageManagerUI.Editor">
+      <HintPath>H:/Apan_WorkAbout/duokemeng/mytest/server/moba_game_server/moba_u3d_client/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.CollabProxy.Editor">
+      <HintPath>H:/Apan_WorkAbout/duokemeng/mytest/server/moba_game_server/moba_u3d_client/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>H:/Apan_WorkAbout/duokemeng/mytest/server/moba_game_server/moba_u3d_client/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.DataPrivacy">
+      <HintPath>H:/Apan_WorkAbout/duokemeng/mytest/server/moba_game_server/moba_u3d_client/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ARModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AccessibilityModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AccessibilityModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.BaselibModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.BaselibModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ClothModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterInputModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterRendererModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CrashReportingModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.DirectorModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.FileSystemHttpModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.FileSystemHttpModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GameCenterModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.GameCenterModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GridModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.GridModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HotReloadModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.HotReloadModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.InputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.LocalizationModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.LocalizationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PerformanceReportingModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.Physics2DModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ProfilerModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ProfilerModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteMaskModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteShapeModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.StreamingModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.StreamingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.StyleSheetsModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.StyleSheetsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SubstanceModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.SubstanceModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TLSModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.TLSModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainPhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.TextCoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TilemapModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.TilemapModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TimelineModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.TimelineModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UNETModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UNETModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UmbraModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UmbraModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityConnectModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityTestProtocolModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityTestProtocolModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VFXModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.VFXModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VRModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.VRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VehiclesModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.VehiclesModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.VideoModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.WindModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.WindModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.XRModule">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Locator">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/Managed/Unity.Locator.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TestRunner">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Timeline">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GoogleAudioSpatializer">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpatialTracking">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.Editor">
+      <HintPath>H:/Apan_WorkAbout/duokemeng/mytest/server/moba_game_server/moba_u3d_client/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.StandardEvents">
+      <HintPath>H:/Apan_WorkAbout/duokemeng/mytest/server/moba_game_server/moba_u3d_client/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.Tracker">
+      <HintPath>H:/Apan_WorkAbout/duokemeng/mytest/server/moba_game_server/moba_u3d_client/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+    </Reference>
+    <Reference Include="netstandard">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/Microsoft.Win32.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.AppContext">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.AppContext.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Concurrent">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Collections.Concurrent.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.NonGeneric">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Collections.NonGeneric.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Specialized">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Collections.Specialized.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.ComponentModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.EventBasedAsync">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.ComponentModel.EventBasedAsync.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Primitives">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.ComponentModel.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.TypeConverter">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.ComponentModel.TypeConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Console">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Common">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Data.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Contracts">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Debug">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.Debug.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.FileVersionInfo">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.FileVersionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Process">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.Process.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.StackTrace">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.StackTrace.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.TextWriterTraceListener">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.TextWriterTraceListener.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tools">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.TraceSource">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.TraceSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tracing">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Diagnostics.Tracing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing.Primitives">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Drawing.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Dynamic.Runtime">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Dynamic.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Globalization.Calendars">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Globalization.Calendars.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Globalization">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Globalization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Globalization.Extensions">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Globalization.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.ZipFile">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.Compression.ZipFile.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.DriveInfo">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.FileSystem.DriveInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Watcher">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.FileSystem.Watcher.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.IsolatedStorage">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.IsolatedStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.MemoryMappedFiles">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.MemoryMappedFiles.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipes">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.Pipes.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.UnmanagedMemoryStream">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.IO.UnmanagedMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Expressions">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Linq.Expressions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Parallel">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Linq.Parallel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Queryable">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Linq.Queryable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.NameResolution">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.NameResolution.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.NetworkInformation">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.NetworkInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Ping">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.Ping.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Primitives">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Requests">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.Requests.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Security">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Sockets">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.Sockets.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.WebHeaderCollection">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.WebHeaderCollection.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.WebSockets.Client">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.WebSockets.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.WebSockets">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Net.WebSockets.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ObjectModel">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.ObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Extensions">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Reflection.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Primitives">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Reflection.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Resources.Reader">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Resources.Reader.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Resources.ResourceManager">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Resources.ResourceManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Resources.Writer">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Resources.Writer.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.VisualC">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.CompilerServices.VisualC.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Handles">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.Handles.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.InteropServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Numerics">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.Serialization.Formatters.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Json">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.Serialization.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Primitives">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.Serialization.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Xml">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Runtime.Serialization.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Claims">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.Claims.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Csp">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.Cryptography.Csp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.Principal.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.SecureString">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Security.SecureString.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Text.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.Extensions">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Text.Encoding.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Text.RegularExpressions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Overlapped">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Threading.Overlapped.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Parallel">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Threading.Tasks.Parallel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Thread">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Threading.Thread.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.ThreadPool">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Threading.ThreadPool.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Timer">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Threading.Timer.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.ReaderWriter">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Xml.ReaderWriter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XDocument">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Xml.XDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XmlDocument">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Xml.XmlDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XmlSerializer">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Xml.XmlSerializer.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XPath">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Xml.XPath.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XPath.XDocument">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netstandard/System.Xml.XPath.XDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics.Vectors">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/Extensions/2.0.0/System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.WindowsRuntime">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.ComponentModel.Composition.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.IO.Compression.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Runtime.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.ServiceModel.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Transactions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Serialization">
+      <HintPath>H:/Dpan_SoftInstall/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -740,5 +744,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  
 </Project>

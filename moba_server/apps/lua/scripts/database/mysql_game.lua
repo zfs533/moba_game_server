@@ -3,7 +3,15 @@ local mysql_conn = nil
 local moba_ugame_config = require("moba_game_config")
 local utils = require("utils")
 
+local function is_connected()
+    if not mysql_conn then
+        return false
+    end
+    return true
+end
+
 local function mysql_connect_to_system_center()
+    if is_connected() then return end
     local conf = game_config.game_mysql
     Mysql.connect(conf.host,conf.port,conf.db_name,conf.uname,conf.upwd,
     function(err,conn)
@@ -284,8 +292,53 @@ local function get_sys_msg_info(ret_handler)
     end)
 end
 
+local function get_robots_ugame_info(ret_handler)
+    if _check_is_connected_sql(ret_handler) == nil then 
+        return 
+    end
+    local sql = "select uid, uchip, uchip1, uchip2, uvip, uvip_endtime, udata1,udata2,udata3,uexp,ustatus from ugame where is_robot =1"
+	local cmd_sql = sql
+    Mysql.query(mysql_conn,cmd_sql,function(err,ret) 
+        if err then
+            if ret_handler ~= nil then
+                ret_handler(err,nil)
+            end
+            return
+        end
+        --没有这条数据
+        if ret == nil or #ret <= 0 then
+            if ret_handler ~= nil then
+                ret_handler(nil,nil)
+            end
+            return
+        end
+        --end
+
+        local k,v 
+        local robots = {}
+        for k,v in pairs(ret) do
+            local result = v
+            local one_robot = {}
+            one_robot.uid = tonumber(result[1])
+            one_robot.uchip = tonumber(result[2])
+            one_robot.uchip1 = tonumber(result[3])
+            one_robot.uchip2 = tonumber(result[4])
+            one_robot.uvip = tonumber(result[5])
+            one_robot.uvip_endtime = tonumber(result[6])
+            one_robot.udata1 = tonumber(result[7])
+            one_robot.udata2 = tonumber(result[8])
+            one_robot.udata3 = tonumber(result[9])
+            one_robot.uexp = tonumber(result[10])
+            one_robot.ustatus = tonumber(result[11])
+            table.insert(robots,one_robot)
+        end
+        ret_handler(nil,robots)
+    end)
+end
+
 local mysql_game_tb = 
 {
+    is_connected = is_connected,
     get_ugame_system_uinfo = get_ugame_system_uinfo,
     insert_ugame_system_user = insert_ugame_system_user,
     get_bonues_info = get_bonues_info,
@@ -299,6 +352,8 @@ local mysql_game_tb =
     update_world_rank_info = update_world_rank_info,
     --系统消息
     get_sys_msg_info = get_sys_msg_info,
+    --机器人
+    get_robots_ugame_info = get_robots_ugame_info,
 }
 
 return mysql_game_tb

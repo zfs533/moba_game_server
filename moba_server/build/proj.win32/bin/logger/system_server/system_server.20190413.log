@@ -1,0 +1,6 @@
+20190413 11:06:18 DEBUG ../../../apps/lua/scripts/system_server/main.lua:36  
+register System:[2] success!!!
+20190413 11:06:18 DEBUG ../../../apps/lua/scripts/database/mysql_auth_center.lua:13  
+connect to auth_center database success!!!
+20190413 11:06:18 DEBUG ../../../apps/lua/scripts/database/mysql_game.lua:15  
+connect to ugame_system database success!!!

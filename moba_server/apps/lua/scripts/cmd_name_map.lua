@@ -23,6 +23,10 @@ local cmd_name_map =
 	"GetSystemMessageRes",
 	"LoginLogicReq",
 	"LoginLogicRes",
+	"EnterZoneReq",
+	"EnterZoneRes",
+	"EnterMatch",
+	"UserArrived",
 }
 
 return cmd_name_map

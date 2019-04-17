@@ -12,6 +12,7 @@ public class ugames : Singletom<ugames>
     public int face = 1;
     public int vip = 0;
     public bool is_guest = false;
+    public int zid = 0;
     public UserGameInfo ugameInfo;
 
     public void save_uinfo(UserCenterInfo info, bool is_guest)
@@ -30,6 +31,10 @@ public class ugames : Singletom<ugames>
     {
         this.ugameInfo = info;
         event_manager.Instance.dispatch_event(event_manager.EVT_UPDATE_UGAME_INFO, info);
+    }
+    public void set_zid(int zid)
+    {
+        this.zid = zid;
     }
     // Update is called once per frame
     void Update()
