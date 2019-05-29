@@ -141,6 +141,10 @@
     <Compile Include="Assets\Scripts\3rd\protobuf\SubItemToken.cs" />
     <Compile Include="Assets\Scripts\3rd\protobuf\WireType.cs" />
     <Compile Include="Assets\Scripts\game\game_manager.cs" />
+    <Compile Include="Assets\Scripts\game\game_scene\game_zygote.cs" />
+    <Compile Include="Assets\Scripts\game\game_scene\hero.cs" />
+    <Compile Include="Assets\Scripts\game\game_scene\joystick.cs" />
+    <Compile Include="Assets\Scripts\game\home_scene\async_loader_scene.cs" />
     <Compile Include="Assets\Scripts\game\home_scene\email_info.cs" />
     <Compile Include="Assets\Scripts\game\home_scene\home_scene.cs" />
     <Compile Include="Assets\Scripts\game\home_scene\login_bonues.cs" />
@@ -165,6 +169,8 @@
     <Compile Include="Assets\Scripts\utils\ShowFPS.cs" />
     <Compile Include="Assets\Scripts\utils\Singleton.cs" />
     <Compile Include="Assets\Scripts\utils\utils.cs" />
+    <None Include="Assets\Media\Shader\Trail Additive Turbulence.shader" />
+    <None Include="Assets\Media\Shader\Additive Turbulence.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>H:/Apan_WorkAbout/duokemeng/mytest/server/moba_game_server/moba_u3d_client/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

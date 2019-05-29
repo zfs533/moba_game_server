@@ -12,6 +12,9 @@ enum
 class uv_session:public session
 {
 public:
+	void* operator new(size_t size);
+	void operator delete(void* mem);
+public:
 	uv_tcp_t tcp_handler;//客户端键入接入进来的句柄
 	char c_address[32];
 	int c_port;

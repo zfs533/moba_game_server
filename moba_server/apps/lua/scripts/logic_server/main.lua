@@ -27,6 +27,7 @@ local servers = game_config.servers
 local Stype = require("Stype")
 -- --开启网关端口监听
 Netbus.tcp_listen(servers[Stype.Logic].port,servers[Stype.Logic].ip)
+Netbus.udp_listen(game_config.logic_udp_port,game_config.logic_udp_ip)
 
 --register service
 local ret = Service.register(Stype.Logic,logic_server)

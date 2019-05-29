@@ -88,9 +88,11 @@ end
 local function login_logic_server(s,req)
     local uid = req[3]
     local stype = req[1]
+    local body = req[4]
     local p = logic_server_players[uid]
     if p then
         p:set_session(s)
+        p:set_udp_addr(body.udp_ip,body.udp_port)
         send_status(s,stype,Cmd.eLoginLogicRes,uid,Respones.OK)
         return 
     end
@@ -102,6 +104,7 @@ local function login_logic_server(s,req)
         end
         send_status(s,stype,Cmd.eLoginLogicRes,uid,status)
     end)
+    p:set_udp_addr(body.udp_ip,body.udp_port)
 end
 --{stype,ctype,utag,body}
 local function client_disconnect(e,req)
@@ -166,8 +169,9 @@ local function search_inview_match_mgr(zid)
         end
     end
     local match = match_mgr:new()
-    table.insert(match_list,match)
+    -- table.insert(match_list,match)
     match:init(zid)
+    match_list[match.matchid] = match
     return match
 end
 
@@ -219,6 +223,51 @@ local function do_match_robots()
 end
 Scheduler.scheduler(do_match_robots,1000,3000,-1)
 
+local function send_status(s,stype,ctype,uid,status)
+    local msg = {stype,ctype,uid,{status = status}}
+    Session.send_msg(s,msg)
+end
+
+local function exit_match_list(s,req)
+    local stype = req[1]
+    local uid = req[3]
+    local p = logic_server_players[uid]
+    if not p then
+        send_status(s,stype,Cmd.eExitMatchRes,uid,Respones.InvalidOpt)
+        return 
+    end
+    if p.state ~= State.InView or p.zid == -1 or p.matchid == -1 then
+        send_status(s,stype,Cmd.eExitMatchRes,uid,Respones.InvalidOpt)
+        return
+    end
+    local match = zone_match_list[p.zid][p.matchid]
+    if not match or match.state ~= State.InView then
+        send_status(s,stype,Cmd.eExitMatchRes,uid,Respones.InvalidOpt)
+        return
+    end
+    match:exit_player(p)
+end
+
+--{stype,ctype,utag,body}
+local function do_udp_test(s,req)
+    local stype = req[1]
+    local ctype = req[2]
+    local body  = req[4]
+    local msg = {stype,ctype,0,{content = body.content}}
+    Session.send_msg(s,msg)
+end
+
+--{stype,ctype,utag,body}
+local function next_frame_opt(s,req)
+    local stype = req[1]
+    local ctype = req[2]
+    local body = req[4]
+    local match = zone_match_list[body.zid][body.matchid]
+    if not match or match.state ~= State.Playing then
+        return
+    end
+    match:handle_next_frame_event(body)
+end
 
 local game_mgr = {
     login_logic_server = login_logic_server,
@@ -226,6 +275,9 @@ local game_mgr = {
     gatway_disconnect = gatway_disconnect,
     gatway_connect = gatway_connect,
     enter_zone = enter_zone,
+    exit_match_list = exit_match_list,
+    do_udp_test = do_udp_test,
+    next_frame_opt = next_frame_opt,
 }
 
 return game_mgr

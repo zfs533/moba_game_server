@@ -25,7 +25,15 @@ CREATE TABLE IF NOT EXISTS `login_bonues` (
   `bonues_time` int(11) DEFAULT NULL COMMENT '发放奖励的时间',
   `days` int(11) DEFAULT '0' COMMENT '连续登录的天数',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='登录奖励管理';
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8 COMMENT='登录奖励管理';
+
+-- 数据导出被取消选择。
+-- 导出  表 moba_game.sys_msg 结构
+CREATE TABLE IF NOT EXISTS `sys_msg` (
+  `id` int(8) unsigned NOT NULL AUTO_INCREMENT COMMENT '唯一标识id号',
+  `msg` varchar(256) NOT NULL DEFAULT '""' COMMENT '消息内容',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='系统消息';
 
 -- 数据导出被取消选择。
 -- 导出  表 moba_game.ugame 结构
@@ -42,8 +50,9 @@ CREATE TABLE IF NOT EXISTS `ugame` (
   `udata3` int(32) NOT NULL DEFAULT '0' COMMENT '用户在游戏中的道具3',
   `uexp` int(32) NOT NULL DEFAULT '0' COMMENT '用户的经验值',
   `ustatus` int(8) NOT NULL DEFAULT '0' COMMENT '用户账号状态，0正常，其他不正常',
+  `is_robot` int(8) NOT NULL DEFAULT '0' COMMENT '是否为机器人，0不是，1是',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='存放玩家在moba这个游戏中的玩家的游戏数据，主要的游戏数据；\r\n金币，其他货币，道具，游戏中的vip等级，账号状态，玩家经验；\r\nuid:标识玩家的，id:作为自增长得唯一id号';
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8 COMMENT='存放玩家在moba这个游戏中的玩家的游戏数据，主要的游戏数据；\r\n金币，其他货币，道具，游戏中的vip等级，账号状态，玩家经验；\r\nuid:标识玩家的，id:作为自增长得唯一id号';
 
 -- 数据导出被取消选择。
 -- 导出  表 moba_game.ulevel 结构
@@ -59,12 +68,13 @@ CREATE TABLE IF NOT EXISTS `ulevel` (
 CREATE TABLE IF NOT EXISTS `urank` (
   `id` int(16) NOT NULL AUTO_INCREMENT COMMENT '唯一标识id',
   `uid` int(16) NOT NULL DEFAULT '0' COMMENT '用户唯一ID',
-  `unick` varchar(64) NOT NULL DEFAULT '""' COMMENT '用户昵称',
+  `unick` varchar(50) NOT NULL DEFAULT '""' COMMENT '用户昵称',
   `usex` int(8) NOT NULL DEFAULT '0' COMMENT '性别：0:男，1：女',
   `uvip` int(8) NOT NULL DEFAULT '0' COMMENT '用户游戏vip等级',
-  `uchip1` int(32) NOT NULL DEFAULT '0' COMMENT '用户金币数',
+  `uchip` int(32) NOT NULL DEFAULT '0' COMMENT '用户金币数',
+  `uface` int(32) NOT NULL DEFAULT '0' COMMENT '用户头像',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='排行榜';
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8 COMMENT='排行榜';
 
 -- 数据导出被取消选择。
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

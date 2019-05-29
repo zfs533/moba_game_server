@@ -15,6 +15,8 @@ public class login_scene : MonoBehaviour
         event_manager.Instance.add_event_listener(event_manager.EVT_LOGIN_SUCCESS, this.evt_login_success);
         event_manager.Instance.add_event_listener(event_manager.EVT_GET_UGAME_INFO_SUCCESS, this.evt_get_ugame_info);
         event_manager.Instance.add_event_listener(event_manager.EVT_LOGIN_LOGIC_SERVER_SUCCESS, this.evt_login_logic_server);
+        this.uname_edit.text = "zfs001";
+        this.upwd_edit.text = "123456";
     }
     
     void evt_login_success(string name, object udata)

@@ -12,8 +12,13 @@ public class ugames : Singletom<ugames>
     public int face = 1;
     public int vip = 0;
     public bool is_guest = false;
-    public int zid = 0;
+    public int zid = -1;
+    public int matchid = -1;
+    public int self_seatid = -1;
+    public int self_side = -1;
     public UserGameInfo ugameInfo;
+    public List<UserArrived> other_users = new List<UserArrived>();
+    public List<PlayerMatchInfo> player_math_info = null;//当前正在比赛的玩家信息
 
     public void save_uinfo(UserCenterInfo info, bool is_guest)
     {

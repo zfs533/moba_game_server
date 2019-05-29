@@ -1,0 +1,36 @@
+20190529 16:48:06 DEBUG ../../../apps/lua/scripts/gateway/main.lua:34  
+register gw_servce:[1] success!!!
+20190529 16:48:06 DEBUG ../../../apps/lua/scripts/gateway/main.lua:34  
+register gw_servce:[2] success!!!
+20190529 16:48:06 DEBUG ../../../apps/lua/scripts/gateway/main.lua:34  
+register gw_servce:[3] success!!!
+20190529 16:48:07 DEBUG ../../../apps/lua/scripts/gateway/gw_server.lua:31  
+connecting to server [Auth server] 127.0.0.1:8012
+20190529 16:48:07 DEBUG ../../../apps/lua/scripts/gateway/gw_server.lua:31  
+connecting to server [System server] 127.0.0.1:8001
+20190529 16:48:07 DEBUG ../../../apps/lua/scripts/gateway/gw_server.lua:31  
+connecting to server [Logic server] 127.0.0.1:8002
+20190529 16:48:08 ERRORR ../../../apps/lua/scripts/gateway/gw_server.lua:19  
+connect error to server [Auth server]127.0.0.1:8012
+20190529 16:48:08 DEBUG ../../../apps/lua/scripts/gateway/gw_server.lua:169  
+8012	127.0.0.1	1
+20190529 16:48:08 DEBUG ../../../apps/lua/scripts/gateway/gw_server.lua:169  
+8012	127.0.0.1	1
+20190529 16:48:08 DEBUG ../../../apps/lua/scripts/gateway/gw_server.lua:169  
+8012	127.0.0.1	1
+20190529 16:48:08 ERRORR ../../../apps/lua/scripts/gateway/gw_server.lua:19  
+connect error to server [System server]127.0.0.1:8001
+20190529 16:48:08 DEBUG ../../../apps/lua/scripts/gateway/gw_server.lua:169  
+8001	127.0.0.1	1
+20190529 16:48:08 DEBUG ../../../apps/lua/scripts/gateway/gw_server.lua:169  
+8001	127.0.0.1	1
+20190529 16:48:08 DEBUG ../../../apps/lua/scripts/gateway/gw_server.lua:169  
+8001	127.0.0.1	1
+20190529 16:48:08 ERRORR ../../../apps/lua/scripts/gateway/gw_server.lua:19  
+connect error to server [Logic server]127.0.0.1:8002
+20190529 16:48:08 DEBUG ../../../apps/lua/scripts/gateway/gw_server.lua:169  
+8002	127.0.0.1	1
+20190529 16:48:08 DEBUG ../../../apps/lua/scripts/gateway/gw_server.lua:169  
+8002	127.0.0.1	1
+20190529 16:48:08 DEBUG ../../../apps/lua/scripts/gateway/gw_server.lua:169  
+8002	127.0.0.1	1

@@ -1,0 +1,92 @@
+20190528 14:18:32 DEBUG ../../../apps/lua/scripts/logic_server/main.lua:35  
+register logic_server:[3] success!!!
+20190528 14:18:32 DEBUG ../../../apps/lua/scripts/database/mysql_auth_center.lua:22  
+connect to auth_center database success!!!
+20190528 14:18:32 DEBUG ../../../apps/lua/scripts/database/mysql_game.lua:23  
+connect to ugame_system database success!!!
+20190528 14:18:52 DEBUG ../../../apps/lua/scripts/logic_server/logic_server.lua:22  
+---------------------------recv_logic_cmd
+20190528 14:18:52 DEBUG ../../../apps/lua/scripts/logic_server/game_mgr.lua:81  
+login_logic_server4
+20190528 14:18:54 DEBUG ../../../apps/lua/scripts/logic_server/logic_server.lua:22  
+---------------------------recv_logic_cmd
+20190528 14:18:54 DEBUG ../../../apps/lua/scripts/logic_server/game_mgr.lua:81  
+login_logic_server4
+20190528 14:18:57 DEBUG ../../../apps/lua/scripts/logic_server/match_mgr.lua:26  
+-------------zid= 1
+20190528 14:22:46 DEBUG ../../../apps/lua/scripts/logic_server/main.lua:35  
+register logic_server:[3] success!!!
+20190528 14:22:46 DEBUG ../../../apps/lua/scripts/database/mysql_auth_center.lua:22  
+connect to auth_center database success!!!
+20190528 14:22:46 DEBUG ../../../apps/lua/scripts/database/mysql_game.lua:23  
+connect to ugame_system database success!!!
+20190528 14:27:30 DEBUG ../../../apps/lua/scripts/logic_server/logic_server.lua:22  
+---------------------------recv_logic_cmd
+20190528 14:27:31 DEBUG ../../../apps/lua/scripts/logic_server/game_mgr.lua:81  
+login_logic_server4
+20190528 14:27:34 DEBUG ../../../apps/lua/scripts/logic_server/logic_server.lua:22  
+---------------------------recv_logic_cmd
+20190528 14:27:34 DEBUG ../../../apps/lua/scripts/logic_server/game_mgr.lua:81  
+login_logic_server4
+20190528 14:27:35 DEBUG ../../../apps/lua/scripts/logic_server/match_mgr.lua:26  
+-------------zid= 2
+20190528 14:29:37 DEBUG ../../../apps/lua/scripts/logic_server/logic_server.lua:22  
+---------------------------recv_logic_cmd
+20190528 14:35:37 DEBUG ../../../apps/lua/scripts/logic_server/main.lua:35  
+register logic_server:[3] success!!!
+20190528 14:35:37 DEBUG ../../../apps/lua/scripts/database/mysql_auth_center.lua:22  
+connect to auth_center database success!!!
+20190528 14:35:37 DEBUG ../../../apps/lua/scripts/database/mysql_game.lua:23  
+connect to ugame_system database success!!!
+20190528 14:35:47 DEBUG ../../../apps/lua/scripts/logic_server/main.lua:35  
+register logic_server:[3] success!!!
+20190528 14:35:47 DEBUG ../../../apps/lua/scripts/database/mysql_auth_center.lua:22  
+connect to auth_center database success!!!
+20190528 14:35:47 DEBUG ../../../apps/lua/scripts/database/mysql_game.lua:23  
+connect to ugame_system database success!!!
+20190528 14:35:57 DEBUG ../../../apps/lua/scripts/logic_server/logic_server.lua:22  
+---------------------------recv_logic_cmd
+20190528 14:35:57 DEBUG ../../../apps/lua/scripts/logic_server/game_mgr.lua:81  
+login_logic_server4
+20190528 14:36:00 DEBUG ../../../apps/lua/scripts/logic_server/logic_server.lua:22  
+---------------------------recv_logic_cmd
+20190528 14:36:01 DEBUG ../../../apps/lua/scripts/logic_server/game_mgr.lua:81  
+login_logic_server4
+20190528 14:36:03 DEBUG ../../../apps/lua/scripts/logic_server/match_mgr.lua:26  
+-------------zid= 1
+20190528 14:44:18 DEBUG ../../../apps/lua/scripts/logic_server/main.lua:35  
+register logic_server:[3] success!!!
+20190528 14:44:18 DEBUG ../../../apps/lua/scripts/database/mysql_auth_center.lua:22  
+connect to auth_center database success!!!
+20190528 14:44:19 DEBUG ../../../apps/lua/scripts/database/mysql_game.lua:23  
+connect to ugame_system database success!!!
+20190528 14:44:50 DEBUG ../../../apps/lua/scripts/logic_server/logic_server.lua:22  
+---------------------------recv_logic_cmd
+20190528 14:44:50 DEBUG ../../../apps/lua/scripts/logic_server/game_mgr.lua:81  
+login_logic_server4
+20190528 14:44:55 DEBUG ../../../apps/lua/scripts/logic_server/logic_server.lua:22  
+---------------------------recv_logic_cmd
+20190528 14:44:55 DEBUG ../../../apps/lua/scripts/logic_server/game_mgr.lua:81  
+login_logic_server4
+20190528 14:44:55 DEBUG ../../../apps/lua/scripts/logic_server/match_mgr.lua:26  
+-------------zid= 2
+20190528 14:46:52 DEBUG ../../../apps/lua/scripts/logic_server/logic_server.lua:22  
+---------------------------recv_logic_cmd
+20190528 14:48:34 DEBUG ../../../apps/lua/scripts/logic_server/main.lua:35  
+register logic_server:[3] success!!!
+20190528 14:48:34 DEBUG ../../../apps/lua/scripts/database/mysql_auth_center.lua:22  
+connect to auth_center database success!!!
+20190528 14:48:34 DEBUG ../../../apps/lua/scripts/database/mysql_game.lua:23  
+connect to ugame_system database success!!!
+20190528 14:48:41 DEBUG ../../../apps/lua/scripts/logic_server/logic_server.lua:22  
+---------------------------recv_logic_cmd
+20190528 14:48:41 DEBUG ../../../apps/lua/scripts/logic_server/game_mgr.lua:81  
+login_logic_server4
+20190528 14:48:44 DEBUG ../../../apps/lua/scripts/logic_server/logic_server.lua:22  
+---------------------------recv_logic_cmd
+20190528 14:48:44 DEBUG ../../../apps/lua/scripts/logic_server/game_mgr.lua:81  
+login_logic_server4
+20190528 14:48:47 DEBUG ../../../apps/lua/scripts/logic_server/match_mgr.lua:26  
+-------------zid= 1
+20190528 14:49:32 DEBUG ../../../apps/lua/scripts/logic_server/logic_server.lua:22  
+---------------------------recv_logic_cmd

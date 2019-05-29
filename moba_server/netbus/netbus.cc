@@ -15,10 +15,18 @@ using namespace std;
 #include "proto_man.h"
 #include "service_man.h"
 #include "udp_session.h"
-
+#include "../utils/small_alloc.h"
 
 extern "C"
 {
+static void on_uv_udp_send_end(uv_udp_send_t* req,int status)
+{
+	if (status == 0 )
+	{
+	}
+	small_free(req);
+}
+
 struct udp_recv_buf {
 	char* recv_buf;
 	size_t max_recv_len;
@@ -66,6 +74,12 @@ static void on_recv_tcp_data(uv_session* s)
 
 		if(!tp_protocol::read_header(pkg_data,s->recved,&pkg_size,&head_size))
 		{
+			break;
+		}
+		//包的数据大小必须要大于>数据头的大小
+		if(pkg_size<=head_size)
+		{
+			s->close();
 			break;
 		}
 		if(s->recved <pkg_size)
@@ -289,6 +303,10 @@ netbus* netbus::instance()
 
 void netbus::udp_listen(int port,const char* ip)
 {
+	if(this->udp_handler)
+	{
+		return;
+	}
 	uv_udp_t* server = (uv_udp_t*)malloc(sizeof(uv_udp_t));
 	memset(server,0,sizeof(uv_udp_t));
 	uv_udp_init(uv_default_loop(),server);
@@ -300,7 +318,7 @@ void netbus::udp_listen(int port,const char* ip)
 	//uv_ip4_addr("127.0.0.1",port,&addr);
 	uv_ip4_addr(ip,port,&addr);
 	uv_udp_bind(server,(const struct sockaddr*)&addr,0);
-
+	this->udp_handler = (void*)server;
 	uv_udp_recv_start(server,udp_uv_alloc_buf,after_uv_udp_recv);
 }
 
@@ -422,4 +440,21 @@ void netbus::tcp_connect(const char* server_ip,int port,void(*connected)(int err
 		return;
 	}
 
+}
+
+netbus::netbus()
+{
+	this->udp_handler = NULL;
+}
+
+void netbus::udp_send_to(char* ip,int port,unsigned char* body,int len)
+{
+	uv_buf_t w_buf;
+	w_buf = uv_buf_init((char*)body,len);
+	uv_udp_send_t* req = (uv_udp_send_t*)small_alloc(sizeof(uv_udp_send_t));
+	SOCKADDR_IN addr;
+	addr.sin_family = AF_INET;
+	addr.sin_port = htons(port);
+	addr.sin_addr.S_un.S_addr = inet_addr(ip);
+	uv_udp_send(req,(uv_udp_t*)this->udp_handler,&w_buf,1,(const sockaddr*)&addr,on_uv_udp_send_end);
 }

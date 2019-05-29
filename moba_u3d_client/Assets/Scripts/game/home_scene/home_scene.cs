@@ -30,12 +30,14 @@ public class home_scene : MonoBehaviour
     public Sprite[] btn_normal;
     public Sprite[] btn_selected;
     public Image[] tab_bottom_btns;
+    public GameObject async_loading;
 
     void Start()
     {
         event_manager.Instance.add_event_listener(event_manager.EVT_SET_MAIN_USER_INFO, this.init_user_info);
         event_manager.Instance.add_event_listener(event_manager.EVT_USER_LOGIN_OUT, this.evt_user_login_out);
         event_manager.Instance.add_event_listener(event_manager.EVT_UPDATE_UGAME_INFO, this.evt_update_ugame_info);
+        event_manager.Instance.add_event_listener(event_manager.EVT_GAME_START, this.evt_game_start);
         this.init_user_info(event_manager.EVT_SET_MAIN_USER_INFO, null);
         this.evt_update_ugame_info(event_manager.EVT_UPDATE_UGAME_INFO, null);
         this.show_home_page_ui();
@@ -90,6 +92,13 @@ public class home_scene : MonoBehaviour
             login_bonues.GetComponent<login_bonues>().show_login_bonues(ugames.Instance.ugameInfo.days);
         }
     }
+
+    private void evt_game_start(string name, object data)
+    {
+        Debug.Log("GOGOGOGOGO--- game start!!!");
+        this.async_loading.SetActive(true);
+    }
+
     public void show_login_bonues_ui()
     {
         GameObject login_bonues = GameObject.Instantiate(this.login_bonues);
@@ -162,5 +171,6 @@ public class home_scene : MonoBehaviour
         event_manager.Instance.remove_event_listener(event_manager.EVT_SET_MAIN_USER_INFO, this.init_user_info);
         event_manager.Instance.remove_event_listener(event_manager.EVT_USER_LOGIN_OUT, this.evt_user_login_out);
         event_manager.Instance.remove_event_listener(event_manager.EVT_UPDATE_UGAME_INFO, this.evt_update_ugame_info);
+        event_manager.Instance.remove_event_listener(event_manager.EVT_GAME_START, this.evt_game_start);
     }
 }

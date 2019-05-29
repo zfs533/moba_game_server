@@ -15,6 +15,11 @@ public class event_manager : Singletom<event_manager>
     public static string EVT_GET_RANK_LIST = "get_rank_list";
     public static string EVT_GET_SYS_EMAIL = "get_sys_email";
     public static string EVT_LOGIN_LOGIC_SERVER_SUCCESS = "login_logic_server_success";
+    public static string EVT_USER_ARRIVIED_MATCH = "user_arrivied_match";
+    public static string EVT_USER_EXIT_MATCH_SUCCESS = "user_exit_match_success";
+    public static string EVT_OTHER_EXIT_MATCH_SUCCESS = "other_user_exit_match_success";
+    public static string EVT_GAME_START = "game_start";
+    public static string EVT_LOGIC_FRAME_UPDATE = "logic_frame_update";
     //-----------------------------------------------------
     public static string EVENT_TEST = "event_test";
 

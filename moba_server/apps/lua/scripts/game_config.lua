@@ -37,6 +37,9 @@ local game_config =
 	gateway_ws_ip = "10.0.7.65",
 	gateway_ws_port = 3000,
 
+	logic_udp_ip = "127.0.0.1",
+	logic_udp_port = 8800,
+
 	servers = remote_servers,
 	auth_mysql = 
 	{

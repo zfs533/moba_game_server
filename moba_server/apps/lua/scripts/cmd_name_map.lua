@@ -27,6 +27,13 @@ local cmd_name_map =
 	"EnterZoneRes",
 	"EnterMatch",
 	"UserArrived",
+	"ExitMatchReq",
+	"ExitMatchRes",
+	"UserExitMatch",
+	"GameStart",
+	"UdpTest",
+	"LogicFrame",
+	"NextFrameOpts",
 }
 
 return cmd_name_map

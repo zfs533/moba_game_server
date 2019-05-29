@@ -1,12 +1,8 @@
-﻿生成启动时间为 2019/4/16 10:54:02。
+﻿生成启动时间为 2019/5/29 16:48:16。
      1>项目“H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\build\proj.win32\moba_game_server\moba_game_server.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I../../..\3rd\tolua /I"../../..\3rd\lua-5.3.4\src" /I../../..\build\proj.win32\hiredis\include /I../../..\build\proj.win32\mysqlclient\x86\include /I../../..\3rd\protobuf\src /I../../..\3rd\libuv\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\apps\lua\proto\game.pb.cc
-         game.pb.cc
-     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\3rd\protobuf\src\google\protobuf\io\coded_stream.h(869): warning C4800: “google::protobuf::internal::Atomic32”: 将值强制为布尔值“true”或“false”(性能警告)
-     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\3rd\protobuf\src\google\protobuf\wire_format_lite.h(863): warning C4146: 一元负运算符应用于无符号类型，结果仍为无符号类型
-     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\3rd\protobuf\src\google\protobuf\wire_format_lite.h(874): warning C4146: 一元负运算符应用于无符号类型，结果仍为无符号类型
-     1>h:\apan_workabout\duokemeng\mytest\server\moba_game_server\moba_server\3rd\protobuf\src\google\protobuf\generated_message_util.h(160): warning C4800: “const google::protobuf::uint32”: 将值强制为布尔值“true”或“false”(性能警告)
+         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I../../..\3rd\tolua /I"../../..\3rd\lua-5.3.4\src" /I../../..\build\proj.win32\hiredis\include /I../../..\build\proj.win32\mysqlclient\x86\include /I../../..\3rd\protobuf\src /I../../..\3rd\libuv\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\apps\lua\main.cc
+         main.cc
        Link:
          D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\build\proj.win32\Debug\moba_game_server.exe" /INCREMENTAL /NOLOGO /LIBPATH:../../..\build\proj.win32\hiredis\x86_libs /LIBPATH:../../..\build\proj.win32\mysqlclient\x86\lib /LIBPATH:../../..\build\proj.win32\protobuf_lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\build\proj.win32\Debug\moba_game_server.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"H:\Apan_WorkAbout\duokemeng\mytest\server\moba_game_server\moba_server\build\proj.win32\Debug\moba_game_server.lib" /MACHINE:X86 /NODEFAULTLIB:libcmt.lib Debug\base64_decoder_zfs.obj
          Debug\base64_encode_zfs.obj
@@ -118,4 +114,4 @@
 
 生成成功。
 
-已用时间 00:00:21.53
+已用时间 00:00:02.97

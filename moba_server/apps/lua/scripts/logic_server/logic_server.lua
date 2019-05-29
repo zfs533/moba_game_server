@@ -14,6 +14,9 @@ local logic_service_handlers = {}
 logic_service_handlers[Cmd.eLoginLogicReq] = game_mgr.login_logic_server
 logic_service_handlers[Cmd.eUserLostConn] = game_mgr.client_disconnect--玩家掉线
 logic_service_handlers[Cmd.eEnterZoneReq] = game_mgr.enter_zone
+logic_service_handlers[Cmd.eExitMatchReq] = game_mgr.exit_match_list
+logic_service_handlers[Cmd.eUdpTest] = game_mgr.do_udp_test
+logic_service_handlers[Cmd.eNextFrameOpts] = game_mgr.next_frame_opt
 
 --{stype,ctype,utag,body}
 local function on_logic_recv_cmd(s,msg)
